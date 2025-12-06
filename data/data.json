@@ -1,0 +1,230 @@
+[
+  {
+    "id": "chessdash.diamondtp",
+    "name": "Diamond TP",
+    "creator": "ChessDash543",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/Chessdash543/Diamond-TP/releases/download/v4.0.7/DiamondTP.zip",
+    "description": "Is a Remake Of Diamond TP And the Texture Mix sequence (TDOSSZ), With a very cool RGB style, with support for +62 mods!",
+    "version": "v4.0.7",
+    "icon": "/uploads/chessdash.diamondtp/icon.png",
+    "screenshot": "/uploads/chessdash.diamondtp/image.png",
+    "downloads": 0
+  },
+  {
+    "id": "danzgame.nova_ui",
+    "name": "Nova Ui",
+    "creator": "DANZGAME",
+    "resolution": [
+      "low",
+      "high",
+      "medium"
+    ],
+    "download": "https://textureworkshop.plusgdps.dev/api/v1/tws/getPack/114.zip",
+    "description": "NOVA UI is a name derived from the word innovation, which means developing ideas in a field.",
+    "version": "v1.6.0",
+    "icon": "/uploads/danzgame.nova_ui/icon.png",
+    "screenshot": "/uploads/danzgame.nova_ui/image.png",
+    "downloads": 0
+  },
+  {
+    "id": "martymcforty.cloudyceramics",
+    "name": "Cloudy Ceramics",
+    "creator": "MartyMCForty",
+    "resolution": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/20yuewi8gma3umboh7caw/Cloudy-Ceramics-TP-Updated-and-Fixed-AGAIN.zip?rlkey=dg9okhgt7et8957u1ggibpilw&st=4xzavfr1&dl=1",
+    "description": "A mix with all the icons with other people's texture packs (Supernova Texture Pack, 1000 Icon Private Mix, etc.). This texture pack also has music, fonts, sfx from mobile games (Cut the Rope, Pou, etc.)\nFor people who use the More Icons mod in order to see the existing icons that are replaced by the texture pack, do the following: Go to Geode --> More Icons --> Mod settings --> Load From Traditional Packs: Off",
+    "version": "v1.0.0",
+    "icon": "/uploads/martymcforty.cloudyceramics/icon.png",
+    "screenshot": "/uploads/martymcforty.cloudyceramics/image.png",
+    "downloads": 0
+  },
+  {
+    "id": "yoichi.onlyyoichigdtexturepack",
+    "name": "OnlyYoichi Texture Pack!",
+    "creator": "OnlyYoichi",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/6bzcgfszs5g34k8ggjoh5/OnlyYoichi-Texture-Pack.zip?rlkey=t1ph20hxwf03hl9r6kiq0ag18&st=8vtudv1a&dl=1",
+    "description": "Simple but modern... That's the essence of it... Created and ported by OnlyYoichi for lovers of the basics and the modern",
+    "version": "v1.1.2",
+    "icon": "/uploads/yoichi.onlyyoichigdtexturepack/icon.png",
+    "screenshot": "/uploads/yoichi.onlyyoichigdtexturepack/image.png",
+    "downloads": 0
+  },
+  {
+    "id": "elbrift.better-df",
+    "name": "Shop Girls",
+    "creator": "OstiLightOff",
+    "resolution": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/w5fkig8kjti1rqso94dz1/ShopGirl2.2-1.zip?rlkey=8ejj779892advdshyts2jo41h&st=5u4r0as8&dl=1",
+    "description": "Turn ShopKeepers into girls... What other explanation do you want?",
+    "version": "v1.5.0",
+    "icon": "/uploads/elbrift.better-df/pack-1.png",
+    "screenshot": "/uploads/elbrift.better-df/78_sin_titulo_20251201221838.png",
+    "downloads": 0
+  },
+  {
+    "id": "DANZGAME.geosu",
+    "name": "Geosu!",
+    "creator": "DANZGAME",
+    "resolution": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/1lw7hsapwbltwy18i30rc/Geosu.zip?rlkey=kggwam01h75h98123i5kczf15&st=5jzk4j2z&dl=1",
+    "description": "Geosu! is a UI Taken From The Game Reference Called Osu!, Which is a Rhythm Game",
+    "version": "v1.0.0",
+    "icon": "/uploads/DANZGAME.geosu/pack.png",
+    "screenshot": "/uploads/DANZGAME.geosu/20251022_201653.jpg",
+    "downloads": 0
+  },
+  {
+    "id": "retroadvance64.supernova",
+    "name": "Supernova",
+    "creator": "RetroAdvance64",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/vlywvtwnxj2imqtp0ur36/SN2.0_v1.7-HM.zip?rlkey=gcuxibc5xezfradu2zsqsuagw&st=izs7jqa9&dl=1",
+    "description": "Experience the world of Geometry Dash into a new coat of paint with a full-packed texture pack that changes everything in the style of the respective author. You'll be in a new different world. Stay solid with a new fancy UI inspired by 2000s graphics era. Over 875+ Icons ready to be unlocked throughout your journey. Jam with new music created by Gibarian. Mega Drive. and others. Delve into the secrets.. Explore the Tower, Vaults and Shops in new different shapes.",
+    "version": "v1.7.2",
+    "icon": "/uploads/retroadvance64.supernova/1764705812032-GeodeLogo2.png",
+    "screenshot": "/uploads/retroadvance64.supernova/1764705812039-Screenshot_20251202-013954.png",
+    "downloads": 0
+  },
+  {
+    "id": "maustyles.srguillestertp",
+    "name": "SrGuillester TP",
+    "creator": "MauStyles",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/0sxj9g9rct1td14o9r6xu/High-Medium-Sr-Guillester-TP-Ported-For-GD-2.207.zip?rlkey=w436mni9udn6c5lad3l4fa90i&st=5mnh7l85&dl=1",
+    "description": "Get ready to go pro with the SrGuillester Texture Pack!!!",
+    "version": "v1.1.0",
+    "icon": "/uploads/maustyles.srguillestertp/1764705782693-mtPE3TsA.png",
+    "screenshot": "/uploads/maustyles.srguillestertp/1764705782708-78_sin_titulo_20251202015734.png",
+    "downloads": 0
+  },
+  {
+    "id": "DANZGAME.cirindo",
+    "name": "Cirindo",
+    "creator": "DANZGAME",
+    "description": "Cirindo (Circuit Indonesia) is a texture pack from the Circuit board line. Special Thanks To DeepResonanceX And ChessDash543 For To Help In Creating a Texture Packs",
+    "version": "v1.3.0",
+    "resolution": [
+      "low",
+      "medium"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/s0jjt6qalsreegj5vqozh/Cirindo.zip?rlkey=1x1bb4t3na296gpgycp5p2osl&st=od6zw2m7&dl=1",
+    "icon": "/uploads/DANZGAME.cirindo/1764796607046-20250211_133200.png",
+    "screenshot": "/uploads/DANZGAME.cirindo/1764796607047-20251114_035005.png",
+    "downloads": 0
+  },
+  {
+    "id": "pvn6.processorpack",
+    "name": "Processor Pack",
+    "creator": "Processor",
+    "description": "Black and Purple themed mashup of some of my favorite texture packs together (Credits: Futura UI, SSOH, Soluble, Zeronium, Blueskii)",
+    "version": "v1.0.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dl.dropboxusercontent.com/scl/fi/zy5hl0bjz8pkrobrs3k7t/Processor-Pack-OFFICIAL-RELEASE.zip?rlkey=5rduuosobxphaz2fyf0oktzut&st=1komgb35&dl=1",
+    "icon": "/uploads/pvn6.processorpack/1764798799643-pack-3.png",
+    "screenshot": "/uploads/pvn6.processorpack/1764798799644-7RFqWs_HJ0U-HD_1.jpg",
+    "downloads": 0
+  },
+  {
+    "id": "asky74.clean",
+    "name": "GD Clean",
+    "creator": "Asky74",
+    "description": "GD Clean is a minimalist, dark-themed, monochromatic texture pack with simple icons from tabler-icons.io. \nIt is intuitive and, most importantly, easy on the eyes.",
+    "version": "v2.1.2",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://github.com/Asky740/gdclean/releases/download/v2.1.2/GDClean2.1.2.zip",
+    "icon": "/uploads/asky74.clean/1764799608547-pack-2.png",
+    "screenshot": "/uploads/asky74.clean/1764799608548-86 sin tÃ­tulo_20251203175319.png",
+    "downloads": 0
+  },
+  {
+    "id": "FREAKINGDAN.DeterminationfontPack",
+    "name": "Determination font Pack",
+    "creator": "FREAKINGDAN",
+    "description": "This simple texture pack (or should i say font pack) changes the bigFont, goldFont and chatFont to the iconic font used in the game called Undertale.\n\nBig shoutout to Toby Fox for making this iconic game and this iconic font for use.",
+    "version": "v1.2.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://github.com/freakingdan/Determination-Font-Pack/releases/download/v1.2.0/DFPNew.zip",
+    "icon": "/uploads/FREAKINGDAN.DeterminationfontPack/1764872876842-pack.png",
+    "screenshot": "/uploads/FREAKINGDAN.DeterminationfontPack/1764872876843-Determination_Thumbnail_20251204_112254_0000.png",
+    "downloads": 0
+  },
+  {
+    "id": "zapher.frutigerdash",
+    "name": "Frutiger Aero Dash",
+    "creator": "Zapher",
+    "description": "The promised future we never got, now in Geometry Dash!",
+    "version": "v1.5.2",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/4ny2wyxyek3bd5n8leppw/Aero-Dash-Workshop.zip?rlkey=grtanpcmdj5i5uf43xgvif9mt&st=dp9tcvz5&dl=1",
+    "icon": "/uploads/zapher.frutigerdash/1764888014502-pack-6.png",
+    "screenshot": "/uploads/zapher.frutigerdash/1764888014506-86_sin_titulo_20251204154144.png",
+    "downloads": 0
+  },
+  {
+    "id": "freadfries.packofchi",
+    "name": "Pack of Chi",
+    "creator": "FreadFries",
+    "description": "A purple texture pack with support for many mods and semi-transparent menus. Shoutout to Jaid and NamesTesla for finding out bugs, and slideglide for providing the hardcoded colors used by Happy Textures.",
+    "version": "v1.2.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://github.com/FreadFries/PackOfChi/releases/download/v1.2.0/Pack.of.Chi.zip",
+    "icon": "/uploads/freadfries.packofchi/1764888197832-pack-5.png",
+    "screenshot": "/uploads/freadfries.packofchi/1764888197835-86_sin_titulo_20251204154500.png"
+  },
+  {
+    "id":"keanan00.tp",
+    "name":"Keanan00's Texture Pack",
+    "creator":"Therealkeanan00",
+    "description":"Purple And Red Texture Pack that Changes a Lot of things, like the Shops, The DF, Buttons, & MUCH MORE",
+    "version":"v1.2.0",
+    "resolution":[
+      "medium",
+      "high"
+    ],
+    "download":"https://www.dropbox.com/scl/fi/7d98jag82ttvw13hxfcrt/Therealkeanan00-s-Texture-Pack-1.2.zip?rlkey=glxb01uv1f1v5mmcw2loq2t9l&st=rick39sd&dl=1",
+    "icon":"/uploads/keanan00.tp/icon.png",
+    "screenshot":"/uploads/keanan00.tp/image.png",
+    "downloads":0
+  }
+]

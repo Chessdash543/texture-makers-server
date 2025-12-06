@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="packTitle"> Texture Pack...</title>
+    <link rel="icon" href="/img/icon.png" type="image/x-icon">
+    <style>
+        /* Base Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121212;
+            min-height: 100vh;
+            color: #E0E0E0;
+            padding: 20px;
+            background-image: url('/img/bg.png'); /* caminho da imagem */
+            background-size: cover;     /* cobre toda a tela */
+            background-repeat: no-repeat; /* não repete a imagem */
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Container Principal */
+        main#pack-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 80px auto 20px; /* Margem superior para o cabeçalho */
+            background: rgb(25, 25, 25); /* Fundo escuro semi-transparente */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgb(255, 255, 255);
+            border: 2px solid #ffffff;
+        }
+        
+        #loading-status {
+            text-align: center;
+            color: #aaa;
+            padding: 50px;
+        }
+
+        .detail-header {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .detail-header {
+                flex-direction: row; /* Layout de 2 colunas em telas maiores */
+                align-items: flex-start;
+            }
+        }
+        
+        .pack-icon-large {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0; /* Não encolhe */
+            filter: drop-shadow(0 4px 6px rgb(255, 255, 255));
+            margin: 0 auto; /* Centraliza no modo coluna */
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .pack-icon-large {
+                margin: 0; /* Remove centralização no modo linha */
+            }
+        }
+
+        .detail-info {
+            flex-grow: 1;
+        }
+
+        .detail-info h1 {
+            color: #ffffff;
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: left; /* Alinhamento correto */
+        }
+        
+        .detail-info p {
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .detail-info p strong {
+            color: #fff;
+            display: inline-block;
+            min-width: 90px; /* Alinha os dois pontos */
+        }
+        
+        .description {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #00aaff;
+            border-radius: 4px;
+            color: #ccc;
+        }
+
+        /* Botão de Download */
+        .download-btn {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 300px; /* Limita a largura do botão */
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #2b7cff;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .download-btn:hover {
+            background: #1a62d6;
+            transform: translateY(-2px);
+        }
+
+        .screenshot-display {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .screenshot-display h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #00aaff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .pack-screenshot-large {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #ffffff;
+        }
+        
+        .detail-header .detail-info p{
+            font-size: 20px;
+        }
+
+        .detail-header .detail-info {
+            text-align: left;
+            font-size: 20px;
+            border: 2px solid #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="pack-container">
+        <h2 id="loading-status">Loading...</h2>
+    </main>
+
+<script>
+    // Variável para armazenar todos os pacotes carregados do data.json
+    let allTexturePacks = [];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadAllPacksAndProcessDetail();
+    });
+
+    /**
+     * Tenta carregar o data.json e, se for bem-sucedido, chama o processamento do ID.
+     */
+    async function loadAllPacksAndProcessDetail() {
+        const container = document.getElementById('pack-container');
+        
+        // Garante que o status de carregamento apareça enquanto buscamos os dados
+        container.innerHTML = `<h2 id="loading-status">Loading Details of pack...</h2>`;
+
+        try {
+            // Chamada para o arquivo local data/data.json
+            const response = await fetch("data/data.json");
+
+            if (!response.ok) {
+                container.innerHTML = `<h2 id="loading-status" style="color: red;">Erro ao carregar data/data.json.</h2>`;
+                return;
+            }
+
+            allTexturePacks = await response.json();
+            
+            // Após carregar, processa o ID da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const packId = urlParams.get('id'); 
+
+            if (packId) {
+                renderPackDetails(packId);
+            } else {
+                container.innerHTML = `<h2 id="loading-status">Erro: ID do pacote não especificada na URL.</h2>`;
+            }
+
+        } catch (error) {
+            console.error('Falha ao carregar data.json:', error);
+            container.innerHTML = `<h2 id="loading-status" style="color: red;">Falha total ao carregar os dados. Consulte o console.</h2>`;
+        }
+    }
+
+
+    /**
+     * Inicia o download (não rastreia mais nada)
+     * @param {string} downloadUrl - A URL direta para o arquivo do pacote.
+     */
+    function initiateDownload(downloadUrl) {
+        // Apenas inicia o download do arquivo sem rastreamento ou API
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = '';
+        link.click();
+        
+        setTimeout(() => link.remove(), 100); 
+    }
+
+
+    /**
+     * Encontra o pacote na lista carregada e renderiza o HTML, sem contagem de downloads.
+     * @param {string} id - A ID do pack.
+     */
+    function renderPackDetails(id) {
+        const container = document.getElementById('pack-container');
+        
+        // 1. Buscar o pacote na lista em memória (allTexturePacks)
+        const pack = allTexturePacks.find(p => p.id === id);
+
+        if (!pack) {
+            container.innerHTML = `<h2 id="loading-status">Pack not found in data.json.</h2>`;
+            return;
+        }
+
+        // Atualiza o Título da Página
+        document.getElementById('packTitle').textContent = `${pack.name} by ${pack.creator}`;
+
+        // 2. Cria o conteúdo HTML (Removido o campo 'Downloads:')
+        container.innerHTML = `
+            <div class="detail-header">
+                <img src="${pack.icon}" alt="Icon" class="pack-icon-large">
+                <div class="detail-info">
+                    <h1>${pack.name}</h1>
+                    <p><strong>Creator:</strong> ${pack.creator}</p>
+                    <p><strong>Resolution(s):</strong> ${pack.resolution}</p>
+                    <p><strong>Version:</strong> ${pack.version}</p>
+                    <p><strong>ID:</strong> ${pack.id}</p>
+                    <p class="description">${pack.description || "Nenhuma descrição fornecida."}</p>
+                
+                    <button id="detailDownloadBtn" class="download-btn" 
+                            data-url="${pack.download}" 
+                            data-version="${pack.version}">
+                        Download (${pack.version})
+                    </button>
+                </div>
+            </div>
+            
+            <div class="screenshot-display">
+                <h2>Screenshot(s)</h2>
+                <img src="${pack.screenshot}" alt="Screenshot principal" class="pack-screenshot-large">
+            </div>
+        `;
+
+        // 3. Adicionar Listener de Download (após o innerHTML)
+        const dlBtn = document.getElementById("detailDownloadBtn");
+
+        if (dlBtn) {
+            // O botão agora chama a função simples initiateDownload
+            dlBtn.addEventListener("click", () => initiateDownload(pack.download));
+        }
+    }
+</script>
+</body>
+</html>
