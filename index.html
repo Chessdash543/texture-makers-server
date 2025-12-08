@@ -132,6 +132,26 @@
         transform: scale(1.03);
     }
 
+    .statistics-nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        
+        /* Estilo visual chamativo - TAMANHO AUMENTADO */
+        padding: 10px 20px; /* AUMENTADO */
+        font-size: 15px; /* AUMENTADO */
+        font-weight: bold;
+        border-radius: 15px;
+        background-color: #00aa00; /* Verde forte */
+        color: rgb(154, 154, 154);
+        border: 3px solid #ffffff; 
+        text-decoration: none;
+        cursor: pointer;
+        
+        /* Efeitos */
+        transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    }
+
     /*
     ====================================
       3. LINKS E RODAPÉ
@@ -141,6 +161,7 @@
         color: #00aaff;
         text-decoration: none;
     }
+
     a:hover {
         color: #ffaa00;
     }
@@ -234,6 +255,12 @@
 
         <br></br>
 
+        <a href="statistics.html" class="cta-button statistics-nav-btn" style="background-color: #909090; color: white; border: 2px solid #7289da; color: black;">
+            <i class="fas fa-download"></i>Texture Pack Statistics
+        </a>
+
+        <br></br>
+
         <img src="img/image.png" alt="screenshot" class="card-screenshot">
         
         <p class="cta-text">
@@ -253,8 +280,6 @@
     <div class="simple-footer">
         &copy; 2025 TMS - Texture Makers Server.
     </div>
-
-
 
 </body>
 </html>
