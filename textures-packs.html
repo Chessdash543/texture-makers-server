@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Texture Packs - TMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/img/icon.png" type="image/x-icon">
+    <meta name="description" content="A collection of texture packs made by the Texture Makers community.">
+    <meta name="keywords" content="Texture Packs, Texture Makers, Download, Server">
+    <meta name="google-site-verification" content="QCSYz2rA9wSjZDzi3caaGW4P8qr9OyDlcqAacH2eC_0" />
+</head>
+<body>
+    <img src="/img/title.png" alt="title" class="title">
+
+    <div class="top-bar">
+        <input type="search" id="search" placeholder="Search Texture Pack...">
+        
+        <select id="filterResolution">
+            <option disabled>Resolutions</option>
+            <option value="all" selected>All</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        
+        <select id="filterType">
+            <option value="all" selected>All Types</option>
+            <option value="texture-pack">Texture Packs</option>
+            <option value="icons">Icons</option>
+        </select>
+
+        <select id="filterFeatured">
+            <option value="all" selected>All Packs</option>
+            <option value="true">Featured Only</option>
+        </select>
+        
+        <button id="addPackBtn" class="add-pack-btn">Add my texture pack</button>
+    </div>
+
+    <div id="cards-container"></div>
+    <div id="pagination"></div>
+
+    <div id="popup" class="popup-bg">
+        <div class="popup-box"></div>
+    </div>
+
+    <div id="invite-popup" class="popup-bg" aria-hidden="true">
+        <div class="popup-box invite-box">
+            <div class="popup-top">
+                <img src="/img/icon.png" alt="icon" class="pack-icon">
+                <div class="popup-info">
+                    <h2>Join our Discord</h2>
+                    <p>Want to add your texture pack? Join our Discord server to submit and get help from the community.</p>
+                    <p><a id="discordInviteLink" href="https://discord.gg/YMGPn26WMN" target="_blank" rel="noopener">Join the Discord</a></p>
+                    <button class="close-invite-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const cardsPerPage = 5;
+        let texturePacks = []; 
+    
+        const cardsContainer = document.getElementById("cards-container");
+        const searchInput = document.getElementById("search");
+        const filterResolutionSelect = document.getElementById("filterResolution"); 
+        
+        // NOVOS FILTROS SELECT
+        const filterTypeSelect = document.getElementById("filterType"); 
+        const filterFeaturedSelect = document.getElementById("filterFeatured"); 
+        
+        const popup = document.getElementById("popup");
+        const popupBox = popup.querySelector(".popup-box");
+        const addPackBtn = document.getElementById("addPackBtn");
+        const invitePopup = document.getElementById("invite-popup");
+        const inviteCloseBtn = invitePopup.querySelector('.close-invite-btn');
+    
+        const DISCORD_INVITE = 'https://discord.gg/YMGPn26WMN';
+    
+        // ----------------------------------------------------
+        // --- FUNÇÕES DE CARREGAMENTO E INICIALIZAÇÃO ---
+        // ----------------------------------------------------
+    
+        async function fetchPacks() {
+            try {
+                const res = await fetch("data/data.json"); 
+                const contentType = res.headers.get('content-type') || '';
+            
+                if (!res.ok) {
+                    cardsContainer.innerHTML = "<p>Erro ao carregar os pacotes. Verifique o console.</p>";
+                    return;
+                }
+            
+                if (contentType.includes('application/json') || res.url.endsWith('.json')) {
+                    texturePacks = await res.json();
+                } else {
+                    cardsContainer.innerHTML = "<p>Erro: Dados não estão no formato JSON.</p>";
+                    return;
+                }
+            
+                filterSearch(); 
+            
+            } catch (err) {
+                console.error('Error fetching packs from data/data.json:', err);
+                cardsContainer.innerHTML = "<p>Falha total ao carregar os dados. Verifique o console.</p>";
+            }
+        }
+    
+        fetchPacks();
+    
+        function initiateDownload(downloadUrl) {
+            const link = document.createElement('a');
+            link.href = downloadUrl;
+            link.download = '';
+            link.click();
+        
+            setTimeout(() => link.remove(), 100); 
+        }
+    
+        // ----------------------------------------------------
+        // --- FUNÇÕES DE RENDERIZAÇÃO E LÓGICA ---
+        // ----------------------------------------------------
+    
+        function renderCards(list) {
+            cardsContainer.innerHTML = "";
+            // ... (Lógica de paginação e filtro mantida)
+        
+            const start = (currentPage - 1) * cardsPerPage;
+            const end = start + cardsPerPage;
+            const pageItems = list.slice(start, end);
+        
+            if (pageItems.length === 0 && list.length > 0 && currentPage !== 1) {
+                currentPage = 1; 
+                renderCards(list); 
+                return;
+            }
+        
+        
+            pageItems.forEach(pack => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+
+                card.dataset.id = pack.id; 
+
+                // LÓGICA DE DESTAQUE FEATURED (Mantida)
+                const isFeatured = pack.featured === true;
+                const featuredTitleClass = isFeatured ? 'featured-title' : '';
+                const featuredStar = isFeatured ? '<span class="featured-star">★ </span>' : '';
+                
+                // NOVO: Classe para o ícone
+                const featuredIconClass = isFeatured ? 'featured-icon-glow' : ''; 
+                
+                // INÍCIO DO card.innerHTML
+                card.innerHTML = `
+                    <div class="card-top">
+                        <img src="${pack.icon}" alt="Icon" class="card-icon ${featuredIconClass}">
+                        <div class="card-content">
+                            <h3 class="${featuredTitleClass}">${featuredStar}${pack.name} by ${pack.creator} - ${pack.version}</h3>
+                            <p>${pack.description}</p>
+                            <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
+                            <p class="download-count"><small>Available for Download</small></p>
+                            <button class="more-info">i</button>
+                        </div>
+                    </div>
+                    <img src="${pack.screenshot}" alt="screenshot" class="card-screenshot">
+                `;
+
+                cardsContainer.appendChild(card);
+
+                const dlBtn = card.querySelector(".download-btn");
+                dlBtn.addEventListener("click", () => initiateDownload(pack.download));
+
+                card.querySelector(".more-info").addEventListener("click", () => openPopup(pack));
+            });
+
+            renderPagination(list);
+        }
+
+        function renderPagination(list) {
+            const pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+
+            const totalPages = Math.ceil(list.length / cardsPerPage);
+            if (totalPages <= 1) return;
+
+            const prev = document.createElement("button");
+            prev.textContent = "Prev";
+            prev.disabled = currentPage === 1;
+            prev.onclick = () => { currentPage--; renderCards(list); }; 
+            pagination.appendChild(prev);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement("button");
+                btn.textContent = i;
+                if (i === currentPage) btn.classList.add("active-page");
+                btn.onclick = () => { currentPage = i; renderCards(list); };
+                pagination.appendChild(btn);
+            }
+
+            const next = document.createElement("button");
+            next.textContent = "Next";
+            next.disabled = currentPage === totalPages;
+            next.onclick = () => { currentPage++; renderCards(list); };
+            pagination.appendChild(next);
+        }
+
+        function sortPacks(list, sortBy) {
+            return list; 
+        }
+
+        function filterSearch() {
+            const fullText = searchInput.value.toLowerCase();
+            const resolution = filterResolutionSelect.value;
+            // const rawInput = searchInput.value.trim(); // Removido
+            
+            // LER VALORES DOS NOVOS SELECTS
+            const type = filterTypeSelect.value;
+            const featured = filterFeaturedSelect.value;
+
+            let searchText = fullText;
+            let creatorFilter = '';
+
+            // Lógica para extrair o filtro 'by:'
+            const creatorMatch = fullText.match(/by:\s*([a-z0-9_.-]+)/); 
+
+            if (creatorMatch && creatorMatch[1]) {
+                creatorFilter = creatorMatch[1].trim(); 
+                searchText = fullText.replace(creatorMatch[0], '').trim(); 
+            }
+
+            // 2. Filtragem
+            let filtered = texturePacks.filter(pack => {
+                // Assegura que o pack tem as propriedades necessárias (prevenção de erro)
+                if (!pack.name || !pack.creator) return false;
+
+                const packName = pack.name.toLowerCase();
+                const packCreator = pack.creator.toLowerCase();
+
+                // 2.1 Filtro por Texto e Criador
+                const matchesText = searchText === '' || packName.includes(searchText);
+                const matchesCreator = creatorFilter === '' || packCreator === creatorFilter;
+
+                // 2.2 Filtro por Resolução
+                const matchesResolution = resolution === "all" || (
+                    Array.isArray(pack.resolution) && pack.resolution.includes(resolution)
+                );
+
+                // 2.3 Filtro por Tipo (type: texture-pack ou icons)
+                const packType = String(pack.type || '').toLowerCase();
+                const matchesType = type === "all" || (packType === type);
+
+                // 2.4 Filtro por Featured (featured: true)
+                const matchesFeatured = featured === "all" || (pack.featured === true);
+                
+                // Retorna TRUE se o pacote passar por TODOS os filtros
+                return matchesText && matchesCreator && matchesResolution && matchesType && matchesFeatured; 
+            });
+
+            // 3. Ordenação 
+            const sortedAndFiltered = sortPacks(filtered, '');
+
+            // 4. Renderização
+            currentPage = 1; 
+            renderCards(sortedAndFiltered);
+        }
+
+        function openPopup(pack) {
+            popupBox.dataset.id = pack.id;
+
+            // Se resolution for um array, exibe de forma legível
+            const resolutionDisplay = Array.isArray(pack.resolution) ? pack.resolution.join(', ') : pack.resolution;
+
+            popupBox.innerHTML = `
+                <div class="popup-top">
+                    <img src="${pack.icon}" alt="Icone do Pack" class="pack-icon"> 
+
+                    <div class="popup-info">
+                        <h2 class="title-popp">${pack.name} - ${pack.version}</h2>
+
+                        <div class="info-details-list">
+                            <p><strong>Criador:</strong> ${pack.creator}</p>
+                            <p><strong>Versão:</strong> ${pack.version}</p>
+                            <p><strong>Resolução:</strong> ${resolutionDisplay}</p> <p style="font-size: 12px; color: #777;">ID: ${pack.id}</p>
+                        </div>
+
+                        <button 
+                            id="popupDownloadBtn" 
+                            class="download-btn"
+                            data-url="${pack.download}">
+                            Download (${pack.version})
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="popup-bottom-content">
+
+                    <p class="description-block">${pack.description || "Descrição não fornecida."}</p>
+
+                    <div class="action-links">
+                        <button 
+                            class="details-btn" 
+                            onclick="window.open('pack-detail.html?id=${pack.id}', '_blank')">
+                            View The Post of ${pack.name} &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <img src="${pack.screenshot}" alt="Screenshot" class="popup-image">
+
+                <button id="closePopup" class="closepopup">Close</button>`;
+
+            const popupDlBtn = popupBox.querySelector("#popupDownloadBtn");
+
+            if (popupDlBtn) {
+                popupDlBtn.addEventListener("click", () => initiateDownload(pack.download));
+            }
+
+            popup.style.display = "flex";
+            document.body.classList.add("no-scroll");
+
+            const closeBtn = document.getElementById("closePopup");
+            closeBtn.addEventListener("click", () => {
+                popup.style.display = "none";
+                document.body.classList.remove("no-scroll");
+            });
+
+            popup.addEventListener("click", e => {
+                if (e.target === popup) {
+                    popup.style.display = "none";
+                    document.body.classList.remove("no-scroll");
+                }
+            });
+        }
+
+        // ----------------------------------------------------
+        // --- LISTENERS DE EVENTOS GLOBAIS ---
+        // ----------------------------------------------------
+
+        // Listeners para a busca e a resolução (mantidos)
+        searchInput.addEventListener("input", filterSearch); 
+        searchInput.addEventListener("keypress", (e) => { if(e.key === "Enter") filterSearch(); });
+        filterResolutionSelect.addEventListener("change", filterSearch);
+
+        // Listeners para os novos filtros SELECT (type e featured)
+        filterTypeSelect.addEventListener("change", filterSearch); 
+        filterFeaturedSelect.addEventListener("change", filterSearch); 
+
+        if (addPackBtn) {
+            addPackBtn.addEventListener('click', () => {
+                const discordInviteLink = document.getElementById('discordInviteLink');
+                if (discordInviteLink) {
+                    discordInviteLink.href = DISCORD_INVITE;
+                }
+                invitePopup.style.display = 'flex';
+                document.body.classList.add('no-scroll');
+            });
+        }
+
+        if (inviteCloseBtn) {
+            inviteCloseBtn.addEventListener('click', () => {
+                invitePopup.style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            });
+        }
+
+        invitePopup.addEventListener('click', e => {
+            if (e.target === invitePopup) {
+                invitePopup.style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            }
+        });
+    </script>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <a class="social-btn youtube" href="https://www.youtube.com/@ChessDash543" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#FF0000" d="M23.5 6.2a3.0 3.0 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3.0 3.0 0 0 0 .5 6.2 29.3 29.3 0 0 0 0 12a29.3 29.3 0 0 0 .5 5.8 3.0 3.0 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3.0 3.0 0 0 0 2.1-2.1A29.3 29.3 0 0 0 24 12a29.3 29.3 0 0 0-.5-5.8z"></path><path fill="#fff" d="M9.8 15.5V8.5l6.2 3.5-6.2 3.5z"></path></svg>
+                <span class="social-label">YouTube</span>
+            </a>
+
+            <a class="social-btn discord" href="https://discord.gg/YMGPn26WMN" target="_blank" rel="noopener" aria-label="Discord">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#7289DA" d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.075.037c-.211.375-.445.864-.608 1.249-1.84-.276-3.68-.276-5.486 0-.163-.39-.405-.88-.617-1.255a.07.07 0 0 0-.076-.036A19.736 19.736 0 0 0 3.678 4.37a.064.064 0 0 0-.03.024C.533 9.045-.319 13.46.066 17.8a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 6.058 3.08.07.07 0 0 0 .078-.027c.468-.637.885-1.31 1.24-2.01a.07.07 0 0 0-.038-.099 13.35 13.35 0 0 1-1.9-.9.07.07 0 0 1-.007-.12c.127-.096.254-.197.375-.305a.07.07 0 0 1 .073-.01c3.97 1.79 8.27 1.79 12.11 0a.07.07 0 0 1 .076.01c.12.108.247.209.374.305a.07.07 0 0 1-.006.12c-.646.4-1.317.754-1.9.899a.07.07 0 0 0-.038.1c.36.7.777 1.374 1.245 2.01a.07.07 0 0 0 .078.026 19.907 19.907 0 0 0 6.058-3.08.082.082 0 0 0 .031-.056c.5-7.168-2.9-11.561-3.93-12.467a.062.062 0 0 0-.03-.023z"></path><path fill="#fff" d="M8.02 13.577c-1.18 0-2.14-1.085-2.14-2.423 0-1.337.955-2.423 2.14-2.423 1.2 0 2.164 1.086 2.14 2.423 0 1.338-.955 2.423-2.14 2.423zm7.96 0c-1.18 0-2.14-1.085-2.14-2.423 0-1.337.955-2.423 2.14-2.423 1.2 0 2.165 1.086 2.14 2.423 0 1.338-.94 2.423-2.14 2.423z"></path></svg>
+                <span class="social-label">Discord</span>
+            </a>
+
+            <a class="social-btn github" href="https://github.com/Chessdash543/texture-server" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#fff" d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.51.11-3.15 0 0 .98-.31 3.2 1.18a11.05 11.05 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.64.23 2.85.11 3.15.75.81 1.2 1.84 1.2 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.77 1.07.77 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12c0-6.28-5.23-11.5-11.5-11.5z"/></svg>
+                <span class="social-label">GitHub</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

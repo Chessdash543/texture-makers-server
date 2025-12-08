@@ -19,7 +19,7 @@ a:hover {
 }
 
 a:visited {
-    color: #aa00ff;
+    color: #ffaa00;
 }
 
 a:active {
@@ -50,9 +50,9 @@ body {
     max-width: 1000px;
     height: auto;
     display: block;
-    margin: 0 auto 30px auto;
+    margin: 20px auto 50px auto;
     box-sizing: border-box;
-    padding: 0 8px;
+    padding: 0 10px;
     filter: drop-shadow(0 0 12px #ffffffab);
 }
 
@@ -499,13 +499,13 @@ select:hover, button:hover {
     margin-bottom: 100px;
     border-radius: 12px;
     border: 2px solid #ffffff;
-    padding: 10px 12px;
+    padding: 15px 25px;
     box-shadow: 0 0 12px #ffffff88;
     background-color: #1a1a1a;
 }
 
 #pagination button {
-    padding: 6px 12px;
+    padding: 10px 20px;
     border-radius: 6px;
     background: #222;
     color: white;
@@ -715,4 +715,13 @@ select:hover, button:hover {
     font-weight: bold;
     cursor: pointer;
     animation: popupFade .2s ease-in-out;
+}
+
+/* No seu arquivo style.css */
+
+/* Estilos de Brilho Amarelo para o Título (Mantido) */
+
+.featured-star {
+    font-size: 1.2em; 
+    margin-right: 5px;
 }

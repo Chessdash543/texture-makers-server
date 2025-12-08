@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Packs por Categoria e Top Criadores - Texture Packs</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="/img/icon.png" type="image/x-icon">
+    <meta name="description" content="Lista completa de pacotes de texturas e o ranking dos 5 principais criadores do site.">
+    
+    <style>
+        /* CSS Specific to the Layout */
+        #main-content {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin: 0 auto; 
+            padding-top: 20px;
+            padding-bottom: 100px;
+        }
+        
+        /* Estilo base para os cards de conteúdo */
+        .content-card {
+            background-color: #111;
+            color: #fff;
+            border-radius: 15px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+            padding: 30px; 
+            margin: 30px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .content-card h2 {
+            font-size: 36px;
+            color: #00aaff;
+            margin-top: 0;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 8px #00aaffaa);
+        }
+
+        /* ------------------- STYLES FOR PACKS AND CREATORS LISTS ------------------- */
+        
+        .all-packs-list, .creators-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        /* Styles for ALL PACKS list */
+        .pack-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .pack-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pack-list li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* Estilo específico para packs FEATURED */
+        #featured-container .pack-list li a {
+            color: #FFD700; /* Dourado */
+        }
+        
+        /* Estilo específico para packs STANDARD */
+        #standard-container .pack-list li a {
+            color: #ccc; 
+        }
+
+        .pack-list li a:hover {
+            color: #fff;
+            background-color: #00aaff33;
+        }
+
+        /* Styles for TOP CREATORS list (mantido do último request) */
+        .creator-entry {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .creator-entry:hover {
+            background-color: #252525;
+        }
+        
+        .creator-entry h3 {
+            margin: 0 0 10px 0;
+            color: #ffaa00;
+            font-size: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .creator-entry .pack-count {
+            font-size: 16px;
+            color: #111;
+            background-color: #00aaff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .creator-entry ul {
+            list-style: disc;
+            margin: 10px 0 0 20px;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .creator-entry ul li {
+            padding: 4px 0;
+        }
+
+        .creator-entry ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .creator-entry ul li a:hover {
+            color: #00aaff;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .content-card {
+                padding: 20px 15px;
+            }
+            .content-card h2 {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="/img/title.png" alt="title" class="title">
+
+    <div id="main-content">
+        
+        <div class="content-card">
+            <h2>Featured Packs</h2>
+            <div id="featured-container">
+                <p>Carregando pacotes em destaque...</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>Pacotes Standard</h2>
+            <div id="standard-container">
+                <p>Carregando pacotes standard...</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>Top 5 Texture Pack Creators</h2>
+            <div id="top-creators-container">
+                <p>Carregando criadores...</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <a class="social-btn youtube" href="https://www.youtube.com/@ChessDash543" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#FF0000" d="M23.5 6.2a3.0 3.0 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3.0 3.0 0 0 0 .5 6.2 29.3 29.3 0 0 0 0 12a29.3 29.3 0 0 0 .5 5.8 3.0 3.0 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3.0 3.0 0 0 0 2.1-2.1A29.3 29.3 0 0 0 24 12a29.3 29.3 0 0 0-.5-5.8z"></path><path fill="#fff" d="M9.8 15.5V8.5l6.2 3.5-6.2 3.5z"></path></svg>
+                <span class="social-label">YouTube</span>
+            </a>
+
+            <a class="social-btn discord" href="https://discord.gg/YMGPn26WMN" target="_blank" rel="noopener" aria-label="Discord">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#7289DA" d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.075.037c-.211.375-.445.864-.608 1.249-1.84-.276-3.68-.276-5.486 0-.163-.39-.405-.88-.617-1.255a.07.07 0 0 0-.076-.036A19.736 19.736 0 0 0 3.678 4.37a.064.064 0 0 0-.03.024C.533 9.045-.319 13.46.066 17.8a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 6.058 3.08.07.07 0 0 0 .078-.027c.468-.637.885-1.31 1.24-2.01a.07.07 0 0 0-.038-.099 13.35 13.35 0 0 1-1.9-.9.07.07 0 0 1-.007-.12c.127-.096.254-.197.375-.305a.07.07 0 0 1 .073-.01c3.97 1.79 8.27 1.79 12.11 0a.07.07 0 0 1 .076.01c.12.108.247.209.374.305a.07.07 0 0 1-.006.12c-.646.4-1.317.754-1.9.899a.07.07 0 0 0-.038.1c.36.7.777 1.374 1.245 2.01a.07.07 0 0 0 .078.026 19.907 19.907 0 0 0 6.058-3.08.082.082 0 0 0 .031-.056c.5-7.168-2.9-11.561-3.93-12.467a.062.062 0 0 0-.03-.023z"></path><path fill="#fff" d="M8.02 13.577c-1.18 0-2.14-1.085-2.14-2.423 0-1.337.955-2.423 2.14-2.423 1.2 0 2.164 1.086 2.14 2.423 0 1.338-.955 2.423-2.14 2.423zm7.96 0c-1.18 0-2.14-1.085-2.14-2.423 0-1.337.955-2.423 2.14-2.423 1.2 0 2.165 1.086 2.14 2.423 0 1.338-.94 2.423-2.14 2.423z"></path></svg>
+                <span class="social-label">Discord</span>
+            </a>
+
+            <a class="social-btn github" href="https://github.com/Chessdash543/texture-server" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="#fff" d="M12 .5"></path></svg>
+                <span class="social-label">GitHub</span>
+            </a>
+        </div>
+    </footer>
+
+
+    <script>
+        let texturePacks = []; 
+        const featuredContainer = document.getElementById("featured-container");
+        const standardContainer = document.getElementById("standard-container");
+        const topCreatorsContainer = document.getElementById("top-creators-container");
+
+        /**
+         * Renderiza uma lista de pacotes em um contêiner específico.
+         * @param {Array} packs - A lista de pacotes a ser renderizada.
+         * @param {HTMLElement} container - O elemento onde a lista será inserida.
+         * @param {string} emptyMessage - Mensagem para quando a lista está vazia.
+         */
+        function renderPackList(packs, container, emptyMessage) {
+            if (!packs || packs.length === 0) {
+                container.innerHTML = `<p>${emptyMessage}</p>`;
+                return;
+            }
+
+            // Ordena por nome
+            const sortedPacks = packs.sort((a, b) => a.name.localeCompare(b.name));
+
+            let htmlContent = `<ul class="pack-list">`;
+            
+            sortedPacks.forEach(pack => {
+                const creatorText = pack.creator ? ` - by ${pack.creator.toUpperCase()}` : '';
+                htmlContent += `
+                    <li>
+                        <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
+                            ${pack.name} (${pack.version})${creatorText}
+                        </a>
+                    </li>
+                `;
+            });
+
+            htmlContent += `</ul>`;
+            container.innerHTML = htmlContent;
+        }
+
+        /**
+         * Renders the two lists based on the 'featured' property.
+         * @param {Array} packs - The full list of texture packs.
+         */
+        /**
+         * Renders the two lists based on the 'featured' property.
+         * @param {Array} packs - The full list of texture packs.
+         */
+        function renderFeaturedAndStandardPacks(packs) {
+            if (!packs || packs.length === 0) {
+                renderPackList([], featuredContainer, "Nenhum pacote carregado.");
+                renderPackList([], standardContainer, "Nenhum pacote carregado.");
+                return;
+            }
+
+            // CORREÇÃO: Usar lógica de filtro que aceita booleano ou string "true"
+            const featuredPacks = packs.filter(pack => {
+                // Converte 'true' (string) ou true (booleano) para um booleano consistente
+                const isFeatured = String(pack.featured).toLowerCase() === 'true'; 
+                return isFeatured;
+            });
+            
+            // Standard Packs são aqueles que não são featured OU onde featured está ausente/falso
+            const standardPacks = packs.filter(pack => {
+                const isFeatured = String(pack.featured).toLowerCase() === 'true';
+                return !isFeatured;
+            });
+
+            renderPackList(featuredPacks, featuredContainer, "Nenhum pacote está marcado como destaque (featured).");
+            renderPackList(standardPacks, standardContainer, "Nenhum pacote standard encontrado.");
+        }
+
+
+        // Mantendo a função para os Top 5 Criadores (inalterada)
+        function calculateTopCreators(packs) {
+            const creatorMap = {};
+
+            packs.forEach(pack => {
+                const creator = (pack.creator || 'UNKNOWN').toUpperCase(); 
+                if (!creatorMap[creator]) {
+                    creatorMap[creator] = { count: 0, packs: [] };
+                }
+                creatorMap[creator].count++;
+                creatorMap[creator].packs.push({
+                    name: pack.name,
+                    version: pack.version,
+                    id: pack.id
+                });
+            });
+
+            const sortedCreators = Object.keys(creatorMap)
+                .map(creator => ({
+                    name: creator,
+                    count: creatorMap[creator].count,
+                    packs: creatorMap[creator].packs.sort((a, b) => a.name.localeCompare(b.name))
+                }))
+                .sort((a, b) => b.count - a.count);
+
+            return sortedCreators.slice(0, 5);
+        }
+
+        function renderTopCreators(packs) {
+            if (!packs || packs.length === 0) {
+                topCreatorsContainer.innerHTML = "<p>Nenhum dado disponível para calcular os Top Criadores.</p>";
+                return;
+            }
+
+            const topCreatorsData = calculateTopCreators(packs);
+
+            if (topCreatorsData.length === 0) {
+                topCreatorsContainer.innerHTML = "<p>Nenhum dado de criador encontrado.</p>";
+                return;
+            }
+
+            let htmlContent = `<ul class="creators-list">`;
+            
+            topCreatorsData.forEach((creator, index) => {
+                const rank = index + 1;
+                
+                htmlContent += `
+                    <li class="creator-entry">
+                        <h3>
+                            #${rank} ${creator.name}
+                            <span class="pack-count">${creator.count} packs</span>
+                        </h3>
+                        <ul>
+                            ${creator.packs.map(pack => 
+                                `<li>
+                                    <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
+                                        ${pack.name} (v${pack.version})
+                                    </a>
+                                </li>`
+                            ).join('')}
+                        </ul>
+                    </li>
+                `;
+            });
+
+            htmlContent += `</ul>`;
+            topCreatorsContainer.innerHTML = htmlContent;
+        }
+
+        // ----------------------------------------------------------------
+        // INICIALIZAÇÃO
+        // ----------------------------------------------------------------
+
+        async function fetchPacksAndRender() {
+            try {
+                const res = await fetch("data/data.json"); 
+            
+                if (!res.ok) {
+                    const errorMessage = "<p>Erro ao carregar dados. Verifique o caminho 'data/data.json'.</p>";
+                    featuredContainer.innerHTML = errorMessage;
+                    standardContainer.innerHTML = "";
+                    topCreatorsContainer.innerHTML = "";
+                    return;
+                }
+            
+                texturePacks = await res.json();
+                
+                // 1. Renderizar Featured e Standard Packs
+                renderFeaturedAndStandardPacks(texturePacks); 
+                
+                // 2. Renderizar os TOP 5 Criadores
+                renderTopCreators(texturePacks);
+            
+            } catch (err) {
+                console.error('Erro ao buscar dados:', err);
+                const fetchError = "<p>Falha ao carregar dados. Consulte o console para obter detalhes.</p>";
+                featuredContainer.innerHTML = fetchError;
+                standardContainer.innerHTML = "";
+                topCreatorsContainer.innerHTML = "";
+            }
+        }
+        
+        // Iniciar o processo
+        fetchPacksAndRender();
+    </script>
+</body>
+</html>
