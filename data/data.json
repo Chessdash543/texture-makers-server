@@ -12,7 +12,7 @@
     "version": "v4.0.7",
     "icon": "/uploads/chessdash.diamondtp/icon.png",
     "screenshot": "/uploads/chessdash.diamondtp/image.png",
-    "featured": false,
+    "featured": true,
     "type":"texture-pack"
   },
   {
