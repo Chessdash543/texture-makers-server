@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title id="page-title">Perfil do Criador - TMS</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="/img/icon.png" type="image/x-icon">
+    <meta name="description" content="Lista completa de pacotes de texturas de um criador específico.">
+    
+    <style>
+        /* Reutiliza o CSS da página de estatísticas, exceto onde houver conflito de IDs */
+        #main-content {
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin: 0 auto; 
+            padding-top: 20px;
+            padding-bottom: 100px;
+        }
+        
+        .content-card {
+            background-color: #111;
+            color: #fff;
+            border-radius: 15px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+            padding: 30px; 
+            margin: 30px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .content-card h2 {
+            font-size: 36px;
+            color: #00aaff;
+            margin-top: 0;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 8px #00aaffaa);
+        }
+        
+        .creator-info p {
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Estilos para a lista de pacotes */
+        .pack-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .pack-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .pack-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pack-list li a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .pack-list li a:hover {
+            color: #fff;
+            background-color: #00aaff33;
+        }
+        
+        .creator-info .pack-count-summary {
+            font-size: 24px;
+            color: #ffaa00;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .content-card h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="/img/title.png" alt="title" class="title">
+
+    <div id="main-content">
+        
+        <div class="content-card">
+            <h2 id="creator-name-header">Creator: Loading...</h2>
+            
+            <div class="creator-info">
+                <p class="pack-count-summary" id="pack-count-summary"></p>
+            </div>
+
+            <div id="creator-packs-list">
+                <p>Loading Creator Page...</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        let allTexturePacks = []; 
+        const creatorNameHeader = document.getElementById("creator-name-header");
+        const packCountSummary = document.getElementById("pack-count-summary");
+        const creatorPacksList = document.getElementById("creator-packs-list");
+
+        /**
+         * Extrai um parâmetro da URL.
+         * @param {string} name - O nome do parâmetro.
+         * @returns {string|null} O valor do parâmetro ou null.
+         */
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            // Decodifica a URL e substitui '_' por espaços (se usados para codificar nomes)
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        /**
+         * Renderiza a lista de pacotes do criador.
+         * @param {Array} packs - Lista de pacotes para exibir.
+         * @param {string} creatorName - Nome do criador.
+         */
+        function renderCreatorDetails(packs, creatorName) {
+            document.getElementById("page-title").textContent = `${creatorName} - Creator - TMS`;
+            creatorNameHeader.textContent = creatorName;
+            
+            if (!packs || packs.length === 0) {
+                packCountSummary.textContent = "Nenhum pacote encontrado para este criador.";
+                creatorPacksList.innerHTML = "<p>Verifique o nome do criador ou se há pacotes atribuídos.</p>";
+                return;
+            }
+
+            packCountSummary.textContent = `${packs.length} Texture Packs Published`;
+            
+            // Ordena por nome
+            const sortedPacks = packs.sort((a, b) => a.name.localeCompare(b.name));
+
+            let htmlContent = `<ul class="pack-list">`;
+            
+            sortedPacks.forEach(pack => {
+                htmlContent += `
+                    <li>
+                        <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
+                            ${pack.name} (${pack.version}) 
+                        </a>
+                    </li>
+                `;
+            });
+
+            htmlContent += `</ul>`;
+            creatorPacksList.innerHTML = htmlContent;
+        }
+
+
+        // ----------------------------------------------------------------
+        // INICIALIZAÇÃO
+        // ----------------------------------------------------------------
+
+        async function fetchPacksAndRenderCreator() {
+            // 1. Obter o nome do criador da URL. Ex: creator-detail.html?creator=CREATOR_NAME
+            const targetCreator = getUrlParameter('creator').toUpperCase();
+
+            if (!targetCreator) {
+                creatorNameHeader.textContent = "Erro: Nome do Criador Ausente";
+                packCountSummary.textContent = "Por favor, especifique um criador na URL.";
+                creatorPacksList.innerHTML = "";
+                return;
+            }
+            
+            try {
+                // 2. Buscar todos os dados
+                const res = await fetch("data/data.json"); 
+                
+                if (!res.ok) {
+                    creatorNameHeader.textContent = `Erro ao Carregar Dados de ${targetCreator}`;
+                    packCountSummary.textContent = "Falha ao acessar o arquivo 'data/data.json'.";
+                    creatorPacksList.innerHTML = "";
+                    return;
+                }
+                
+                allTexturePacks = await res.json();
+                
+                // 3. Filtrar pacotes para o criador alvo
+                const filteredPacks = allTexturePacks.filter(pack => {
+                    const packCreator = (pack.creator || '').toUpperCase();
+                    // Garante que o criador do pacote corresponde ao criador da URL
+                    return packCreator === targetCreator; 
+                });
+                
+                // 4. Renderizar os resultados
+                renderCreatorDetails(filteredPacks, targetCreator);
+            
+            } catch (err) {
+                console.error('Erro ao buscar dados:', err);
+                creatorNameHeader.textContent = `Erro Interno: ${targetCreator}`;
+                packCountSummary.textContent = "Falha ao processar os dados dos pacotes.";
+                creatorPacksList.innerHTML = "";
+            }
+        }
+        
+        // Iniciar o processo
+        fetchPacksAndRenderCreator();
+    </script>
+</body>
+</html>

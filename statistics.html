@@ -315,7 +315,9 @@
                 htmlContent += `
                     <li class="creator-entry">
                         <h3>
-                            #${rank} ${creator.name}
+                            <a href="javascript:void(0)" style="text-align: left;" onclick="window.open('creator-detail.html?creator=${creator.name}', '_blank');">
+                                #${rank} ${creator.name}
+                            </a>
                             <span class="pack-count">${creator.count} packs</span>
                         </h3>
                         <ul>

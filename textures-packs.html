@@ -177,6 +177,10 @@
             });
 
             renderPagination(list);
+            const topBar = document.querySelector(".title");
+                if (topBar) {
+                topBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         function renderPagination(list) {
@@ -281,7 +285,7 @@
                         <h2 class="title-popp">${pack.name} - ${pack.version}</h2>
 
                         <div class="info-details-list">
-                            <p><strong>Criador:</strong> ${pack.creator}</p>
+                            <p><strong>Criador:</strong> <a href="javascript:void(0)" onclick="window.open('creator-detail.html?creator=${pack.creator}', '_blank');">${pack.creator}</a></p>
                             <p><strong>Versão:</strong> ${pack.version}</p>
                             <p><strong>Resolução:</strong> ${resolutionDisplay}</p> <p style="font-size: 12px; color: #777;">ID: ${pack.id}</p>
                         </div>
