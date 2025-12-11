@@ -42,8 +42,14 @@ body {
     width: 500px;
     max-width: 100%;
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
 }
 
+#search:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+    filter: drop-shadow(0 0 13px #ffffff);
+}
 
 .title {
     width: 100%;
@@ -70,18 +76,19 @@ input, select, button {
     border-radius: 10px;
     border: none;
     outline: none;
-    transition: transform 0.2s;
+    transition: all 0.2s ease-in-out;
+    background-color: #494949;
+    color: #fff;
+    border: 2px solid #ffffff86;
+}
+
+input:focus, select:focus {
+    border: 2px solid #ffffff;
+    filter: drop-shadow(0 0 13px #ffffff);
 }
 
 input {
     flex: 1;
-    
-}
-
-input, select, button {
-    background-color: #494949;
-    color: #fff;
-    border: 2px solid #ffffff86;
 }
 
 input::placeholder {
