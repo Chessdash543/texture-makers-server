@@ -7,6 +7,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 a {
@@ -111,6 +112,7 @@ select:hover, button:hover {
     border: 2px solid #ffffff;
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
     overflow: hidden;
+    margin: 15px 0;
     width: 100%;
     max-width: 800px;
     padding: 15px;
@@ -146,7 +148,6 @@ select:hover, button:hover {
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
-    flex-shrink: 0;
     filter: drop-shadow(0 0 12px #ffffffc5);
     margin: 7px;
 }
@@ -369,7 +370,7 @@ select:hover, button:hover {
 @media (max-width: 600px) {
 
     body {
-        padding: 10px;
+        padding: 10px 0;
     }
 
     h1.title {
