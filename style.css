@@ -166,6 +166,7 @@ select:hover, button:hover {
     border: 2px solid #ffffff;   /* borda do subbloco */
     box-shadow: 0 0 10px #ffffff88; /* leve brilho */
     position: relative;
+    width: 100%;
 }
 
 .card-content .download-btn {
