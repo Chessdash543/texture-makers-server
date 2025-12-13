@@ -259,5 +259,21 @@
     "screenshot":"/uploads/olgcraft.garrytexturepack/image.png",
     "type": "icons",
     "featured": false
+  },
+  {
+    "id":"yoichi&icydoodles.dokidoki",
+    "name":"Doki Doki Geometry Dash!",
+    "creator":"Yoichi & Icy Doodles",
+    "description":"A Texture Pack based on \"Doki Doki Literature Club!\" This cute texture pack changes to pink and white colors! Happy Texture is HIGHLY Recommended to use this texture pack or else it won't do anything",
+    "version":"v1.0.0",
+    "resolution":[
+      "medium",
+      "high",
+    ],
+    "download":"https://www.dropbox.com/scl/fi/12lniq9esri823rxswoow/DDLC-Texture-Pack-By-OnlyYoichi-Icy-Doodles-Port-to-medium-by-Kings-R-Us.zip?rlkey=l11h5s5q7q9ez3pfkbuf7psow&st=qxm0vjeo&dl=1",
+    "icon":"/uploads/yoichi&icydoodles.dokidoki/pack.png",
+    "screenshot":"/uploads/yoichi&icydoodles.dokidoki/image.png",
+    "type": "texture-pack",
+    "featured": true
   }
 ]
