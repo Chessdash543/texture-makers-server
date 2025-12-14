@@ -160,7 +160,7 @@
                     <div class="card-top">
                         <img src="${pack.icon}" alt="Icon" class="card-icon ${featuredIconClass}">
                         <div class="card-content">
-                            <h3 class="${featuredTitleClass}">${featuredStar}${pack.name} by ${pack.creator} - ${pack.version}</h3>
+                            <h3 class="${featuredTitleClass}">${featuredStar}${pack.name} by <a href="creator-detail.html?creator=${pack.creator}", '_blank';>${pack.creator}</a> - ${pack.version}</h3>
                             <p>${pack.description}</p>
                             <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
                             <p class="download-count"><small>Available for Download</small></p>
@@ -287,7 +287,7 @@
                         <h2 class="title-popp">${pack.name} - ${pack.version}</h2>
 
                         <div class="info-details-list">
-                            <p><strong>Criador:</strong> <a href="javascript:void(0)" onclick="window.open('creator-detail.html?creator=${pack.creator}', '_blank');">${pack.creator}</a></p>
+                            <p><strong>Criador:</strong> <a href="creator-detail.html?creator=${pack.creator}", '_blank');">${pack.creator}</a></p>
                             <p><strong>Versão:</strong> ${pack.version}</p>
                             <p><strong>Resolução:</strong> ${resolutionDisplay}</p> <p style="font-size: 12px; color: #777;">ID: ${pack.id}</p>
                         </div>

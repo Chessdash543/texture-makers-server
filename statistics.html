@@ -11,7 +11,7 @@
     <style>
         /* CSS Specific to the Layout */
         #main-content {
-            width: 100%;
+            width: 1)00%;
             max-width: 1000px;
             padding: 0 10px;
             box-sizing: border-box;
@@ -222,7 +222,7 @@
                 const creatorText = pack.creator ? ` - by ${pack.creator.toUpperCase()}` : '';
                 htmlContent += `
                     <li>
-                        <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
+                        <a href="pack-detail.html?id=${pack.id}", '_blank');">
                             ${pack.name} (${pack.version})${creatorText}
                         </a>
                     </li>
@@ -315,7 +315,7 @@
                 htmlContent += `
                     <li class="creator-entry">
                         <h3>
-                            <a href="javascript:void(0)" style="text-align: left;" onclick="window.open('creator-detail.html?creator=${creator.name}', '_blank');">
+                            <a href="creator-detail.html?creator=${creator.name}" style="text-align: left;", '_blank');">
                                 #${rank} ${creator.name}
                             </a>
                             <span class="pack-count">${creator.count} packs</span>
@@ -323,8 +323,8 @@
                         <ul>
                             ${creator.packs.map(pack => 
                                 `<li>
-                                    <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
-                                        ${pack.name} (${pack.version})
+                                    <a href="pack-detail.html?id=${pack.id}", '_blank');">
+                                        ${pack.name} (${pack.version}
                                     </a>
                                 </li>`
                             ).join('')}
