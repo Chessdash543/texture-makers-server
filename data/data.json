@@ -275,5 +275,22 @@
     "screenshot":"/uploads/yoichi&icydoodles.dokidoki/image.png",
     "type": "texture-pack",
     "featured": true
+  },
+  {
+    "id":"Trail Flags",
+    "name":"Doki Doki Geometry Dash!",
+    "creator":"ChessDash543",
+    "description":"Just the texture pack with various country trails. ",
+    "version":"v1.0.0",
+    "resolution":[
+      "medium",
+      "high",
+      "low"
+    ],
+    "download":"https://github.com/Chessdash543/Trail-Flags/releases/download/1.3.1/Trail.Flags.zip",
+    "icon":"/uploads/trail.flags/pack.png",
+    "screenshot":"/uploads/trail.flags/image.png",
+    "type": "icons",
+    "featured": false
   }
 ]
