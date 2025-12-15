@@ -292,5 +292,22 @@
     "screenshot":"/uploads/trail.flags/image.png",
     "type": "icons",
     "featured": false
+  },
+  {
+    "id":"chessdash543.weneedmoremoderators",
+    "name":"WE NEED MORE MODERATORS!!!",
+    "creator":"ChessDash543",
+    "description":"WE NEED MORE MODERATORS!!!",
+    "version":"v1.0.0",
+    "resolution":[
+      "medium",
+      "high",
+      "low"
+    ],
+    "download":"https://github.com/Chessdash543/WE-NEED-MORE-MODERATORS-/releases/download/v1.0.0/WE.NEED.MORE.MODERATORS.zip",
+    "icon":"/uploads/chessdash543.weneedmoremoderators/pack.png",
+    "screenshot":"/uploads/chessdash543.weneedmoremoderators/image.png",
+    "type": "texture-pack",
+    "featured": false
   }
 ]
