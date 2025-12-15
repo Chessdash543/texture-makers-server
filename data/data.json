@@ -277,8 +277,8 @@
     "featured": true
   },
   {
-    "id":"Trail Flags",
-    "name":"Doki Doki Geometry Dash!",
+    "id":"trail.flags",
+    "name":"Trail Flags",
     "creator":"ChessDash543",
     "description":"Just the texture pack with various country trails. ",
     "version":"v1.0.0",
