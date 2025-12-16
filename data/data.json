@@ -2,7 +2,6 @@
   {
     "id": "chessdash.diamondtp",
     "name": "Diamond TP",
-    "creator": "ChessDash543",
     "resolution": [
       "high",
       "medium"
@@ -13,12 +12,14 @@
     "icon": "/uploads/chessdash.diamondtp/icon.png",
     "screenshot": "/uploads/chessdash.diamondtp/image.png",
     "featured": true,
-    "type":"texture-pack"
+    "type": "texture-pack",
+    "creators": [
+      "ChessDash543"
+    ]
   },
   {
     "id": "danzgame.nova_ui",
     "name": "Nova Ui",
-    "creator": "DANZGAME",
     "resolution": [
       "low",
       "high",
@@ -30,12 +31,14 @@
     "icon": "/uploads/danzgame.nova_ui/icon.png",
     "screenshot": "/uploads/danzgame.nova_ui/image.png",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "DANZGAME"
+    ]
   },
   {
     "id": "martymcforty.cloudyceramics",
     "name": "Cloudy Ceramics",
-    "creator": "MartyMCForty",
     "resolution": [
       "low",
       "medium",
@@ -47,12 +50,14 @@
     "icon": "/uploads/martymcforty.cloudyceramics/icon.png",
     "screenshot": "/uploads/martymcforty.cloudyceramics/image.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "MartyMCForty"
+    ]
   },
   {
     "id": "yoichi.onlyyoichigdtexturepack",
     "name": "OnlyYoichi Texture Pack!",
-    "creator": "OnlyYoichi",
     "resolution": [
       "medium",
       "high"
@@ -63,12 +68,14 @@
     "icon": "/uploads/yoichi.onlyyoichigdtexturepack/icon.png",
     "screenshot": "/uploads/yoichi.onlyyoichigdtexturepack/image.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "OnlyYoichi"
+    ]
   },
   {
     "id": "elbrift.better-df",
     "name": "Shop Girls",
-    "creator": "OstiLightOff",
     "resolution": [
       "low",
       "medium",
@@ -80,12 +87,14 @@
     "icon": "/uploads/elbrift.better-df/pack-1.png",
     "screenshot": "/uploads/elbrift.better-df/78_sin_titulo_20251201221838.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "OstiLightOff"
+    ]
   },
   {
     "id": "DANZGAME.geosu",
     "name": "Geosu!",
-    "creator": "DANZGAME",
     "resolution": [
       "low",
       "medium",
@@ -97,12 +106,14 @@
     "icon": "/uploads/DANZGAME.geosu/pack.png",
     "screenshot": "/uploads/DANZGAME.geosu/20251022_201653.jpg",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "DANZGAME"
+    ]
   },
   {
     "id": "retroadvance64.supernova",
     "name": "Supernova",
-    "creator": "RetroAdvance64",
     "resolution": [
       "medium",
       "high"
@@ -113,12 +124,14 @@
     "icon": "/uploads/retroadvance64.supernova/1764705812032-GeodeLogo2.png",
     "screenshot": "/uploads/retroadvance64.supernova/1764705812039-Screenshot_20251202-013954.png",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "RetroAdvance64"
+    ]
   },
   {
     "id": "maustyles.srguillestertp",
     "name": "SrGuillester TP",
-    "creator": "MauStyles",
     "resolution": [
       "medium",
       "high"
@@ -129,12 +142,14 @@
     "icon": "/uploads/maustyles.srguillestertp/1764705782693-mtPE3TsA.png",
     "screenshot": "/uploads/maustyles.srguillestertp/1764705782708-78_sin_titulo_20251202015734.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "MauStyles"
+    ]
   },
   {
     "id": "DANZGAME.cirindo",
     "name": "Cirindo",
-    "creator": "DANZGAME",
     "description": "Cirindo (Circuit Indonesia) is a texture pack from the Circuit board line. Special Thanks To DeepResonanceX And ChessDash543 For To Help In Creating a Texture Packs",
     "version": "v1.3.0",
     "resolution": [
@@ -145,12 +160,14 @@
     "icon": "/uploads/DANZGAME.cirindo/1764796607046-20250211_133200.png",
     "screenshot": "/uploads/DANZGAME.cirindo/1764796607047-20251114_035005.png",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "DANZGAME"
+    ]
   },
   {
     "id": "pvn6.processorpack",
     "name": "Processor Pack",
-    "creator": "Processor",
     "description": "Black and Purple themed mashup of some of my favorite texture packs together (Credits: Futura UI, SSOH, Soluble, Zeronium, Blueskii)",
     "version": "v1.0.0",
     "resolution": [
@@ -161,12 +178,14 @@
     "icon": "/uploads/pvn6.processorpack/1764798799643-pack-3.png",
     "screenshot": "/uploads/pvn6.processorpack/1764798799644-7RFqWs_HJ0U-HD_1.jpg",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "Processor"
+    ]
   },
   {
     "id": "asky74.clean",
     "name": "GD Clean",
-    "creator": "Asky74",
     "description": "GD Clean is a minimalist, dark-themed, monochromatic texture pack with simple icons from tabler-icons.io. \nIt is intuitive and, most importantly, easy on the eyes.",
     "version": "v2.1.2",
     "resolution": [
@@ -177,12 +196,14 @@
     "icon": "/uploads/asky74.clean/1764799608547-pack-2.png",
     "screenshot": "/uploads/asky74.clean/1764799608548-86 sin tÃ­tulo_20251203175319.png",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "Asky74"
+    ]
   },
   {
     "id": "FREAKINGDAN.DeterminationfontPack",
     "name": "Determination font Pack",
-    "creator": "FREAKINGDAN",
     "description": "This simple texture pack (or should i say font pack) changes the bigFont, goldFont and chatFont to the iconic font used in the game called Undertale.\n\nBig shoutout to Toby Fox for making this iconic game and this iconic font for use.",
     "version": "v1.2.0",
     "resolution": [
@@ -193,12 +214,14 @@
     "icon": "/uploads/FREAKINGDAN.DeterminationfontPack/1764872876842-pack.png",
     "screenshot": "/uploads/FREAKINGDAN.DeterminationfontPack/1764872876843-Determination_Thumbnail_20251204_112254_0000.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "FREAKINGDAN"
+    ]
   },
   {
     "id": "zapher.frutigerdash",
     "name": "Frutiger Aero Dash",
-    "creator": "Zapher",
     "description": "The promised future we never got, now in Geometry Dash!",
     "version": "v1.5.2",
     "resolution": [
@@ -209,12 +232,14 @@
     "icon": "/uploads/zapher.frutigerdash/1764888014502-pack-6.png",
     "screenshot": "/uploads/zapher.frutigerdash/1764888014506-86_sin_titulo_20251204154144.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "Zapher"
+    ]
   },
   {
     "id": "freadfries.packofchi",
     "name": "Pack of Chi",
-    "creator": "FreadFries",
     "description": "A purple texture pack with support for many mods and semi-transparent menus. Shoutout to Jaid and NamesTesla for finding out bugs, and slideglide for providing the hardcoded colors used by Happy Textures.",
     "version": "v1.2.0",
     "resolution": [
@@ -225,89 +250,103 @@
     "icon": "/uploads/freadfries.packofchi/1764888197832-pack-5.png",
     "screenshot": "/uploads/freadfries.packofchi/1764888197835-86_sin_titulo_20251204154500.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "FreadFries"
+    ]
   },
   {
-    "id":"keanan00.tp",
-    "name":"Keanan00's Texture Pack",
-    "creator":"Therealkeanan00",
-    "description":"Purple And Red Texture Pack that Changes a Lot of things, like the Shops, The DF, Buttons, & MUCH MORE",
-    "version":"v1.2.0",
-    "resolution":[
+    "id": "keanan00.tp",
+    "name": "Keanan00's Texture Pack",
+    "description": "Purple And Red Texture Pack that Changes a Lot of things, like the Shops, The DF, Buttons, & MUCH MORE",
+    "version": "v1.2.0",
+    "resolution": [
       "medium",
       "high"
     ],
-    "download":"https://www.dropbox.com/scl/fi/7d98jag82ttvw13hxfcrt/Therealkeanan00-s-Texture-Pack-1.2.zip?rlkey=glxb01uv1f1v5mmcw2loq2t9l&st=rick39sd&dl=1",
-    "icon":"/uploads/keanan00.tp/icon.png",
-    "screenshot":"/uploads/keanan00.tp/image.png",
+    "download": "https://www.dropbox.com/scl/fi/7d98jag82ttvw13hxfcrt/Therealkeanan00-s-Texture-Pack-1.2.zip?rlkey=glxb01uv1f1v5mmcw2loq2t9l&st=rick39sd&dl=1",
+    "icon": "/uploads/keanan00.tp/icon.png",
+    "screenshot": "/uploads/keanan00.tp/image.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "Therealkeanan00"
+    ]
   },
   {
-    "id":"olgcraft.garrytexturepack",
-    "name":"The Garry texture pack",
-    "creator":"OLGcraft",
-    "description":"A Texture Pack to honor Garry.",
-    "version":"v1.0.0",
-    "resolution":[
+    "id": "olgcraft.garrytexturepack",
+    "name": "The Garry texture pack",
+    "description": "A Texture Pack to honor Garry.",
+    "version": "v1.0.0",
+    "resolution": [
       "medium",
       "high",
       "low"
     ],
-    "download":"https://www.dropbox.com/scl/fi/8htrlhpwb1l27irt18kpf/The-Garry-texture-pack.zip?rlkey=olfht68q0n6jjrud9iki1y44k&st=twqjpfrd&dl=1",
-    "icon":"/uploads/olgcraft.garrytexturepack/pack.png",
-    "screenshot":"/uploads/olgcraft.garrytexturepack/image.png",
+    "download": "https://www.dropbox.com/scl/fi/8htrlhpwb1l27irt18kpf/The-Garry-texture-pack.zip?rlkey=olfht68q0n6jjrud9iki1y44k&st=twqjpfrd&dl=1",
+    "icon": "/uploads/olgcraft.garrytexturepack/pack.png",
+    "screenshot": "/uploads/olgcraft.garrytexturepack/image.png",
     "type": "icons",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "OLGcraft"
+    ]
   },
   {
-    "id":"yoichiicydoodles.dokidoki",
-    "name":"Doki Doki Geometry Dash!",
-    "creator":"Yoichi & Icy Doodles",
-    "description":"A Texture Pack based on \"Doki Doki Literature Club!\" This cute texture pack changes to pink and white colors! Happy Texture is HIGHLY Recommended to use this texture pack or else it won't do anything",
-    "version":"v1.0.0",
-    "resolution":[
+    "id": "yoichiicydoodles.dokidoki",
+    "name": "Doki Doki Geometry Dash!",
+    "description": "A Texture Pack based on \"Doki Doki Literature Club!\" This cute texture pack changes to pink and white colors! Happy Texture is HIGHLY Recommended to use this texture pack or else it won't do anything",
+    "version": "v1.0.0",
+    "resolution": [
       "medium",
       "high"
     ],
-    "download":"https://www.dropbox.com/scl/fi/12lniq9esri823rxswoow/DDLC-Texture-Pack-By-OnlyYoichi-Icy-Doodles-Port-to-medium-by-Kings-R-Us.zip?rlkey=l11h5s5q7q9ez3pfkbuf7psow&st=qxm0vjeo&dl=1",
-    "icon":"/uploads/yoichi&icydoodles.dokidoki/pack.png",
-    "screenshot":"/uploads/yoichi&icydoodles.dokidoki/image.png",
+    "download": "https://www.dropbox.com/scl/fi/12lniq9esri823rxswoow/DDLC-Texture-Pack-By-OnlyYoichi-Icy-Doodles-Port-to-medium-by-Kings-R-Us.zip?rlkey=l11h5s5q7q9ez3pfkbuf7psow&st=qxm0vjeo&dl=1",
+    "icon": "/uploads/yoichi&icydoodles.dokidoki/pack.png",
+    "screenshot": "/uploads/yoichi&icydoodles.dokidoki/image.png",
     "type": "texture-pack",
-    "featured": true
+    "featured": true,
+    "creators": [
+      "OnlyYoichi",
+      "Icy Doodles"
+    ]
   },
   {
-    "id":"trail.flags",
-    "name":"Trail Flags",
-    "creator":"ChessDash543",
-    "description":"Just the texture pack with various country trails. ",
-    "version":"v1.0.0",
-    "resolution":[
+    "id": "trail.flags",
+    "name": "Trail Flags",
+    "description": "Just the texture pack with various country trails. ",
+    "version": "v1.0.0",
+    "resolution": [
       "medium",
       "high",
       "low"
     ],
-    "download":"https://github.com/Chessdash543/Trail-Flags/releases/download/1.3.1/Trail.Flags.zip",
-    "icon":"/uploads/trail.flags/pack.png",
-    "screenshot":"/uploads/trail.flags/image.png",
+    "download": "https://github.com/Chessdash543/Trail-Flags/releases/download/1.3.1/Trail.Flags.zip",
+    "icon": "/uploads/trail.flags/pack.png",
+    "screenshot": "/uploads/trail.flags/image.png",
     "type": "icons",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "ChessDash543"
+    ]
   },
   {
-    "id":"chessdash543.weneedmoremoderators",
-    "name":"WE NEED MORE MODERATORS!!!",
-    "creator":"ChessDash543",
-    "description":"WE NEED MORE MODERATORS!!!",
-    "version":"v1.0.0",
-    "resolution":[
+    "id": "chessdash543.weneedmoremoderators",
+    "name": "WE NEED MORE MODERATORS!!!",
+    "description": "WE NEED MORE MODERATORS!!!",
+    "version": "v1.0.0",
+    "resolution": [
       "medium",
       "high",
       "low"
     ],
-    "download":"https://github.com/Chessdash543/WE-NEED-MORE-MODERATORS-/releases/download/v1.0.0/WE.NEED.MORE.MODERATORS.zip",
-    "icon":"/uploads/chessdash543.weneedmoremoderators/pack.png",
-    "screenshot":"/uploads/chessdash543.weneedmoremoderators/image.png",
+    "download": "https://github.com/Chessdash543/WE-NEED-MORE-MODERATORS-/releases/download/v1.0.0/WE.NEED.MORE.MODERATORS.zip",
+    "icon": "/uploads/chessdash543.weneedmoremoderators/pack.png",
+    "screenshot": "/uploads/chessdash543.weneedmoremoderators/image.png",
     "type": "texture-pack",
-    "featured": false
+    "featured": false,
+    "creators": [
+      "ChessDash543"
+    ]
   }
 ]

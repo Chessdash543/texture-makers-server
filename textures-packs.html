@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <script>
+<script>
         let currentPage = 1;
         const cardsPerPage = 5;
         let texturePacks = []; 
@@ -82,6 +82,31 @@
     
         const DISCORD_INVITE = 'https://discord.gg/YMGPn26WMN';
     
+        // ----------------------------------------------------
+        // --- FUNÇÕES AUXILIARES PARA CRIADORES ---
+        // ----------------------------------------------------
+
+        // Função auxiliar para formatar o display de criadores (ex: "Criador 1, Criador 2 e Outro")
+        function formatCreators(creatorsArray) {
+            if (!Array.isArray(creatorsArray) || creatorsArray.length === 0) {
+                return "Desconhecido";
+            }
+            if (creatorsArray.length === 1) {
+                // Apenas um criador, retorna o nome
+                return `<a href="creator-detail.html?creator=${encodeURIComponent(creatorsArray[0])}" target="_blank">${creatorsArray[0]}</a>`;
+            }
+            // Múltiplos criadores: junta com vírgula, e o último com " e "
+            const links = creatorsArray.map(name => `<a href="creator-detail.html?creator=${encodeURIComponent(name)}" target="_blank">${name}</a>`);
+            const last = links.pop();
+            return links.join(', ') + ' & ' + last;
+        }
+
+        // Função auxiliar para obter a string de criadores para o filtro
+        function getCreatorsString(creatorsArray) {
+            if (!Array.isArray(creatorsArray)) return '';
+            return creatorsArray.join(', ').toLowerCase();
+        }
+        
         // ----------------------------------------------------
         // --- FUNÇÕES DE CARREGAMENTO E INICIALIZAÇÃO ---
         // ----------------------------------------------------
@@ -128,19 +153,18 @@
     
         function renderCards(list) {
             cardsContainer.innerHTML = "";
-            // ... (Lógica de paginação e filtro mantida)
-        
+            
             const start = (currentPage - 1) * cardsPerPage;
             const end = start + cardsPerPage;
             const pageItems = list.slice(start, end);
-        
+            
             if (pageItems.length === 0 && list.length > 0 && currentPage !== 1) {
                 currentPage = 1; 
                 renderCards(list); 
                 return;
             }
-        
-        
+            
+            
             pageItems.forEach(pack => {
                 const card = document.createElement("div");
                 card.classList.add("card");
@@ -151,16 +175,17 @@
                 const isFeatured = pack.featured === true;
                 const featuredTitleClass = isFeatured ? 'featured-title' : '';
                 const featuredStar = isFeatured ? '<span class="featured-star">★ </span>' : '';
-                
-                // NOVO: Classe para o ícone
                 const featuredIconClass = isFeatured ? 'featured-icon-glow' : ''; 
                 
-                // INÍCIO DO card.innerHTML
+                // NOVO: Criadores formatados para o card
+                const creatorsFormatted = formatCreators(pack.creators);
+                
+                // INÍCIO DO card.innerHTML - CORRIGIDO
                 card.innerHTML = `
                     <div class="card-top">
                         <img src="${pack.icon}" alt="Icon" class="card-icon ${featuredIconClass}">
                         <div class="card-content">
-                            <h3 class="${featuredTitleClass}">${featuredStar}<a href="pack-detail.html?id=${pack.id}", '_blank';>${pack.name}</a> by <a href="creator-detail.html?creator=${pack.creator}", '_blank';>${pack.creator}</a> - ${pack.version}</h3>
+                            <h3 class="${featuredTitleClass}">${featuredStar}<a href="pack-detail.html?id=${pack.id}" target="_blank">${pack.name}</a> by ${creatorsFormatted} - ${pack.version}</h3>
                             <p>${pack.description}</p>
                             <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
                             <p class="download-count"><small>Available for Download</small></p>
@@ -220,7 +245,6 @@
         function filterSearch() {
             const fullText = searchInput.value.toLowerCase();
             const resolution = filterResolutionSelect.value;
-            // const rawInput = searchInput.value.trim(); // Removido
             
             // LER VALORES DOS NOVOS SELECTS
             const type = filterTypeSelect.value;
@@ -240,14 +264,18 @@
             // 2. Filtragem
             let filtered = texturePacks.filter(pack => {
                 // Assegura que o pack tem as propriedades necessárias (prevenção de erro)
-                if (!pack.name || !pack.creator) return false;
+                // NOVO: verifica se pack.creators é um array
+                if (!pack.name || !Array.isArray(pack.creators)) return false; 
 
                 const packName = pack.name.toLowerCase();
-                const packCreator = pack.creator.toLowerCase();
+                // NOVO: Concatena os nomes dos criadores para busca
+                const packCreatorsString = getCreatorsString(pack.creators); 
 
                 // 2.1 Filtro por Texto e Criador
                 const matchesText = searchText === '' || packName.includes(searchText);
-                const matchesCreator = creatorFilter === '' || packCreator === creatorFilter;
+                // NOVO: O filtro de criador agora verifica se o nome buscado (creatorFilter)
+                // está incluído na string de criadores do pacote.
+                const matchesCreator = creatorFilter === '' || packCreatorsString.includes(creatorFilter);
 
                 // 2.2 Filtro por Resolução
                 const matchesResolution = resolution === "all" || (
@@ -278,7 +306,16 @@
 
             // Se resolution for um array, exibe de forma legível
             const resolutionDisplay = Array.isArray(pack.resolution) ? pack.resolution.join(', ') : pack.resolution;
+            
+            // NOVO: Criadores formatados para o popup
+            const creatorsFormatted = formatCreators(pack.creators);
+            
+            // NOVO: Link para o primeiro criador, caso queira manter um link direto (opcional)
+            const firstCreator = Array.isArray(pack.creators) && pack.creators.length > 0 ? pack.creators[0] : 'Desconhecido';
+            const creatorLink = `<a href="creator-detail.html?creator=${encodeURIComponent(firstCreator)}" target="_blank">${creatorsFormatted}</a>`;
 
+
+            // CORRIGIDO: O campo "Criador" agora usa creatorsFormatted
             popupBox.innerHTML = `
                 <div class="popup-top">
                     <img src="${pack.icon}" alt="Icone do Pack" class="pack-icon"> 
@@ -287,7 +324,7 @@
                         <h2 class="title-popp">${pack.name} - ${pack.version}</h2>
 
                         <div class="info-details-list">
-                            <p><strong>Criador:</strong> <a href="creator-detail.html?creator=${pack.creator}", '_blank');">${pack.creator}</a></p>
+                            <p><strong>Criador(es):</strong> ${creatorsFormatted}</p>
                             <p><strong>Versão:</strong> ${pack.version}</p>
                             <p><strong>Resolução:</strong> ${resolutionDisplay}</p> <p style="font-size: 12px; color: #777;">ID: ${pack.id}</p>
                         </div>

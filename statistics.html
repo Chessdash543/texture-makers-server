@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -219,7 +219,17 @@
             let htmlContent = `<ul class="pack-list">`;
             
             sortedPacks.forEach(pack => {
-                const creatorText = pack.creator ? ` - by ${pack.creator.toUpperCase()}` : '';
+                // Exibe a lista de criadores ou o campo 'creator' (se for string), ou vazio.
+                let creatorText = '';
+
+                if (Array.isArray(pack.creators) && pack.creators.length > 0) {
+                    // Novo formato: Junta os nomes com '&' e coloca em maiúsculas
+                    creatorText = ` - by ${pack.creators.map(c => c.toUpperCase()).join(' & ')}`;
+                } else if (typeof pack.creator === 'string' && pack.creator) {
+                    // Formato antigo: apenas a string do criador
+                    creatorText = ` - by ${pack.creator.toUpperCase()}`;
+                }
+
                 htmlContent += `
                     <li>
                         <a href="pack-detail.html?id=${pack.id}", '_blank');">
@@ -237,10 +247,6 @@
          * Renders the two lists based on the 'featured' property.
          * @param {Array} packs - The full list of texture packs.
          */
-        /**
-         * Renders the two lists based on the 'featured' property.
-         * @param {Array} packs - The full list of texture packs.
-         */
         function renderFeaturedAndStandardPacks(packs) {
             if (!packs || packs.length === 0) {
                 renderPackList([], featuredContainer, "Nenhum pacote carregado.");
@@ -248,14 +254,11 @@
                 return;
             }
 
-            // CORREÇÃO: Usar lógica de filtro que aceita booleano ou string "true"
             const featuredPacks = packs.filter(pack => {
-                // Converte 'true' (string) ou true (booleano) para um booleano consistente
                 const isFeatured = String(pack.featured).toLowerCase() === 'true'; 
                 return isFeatured;
             });
-            
-            // Standard Packs são aqueles que não são featured OU onde featured está ausente/falso
+
             const standardPacks = packs.filter(pack => {
                 const isFeatured = String(pack.featured).toLowerCase() === 'true';
                 return !isFeatured;
@@ -266,30 +269,57 @@
         }
 
 
-        // Mantendo a função para os Top 5 Criadores (inalterada)
+        /**
+         * CALCULA OS TOP CRIADORES: Suporta arrays 'creators' ou string 'creator'.
+         * Cada nome no array 'creators' recebe crédito por 1 pacote.
+         * @param {Array} packs - A lista completa de pacotes.
+         */
         function calculateTopCreators(packs) {
             const creatorMap = {};
 
             packs.forEach(pack => {
-                const creator = (pack.creator || 'UNKNOWN').toUpperCase(); 
-                if (!creatorMap[creator]) {
-                    creatorMap[creator] = { count: 0, packs: [] };
+                let creatorNames = [];
+
+                // 1. Prioriza o novo formato (array de strings: "creators")
+                if (Array.isArray(pack.creators) && pack.creators.length > 0) {
+                    creatorNames = pack.creators;
+                } 
+                // 2. Se não houver array, usa o formato antigo (string simples: "creator")
+                else if (typeof pack.creator === 'string' && pack.creator) {
+                    creatorNames.push(pack.creator);
+                } else {
+                    // Se não houver criador, usa 'UNKNOWN'
+                    creatorNames.push('UNKNOWN');
                 }
-                creatorMap[creator].count++;
-                creatorMap[creator].packs.push({
-                    name: pack.name,
-                    version: pack.version,
-                    id: pack.id
+
+                // Itera sobre CADA nome encontrado (ou 'UNKNOWN')
+                creatorNames.forEach(name => {
+                    const creatorKey = name.toUpperCase().trim(); // A chave para agrupar (ex: ONLYYOICHI)
+
+                    if (!creatorMap[creatorKey]) {
+                        creatorMap[creatorKey] = { count: 0, packs: [] };
+                    }
+
+                    // Adiciona 1 à contagem desse criador
+                    creatorMap[creatorKey].count++;
+
+                    // Adiciona o pacote à lista de pacotes desse criador
+                    creatorMap[creatorKey].packs.push({
+                        name: pack.name,
+                        version: pack.version,
+                        id: pack.id
+                    });
                 });
             });
 
+            // Converte o mapa em um array e ordena (por contagem descendente, depois por nome ascendente)
             const sortedCreators = Object.keys(creatorMap)
                 .map(creator => ({
                     name: creator,
                     count: creatorMap[creator].count,
                     packs: creatorMap[creator].packs.sort((a, b) => a.name.localeCompare(b.name))
                 }))
-                .sort((a, b) => b.count - a.count);
+                .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
             return sortedCreators.slice(0, 5);
         }
@@ -311,13 +341,13 @@
             
             topCreatorsData.forEach((creator, index) => {
                 const rank = index + 1;
-                
+
                 htmlContent += `
                     <li class="creator-entry">
                         <h3>
                             <a href="creator-detail.html?creator=${creator.name}" style="text-align: left;", '_blank');">
-                                #${rank} ${creator.name}
-                            </a>
+                                #${rank} ${creator.name}
+                            </a>
                             <span class="pack-count">${creator.count} packs</span>
                         </h3>
                         <ul>
@@ -343,6 +373,7 @@
 
         async function fetchPacksAndRender() {
             try {
+                // Busca o array JSON
                 const res = await fetch("data/data.json"); 
             
                 if (!res.ok) {
@@ -354,10 +385,10 @@
                 }
             
                 texturePacks = await res.json();
-                
+
                 // 1. Renderizar Featured e Standard Packs
                 renderFeaturedAndStandardPacks(texturePacks); 
-                
+
                 // 2. Renderizar os TOP 5 Criadores
                 renderTopCreators(texturePacks);
             
@@ -369,7 +400,7 @@
                 topCreatorsContainer.innerHTML = "";
             }
         }
-        
+
         // Iniciar o processo
         fetchPacksAndRender();
     </script>

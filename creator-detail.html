@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,7 +112,7 @@
         const creatorNameHeader = document.getElementById("creator-name-header");
         const packCountSummary = document.getElementById("pack-count-summary");
         const creatorPacksList = document.getElementById("creator-packs-list");
-
+    
         /**
          * Extrai um parâmetro da URL.
          * @param {string} name - O nome do parâmetro.
@@ -125,27 +125,30 @@
             // Decodifica a URL e substitui '_' por espaços (se usados para codificar nomes)
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
-
+    
         /**
          * Renderiza a lista de pacotes do criador.
          * @param {Array} packs - Lista de pacotes para exibir.
          * @param {string} creatorName - Nome do criador.
          */
         function renderCreatorDetails(packs, creatorName) {
-            document.getElementById("page-title").textContent = `${creatorName} - Creator - TMS`;
-            creatorNameHeader.textContent = creatorName;
+            // Usa o nome do criador no formato original (com maiúsculas/minúsculas)
+            const displayCreatorName = packs[0] && Array.isArray(packs[0].creators) ? packs[0].creators.find(c => c.toUpperCase() === creatorName) || creatorName : creatorName;
+        
+            document.getElementById("page-title").textContent = `${displayCreatorName} - Creator - TMS`;
+            creatorNameHeader.textContent = displayCreatorName;
             
             if (!packs || packs.length === 0) {
                 packCountSummary.textContent = "Nenhum pacote encontrado para este criador.";
                 creatorPacksList.innerHTML = "<p>Verifique o nome do criador ou se há pacotes atribuídos.</p>";
                 return;
             }
-
+        
             packCountSummary.textContent = `${packs.length} Texture Packs Published`;
             
             // Ordena por nome
             const sortedPacks = packs.sort((a, b) => a.name.localeCompare(b.name));
-
+        
             let htmlContent = `<ul class="pack-list">`;
             
             sortedPacks.forEach(pack => {
@@ -157,20 +160,20 @@
                     </li>
                 `;
             });
-
+        
             htmlContent += `</ul>`;
             creatorPacksList.innerHTML = htmlContent;
         }
-
-
+    
+    
         // ----------------------------------------------------------------
         // INICIALIZAÇÃO
         // ----------------------------------------------------------------
-
+    
         async function fetchPacksAndRenderCreator() {
-            // 1. Obter o nome do criador da URL. Ex: creator-detail.html?creator=CREATOR_NAME
+            // 1. Obter o nome do criador da URL e converter para maiúsculas para busca case-insensitive
             const targetCreator = getUrlParameter('creator').toUpperCase();
-
+        
             if (!targetCreator) {
                 creatorNameHeader.textContent = "Erro: Nome do Criador Ausente";
                 packCountSummary.textContent = "Por favor, especifique um criador na URL.";
@@ -193,9 +196,11 @@
                 
                 // 3. Filtrar pacotes para o criador alvo
                 const filteredPacks = allTexturePacks.filter(pack => {
-                    const packCreator = (pack.creator || '').toUpperCase();
-                    // Garante que o criador do pacote corresponde ao criador da URL
-                    return packCreator === targetCreator; 
+                    // CORREÇÃO: Verifica se pack.creators é um array e se contém o criador alvo
+                    const packCreators = Array.isArray(pack.creators) ? pack.creators : [];
+                    
+                    // Retorna TRUE se o nome do criador (em maiúsculas) for encontrado no array pack.creators (em maiúsculas)
+                    return packCreators.some(creator => creator.toUpperCase() === targetCreator); 
                 });
                 
                 // 4. Renderizar os resultados

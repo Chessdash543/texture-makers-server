@@ -175,6 +175,48 @@
         loadAllPacksAndProcessDetail();
     });
 
+    // ----------------------------------------------------
+    // --- FUNÇÕES AUXILIARES PARA FORMATAÇÃO ---
+    // ----------------------------------------------------
+
+    /**
+     * Função auxiliar para formatar o display de criadores (ex: "Criador 1, Criador 2 e Outro")
+     * e envolvê-los em links.
+     */
+    function formatCreatorsWithLinks(creatorsArray) {
+        if (!Array.isArray(creatorsArray) || creatorsArray.length === 0) {
+            return "Desconhecido";
+        }
+        
+        // Mapeia cada nome para um link de detalhe do criador
+        const links = creatorsArray.map(name => 
+            `<a href="creator-detail.html?creator=${encodeURIComponent(name)}" target="_blank">${name}</a>`
+        );
+        
+        if (links.length === 1) {
+            return links[0];
+        }
+
+        // Para múltiplos criadores: junta com vírgula, e o último com " e "
+        const last = links.pop();
+        return links.join(', ') + ' & ' + last;
+    }
+
+    /**
+     * Função auxiliar para formatar a lista de resoluções.
+     * @param {string[] | string} resolution - O array ou string de resoluções.
+     */
+    function formatResolution(resolution) {
+        if (Array.isArray(resolution)) {
+            return resolution.map(r => r.charAt(0).toUpperCase() + r.slice(1)).join(', ');
+        }
+        return String(resolution);
+    }
+
+    // ----------------------------------------------------
+    // --- FUNÇÕES DE CARREGAMENTO E LÓGICA ---
+    // ----------------------------------------------------
+
     /**
      * Tenta carregar o data.json e, se for bem-sucedido, chama o processamento do ID.
      */
@@ -241,18 +283,25 @@
             container.innerHTML = `<h2 id="loading-status">Pack not found in data.json.</h2>`;
             return;
         }
+        
+        // --- NOVO: Tratamento de Creators e Resolution ---
+        const creatorsHtml = formatCreatorsWithLinks(pack.creators);
+        const resolutionDisplay = formatResolution(pack.resolution);
+        
+        // Para o título da página (title, não h1), usamos o primeiro criador ou a lista
+        const titleCreator = Array.isArray(pack.creators) && pack.creators.length > 0 ? pack.creators.join(', ') : 'Unknown Creator';
 
         // Atualiza o Título da Página
-        document.getElementById('packTitle').textContent = `${pack.name} by ${pack.creator}`;
+        document.getElementById('packTitle').textContent = `${pack.name} by ${titleCreator}`;
 
-        // 2. Cria o conteúdo HTML (Removido o campo 'Downloads:')
+        // 2. Cria o conteúdo HTML (USANDO AS NOVAS VARIÁVEIS)
         container.innerHTML = `
             <div class="detail-header">
                 <img src="${pack.icon}" alt="Icon" class="pack-icon-large">
                 <div class="detail-info">
                     <h1>${pack.name}</h1>
-                    <p><strong>Creator:</strong><a href="creator-detail.html?creator=${pack.creator}", '_blank');">${pack.creator}</a></p>
-                    <p><strong>Resolution(s):</strong> ${pack.resolution}</p>
+                    <p><strong>Creator(s):</strong> ${creatorsHtml}</p>
+                    <p><strong>Resolution(s):</strong> ${resolutionDisplay}</p>
                     <p><strong>Version:</strong> ${pack.version}</p>
                     <p><strong>ID:</strong> ${pack.id}</p>
                     <p class="description">${pack.description || "Nenhuma descrição fornecida."}</p>
