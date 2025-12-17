@@ -1,13 +1,26 @@
 body {
+    /* Layout e Alinhamento */
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    padding: 20px;
     overflow-x: hidden;
+
+    /* Tipografia */
+    font-family: Arial, sans-serif;
+
+    /* Estilos de Fundo */
+    background-color: #000; /* Cor de fundo de fallback (preto) */
+    background-image: url('/img/bg.png'); /* Caminho da imagem de fundo */
+    background-size: cover; /* Cobre toda a área do elemento */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Imagem de fundo fixa na viewport */
+
+    /* Espaçamento (padding) */
+    /* Usando a última especificação: 20px superior/inferior, 0 esquerda/direita */
+    padding: 20px 0; 
 }
 
 a {
@@ -27,31 +40,11 @@ a:active {
     color: #ff0000;
 }
 
-body {
-    background-image: url('/img/bg.png'); /* caminho da imagem */
-    background-size: cover;     /* cobre toda a tela */
-    background-repeat: no-repeat; /* não repete a imagem */
-    background-position: center;
-    background-attachment: fixed;
-}
-
 p {
     filter: drop-shadow(0 0 8px #ffffff2c) !important;
 }
 
 /* Seleciona o INPUT DE PESQUISA */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    /* MUDANÇA AQUI: Mantenha apenas o padding vertical */
-    padding: 20px 0; /* 20px superior/inferior, 0 esquerda/direita */ 
-    overflow-x: hidden;
-}
 /* Seleciona TODOS os outros elementos da barra de filtro (selects e buttons) */
 /* (Esta é a regra que estava usando 10px 15px e causava a diferença) */
 input, select, button {
