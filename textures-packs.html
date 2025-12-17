@@ -185,7 +185,7 @@
                     <div class="card-top">
                         <img src="${pack.icon}" alt="Icon" class="card-icon ${featuredIconClass}">
                         <div class="card-content">
-                            <h3 class="${featuredTitleClass}">${featuredStar}<a href="pack-detail.html?id=${pack.id}" target="_blank">${pack.name}</a> by ${creatorsFormatted} - ${pack.version}</h3>
+                            <h3 class="${featuredTitleClass}">${featuredStar}<a href="pack-detail.html?id=${pack.id}" target="_self">${pack.name}</a> by ${creatorsFormatted} - ${pack.version}</h3>
                             <p>${pack.description}</p>
                             <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
                             <p class="download-count"><small>Available for Download</small></p>
@@ -348,7 +348,7 @@
                     <div class="action-links">
                         <button 
                             class="details-btn" 
-                            onclick="window.open('pack-detail.html?id=${pack.id}', '_blank')">
+                            onclick="window.open('pack-detail.html?id=${pack.id}', '_self')">
                             View The Post of ${pack.name} &rarr;
                         </button>
                     </div>

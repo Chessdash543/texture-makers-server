@@ -232,7 +232,7 @@
 
                 htmlContent += `
                     <li>
-                        <a href="pack-detail.html?id=${pack.id}", '_blank');">
+                        <a href="pack-detail.html?id=${pack.id}", '_self');">
                             ${pack.name} (${pack.version})${creatorText}
                         </a>
                     </li>
@@ -345,7 +345,7 @@
                 htmlContent += `
                     <li class="creator-entry">
                         <h3>
-                            <a href="creator-detail.html?creator=${creator.name}" style="text-align: left;", '_blank');">
+                            <a href="creator-detail.html?creator=${creator.name}" style="text-align: left;", '_self');">
                                 #${rank} ${creator.name}
                             </a>
                             <span class="pack-count">${creator.count} packs</span>
@@ -353,7 +353,7 @@
                         <ul>
                             ${creator.packs.map(pack => 
                                 `<li>
-                                    <a href="pack-detail.html?id=${pack.id}", '_blank');">
+                                    <a href="pack-detail.html?id=${pack.id}", '_self');">
                                         ${pack.name} (${pack.version})
                                     </a>
                                 </li>`

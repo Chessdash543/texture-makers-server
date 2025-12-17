@@ -154,7 +154,7 @@
             sortedPacks.forEach(pack => {
                 htmlContent += `
                     <li>
-                        <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_blank');">
+                        <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_self');">
                             ${pack.name} (${pack.version}) 
                         </a>
                     </li>

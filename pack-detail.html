@@ -190,7 +190,7 @@
         
         // Mapeia cada nome para um link de detalhe do criador
         const links = creatorsArray.map(name => 
-            `<a href="creator-detail.html?creator=${encodeURIComponent(name)}" target="_blank">${name}</a>`
+            `<a href="creator-detail.html?creator=${encodeURIComponent(name)}" target="_self">${name}</a>`
         );
         
         if (links.length === 1) {
