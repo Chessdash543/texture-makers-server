@@ -39,15 +39,45 @@ p {
     filter: drop-shadow(0 0 8px #ffffff2c) !important;
 }
 
-#search {
-    min-width: 150px;
-    padding: 20px 30px;
-    font-size: 18px;
-    width: 500px;
-    max-width: 100%;
-    box-sizing: border-box;
-    transition: all 0.2s ease-in-out;
+/* Seleciona o INPUT DE PESQUISA */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    /* MUDANÇA AQUI: Mantenha apenas o padding vertical */
+    padding: 20px 0; /* 20px superior/inferior, 0 esquerda/direita */ 
+    overflow-x: hidden;
 }
+/* Seleciona TODOS os outros elementos da barra de filtro (selects e buttons) */
+/* (Esta é a regra que estava usando 10px 15px e causava a diferença) */
+input, select, button {
+    padding: 20px 15px; /* Aumenta o padding vertical para 20px (igual ao #search) */
+    font-size: 18px;    /* Aumenta a fonte para 18px */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    background-color: #494949;
+    color: #fff;
+    border: 2px solid #ffffff86;
+}
+
+#search {
+    width: calc(100% + 40px); 
+    margin-left: -20px; 
+    margin-right: -20px; 
+    max-width: none; 
+    padding: 20px 30px; 
+    margin: 10px;
+}
+
+/* Note: Eu usei 20px vertical e mantive 15px horizontal nos selects/buttons, 
+   mas você pode usar 20px 30px em todos se quiser que o preenchimento lateral 
+   também seja maior. O importante é o padding vertical (20px). */
 
 #search:focus {
     outline: none;
@@ -68,21 +98,25 @@ p {
 
 .top-bar {
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-direction: column; 
+    width: 100%;
+    /* MUDANÇA AQUI: Centraliza todos os filhos (Search e Filter-Group) horizontalmente */
+    align-items: center; 
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto; /* Adicionar margem auto para centralizar o bloco inteiro (se necessário) */
 }
 
-input, select, button {
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    transition: all 0.2s ease-in-out;
-    background-color: #494949;
-    color: #fff;
-    border: 2px solid #ffffff86;
+.filter-group {
+    display: flex;
+    gap: 12px;
+    width: 100%; 
+    max-width: 800px; /* Use o mesmo max-width do search ou o desejado */
+    
+    /* MUDANÇA AQUI: Garante que os selects e o botão estejam centralizados dentro do grupo */
+    justify-content: center; 
+    
+    flex-wrap: wrap; 
 }
 
 input:focus, select:focus {
@@ -116,13 +150,16 @@ select:hover, button:hover {
     box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
     overflow: hidden;
     margin: 15px 0;
-    width: 100%;
-    max-width: 800px;
     padding: 15px;
     margin: 15px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: auto; /* Deixa o grid controlar a largura da célula */
+    margin: 0; /* Remove a margem vertical desnecessária entre os cards na grid */
+    
+    /* Garante que o card ocupe o espaço da célula de forma flexível */
+    min-height: min-content;
 }
 
 .card-top {
@@ -240,6 +277,18 @@ select:hover, button:hover {
     border-radius: 10px;
     object-fit: cover;
     border: 3px solid #ffffff;
+}
+
+.cards-grid {
+    display: grid;
+    /* Define 2 colunas com largura igual */
+    grid-template-columns: 1fr 1fr; 
+    /* Espaçamento entre os cards (20px horizontal, 30px vertical) */
+    gap: 30px 20px; 
+    /* Limita a largura máxima da grade para evitar que se espalhe demais */
+    max-width: 1400px; 
+    width: 100%;
+    margin: 20px auto; /* Centraliza a grade */
 }
 
 .description-card {
@@ -408,20 +457,36 @@ select:hover, button:hover {
     }
 
     .card-top {
-        display: flex;
+        /* MUDANÇA PRINCIPAL: Altera de lado a lado para empilhado (Coluna) */
+        flex-direction: column; 
+        /* Centraliza o ícone e o conteúdo horizontalmente */
+        align-items: center; 
         gap: 10px;
-        align-items: center;
     }
 
-    /* ÍCONE MUITO GRANDE — CORRIGIDO */
+    /* 2. Ajustar o Tamanho do Ícone */
     .card-icon {
-        width: 90px;
-        height: 90px;
-        border-radius: 10px;
+        /* Aumentar um pouco o tamanho do ícone para dar destaque */
+        width: 120px; 
+        height: 120px;
+        /* Remover o display flex (se ele estivesse sendo aplicado indevidamente) */
+        display: block; 
     }
 
+    /* 3. Ajustar o Conteúdo do Card */
     .card-content {
-        gap: 6px;
+        /* Garante que o conteúdo ocupe a largura total */
+        width: 100%; 
+        /* Alinha o texto à esquerda (ou centralizado, se preferir) */
+        text-align: left; 
+    }
+
+    /* Ocultar o botão 'i' em telas muito pequenas, ou movê-lo para o canto superior direito do card-top */
+    .card-content .more-info {
+        top: 0;
+        right: 0;
+        /* Posiciona em relação ao card-top (se o card-top for position: relative) */
+        position: absolute; 
     }
 
     .card-content h3 {
@@ -469,6 +534,17 @@ select:hover, button:hover {
 
     .popup-info p {
         font-size: 14px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr; /* Volta para uma única coluna */
+        gap: 20px 0; /* Ajusta o espaçamento quando é 1 coluna */
+        padding: 0 10px;
+    }
+    
+    /* Ajustes no card para mobile dentro da media query */
+    .card {
+        max-width: 100%; /* Garante que o card ocupe 100% do container */
     }
 }
 
