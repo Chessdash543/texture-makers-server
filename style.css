@@ -63,9 +63,8 @@ p {
     margin: 20px auto 50px auto;
     box-sizing: border-box;
     padding: 0 10px;
-    filter: drop-shadow(0 0 12px #ffffffab);
+    filter: drop-shadow(0 0 12px #ffffff80);
 }
-
 
 .top-bar {
     display: flex;

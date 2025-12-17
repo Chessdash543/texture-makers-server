@@ -8,7 +8,18 @@
     <style>
         /* Base Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        .title {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+            margin: 20px auto 50px auto;
+            box-sizing: border-box;
+            padding: 0 10px;
+            filter: drop-shadow(0 0 12px #ffffffab);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #121212;
@@ -162,6 +173,7 @@
     </style>
 </head>
 <body>
+    <a href="index.html"><img src="/img/title.png" alt="title" class="title"></a>
 
     <main id="pack-container">
         <h2 id="loading-status">Loading...</h2>
