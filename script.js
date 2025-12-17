@@ -204,7 +204,7 @@
                             <a href="pack-detail.html?id=${pack.id}" target="_self">${pack.name}</a> 
                             by ${creatorsFormatted} - ${pack.version}
                         </h3>
-                        <p>${pack.description}</p>
+                        <p class="pack-description-text">${pack.description}</p>
                         <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
                         <p class="download-count"><small>Available for Download</small></p>
                         <button class="more-info" aria-label="More information about ${pack.name}">i</button>

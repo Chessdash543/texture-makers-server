@@ -226,6 +226,38 @@ select:hover, button:hover {
     transform: scale(1.05);
 }
 
+.pack-description-text {
+    /* Define a altura máxima que a descrição pode ter antes de rolar. 
+       Ajuste este valor conforme necessário para seu layout. 
+       Por exemplo, 4rem é cerca de 4 linhas de texto. */
+    max-height: 4rem; 
+    
+    /* Habilita a barra de rolagem vertical (scroll) 
+       SOMENTE se o conteúdo exceder o max-height. */
+    overflow-y: auto; 
+    
+    /* Opcional: Adiciona preenchimento para que a barra de rolagem 
+       não fique muito grudada no texto. */
+    padding-right: 10px; 
+    
+    /* Opcional: Adiciona margem inferior para separar do botão de Download. */
+    margin-bottom: 10px; 
+}
+
+/* Opcional: Estilize a barra de rolagem para um visual mais limpo (apenas WebKit/Chrome/Safari) */
+.pack-description-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pack-description-text::-webkit-scrollbar-thumb {
+    background-color: #ffffff; /* Cor da alça do scroll */
+    border-radius: 3px;
+}
+
+.pack-description-text::-webkit-scrollbar-track {
+    background-color: #464646; /* Cor de fundo do scroll */
+}
+
 .download-count {
     margin: 4px 0 0 0;
     font-size: 12px;
