@@ -642,58 +642,130 @@ select:hover, button:hover {
 }
 
 @media (max-width: 900px) {
-    .top-bar {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        width: 100%;
+    .cards-grid {
+        grid-template-columns: 1fr; /* Uma coluna apenas */
+        gap: 20px;
+        padding: 0 15px;
     }
 
-    .top-bar > * {
-        width: 100%;
-        min-width: 0;
-        box-sizing: border-box;
+    .top-bar {
+        padding: 0 15px;
+    }
+
+    .filter-group {
+        gap: 8px;
+    }
+
+    /* Reduzindo o exagero do padding em botões e inputs */
+    input, select, button, .top-bar select, .top-bar input {
+        padding: 12px 15px !important;
+        font-size: 16px !important;
     }
 
     #search {
-        font-size: 18px;
-        padding: 12px 14px;
-    }
-
-    .top-bar button, .top-bar select, .top-bar input {
-        padding: 14px 16px;
-        font-size: 18px;
-    }
-
-    .download-btn {
-        width: 100%;
-        font-size: 16px;
-        padding: 12px 16px;
-        border-radius: 12px;
-    }
-
-    #pagination button {
-        padding: 10px 14px;
-        font-size: 18px;
-    }
-
-    .card-content .more-info {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+        margin: 10px 0;
+        width: 100%; /* Ocupa a largura total sem transbordar */
     }
 }
 
-@media (max-width: 420px) {
-    /* Extra large touch targets for small phones */
-    .top-bar button, .top-bar select, .top-bar input {
-        padding: 16px 18px;
-        font-size: 20px;
+/* Ajustes para Celulares (Smartphones) */
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll; /* Melhora performance em mobile */
     }
 
-    .card-icon { width: 80px; height: 80px; }
-    .card-content p { font-size: 15px; }
-    .card-content h3 { font-size: 18px; }
+    .title {
+        margin: 10px auto 30px auto;
+        max-width: 90%;
+    }
+
+    /* Card Mobile: Empilhar ícone e texto */
+    .card-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 0 10px 0;
+    }
+
+    .card-content {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .card-content .more-info {
+        top: -10px;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .card-content h3 {
+        font-size: 16px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+        max-height: none; /* Deixa o texto expandir no mobile */
+    }
+
+    /* Popups Mobile */
+    .popup-box {
+        width: 95%;
+        padding: 15px;
+        max-height: 95vh;
+    }
+
+    .popup-top {
+        flex-direction: column;
+    }
+
+    .popup-top .pack-icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .popup-info h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .popup-info p {
+        font-size: 14px !important;
+    }
+
+    /* Paginação */
+    #pagination {
+        padding: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+
+    #pagination button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Ajuste para telas muito pequenas (iPhone SE / etc) */
+@media (max-width: 380px) {
+    .filter-group {
+        flex-direction: column;
+    }
+
+    .filter-group select, 
+    .filter-group button {
+        width: 100%;
+    }
+}
+
+/* Garante que o popup não suma ao clicar se estiver ativo */
+.popup-bg[style*="display: flex"] {
+    display: flex !important;
 }
 
 .add-pack-btn {
