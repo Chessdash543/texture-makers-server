@@ -349,5 +349,23 @@
     "creators": [
       "ChessDash543"
     ]
+  },
+  {
+    "id": "diegolb.diegolbtp",
+    "name": "DiegolbTP",
+    "description": "A Texture Pack developed over several months, focused on matching the creator’s style and providing a clean, enjoyable experience. The pack will continue to receive updates over time",
+    "version": "v1.0.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download":"https://www.dropbox.com/scl/fi/ng9dhn4do99f3xknvr382/DiegolbTP.zip?rlkey=69m2zdg4citsrtnadejfhhalk&st=vbg4mqgu&dl=1",
+    "icon": "/uploads/chessdash543.weneedmoremoderators/pack.png",
+    "screenshot": "/uploads/diegolb.diegolbtp/image.png",
+    "type": "texture-pack",
+    "featured": false,
+    "creators": [
+      "Diegolb"
+    ]
   }
 ]
