@@ -6,8 +6,8 @@
 
     // --- CONFIGURATION AND GLOBAL VARIABLES ---
     let currentPage = 1;
-    // Set this to 10 if you want 2 columns * 5 rows on each page.
-    const cardsPerPage = 10; 
+    // Set this to 6 if you want 2 columns * 3 rows on each page.
+    const cardsPerPage = 6; 
     let texturePacks = []; 
     let filteredPacks = [];
 
