@@ -140,9 +140,14 @@
                 Array.isArray(pack.resolution) && pack.resolution.includes(resolution)
             );
 
-            // 3. Type Filter
-            const packType = String(pack.type || '').toLowerCase();
-            const matchesType = type === "all" || (packType === type);
+            // 3. Type Filter - support array or string values for `pack.type`
+            let packTypes = [];
+            if (Array.isArray(pack.type)) {
+                packTypes = pack.type.map(t => String(t || '').toLowerCase());
+            } else if (typeof pack.type === 'string') {
+                packTypes = [pack.type.toLowerCase()];
+            }
+            const matchesType = type === "all" || packTypes.includes(type);
 
             // 4. Featured Filter
             const matchesFeatured = featured === "all" || (pack.featured === true);

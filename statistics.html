@@ -146,33 +146,110 @@
                 margin-bottom: 20px;
             }
         }
+    
+        /* Summary cards and charts */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .summary-card {
+            background: linear-gradient(180deg,#0f1112,#141617);
+            border: 1px solid #222;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .summary-card h3 { margin: 0; font-size: 20px; color: #ccc }
+        .summary-card p { margin: 8px 0 0 0; font-size: 22px; color: #fff; font-weight: 700 }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .charts-grid { grid-template-columns: 1fr }
+        }
     </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <a href="index.html"><img src="/img/title.png" alt="title" class="title"></a>
 
     <div id="main-content">
-        
+
         <div class="content-card">
-            <h2>Featured Packs</h2>
-            <div id="featured-container">
-                <p>Loading featured packs...</p>
+            <h2>Overview</h2>
+            <div class="summary-grid" id="summary-grid">
+                <div class="summary-card">
+                    <h3>Total Packs</h3>
+                    <p id="total-packs">—</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Featured</h3>
+                    <p id="total-featured">—</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Texture Packs</h3>
+                    <p id="total-texturepacks">—</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Icons</h3>
+                    <p id="total-icons">—</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Unique Creators</h3>
+                    <p id="total-creators">—</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Resolutions Seen</h3>
+                    <p id="total-resolutions">—</p>
+                </div>
+            </div>
+            <p style="margin-top:12px;color:#ccc">This overview shows metrics built from <strong>data/data.json</strong>. Missing fields are handled gracefully.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>Charts</h2>
+            <div class="charts-grid">
+                <div>
+                    <canvas id="chartTypes" aria-label="Type distribution" role="img"></canvas>
+                </div>
+                <div>
+                    <canvas id="chartResolutions" aria-label="Resolution distribution" role="img"></canvas>
+                </div>
+                <div>
+                    <canvas id="chartCreators" aria-label="Top creators by texture packs" role="img"></canvas>
+                </div>
             </div>
         </div>
 
         <div class="content-card">
-            <h2>Standard Packs</h2>
-            <div id="standard-container">
-                <p>Loading standard packs...</p>
-            </div>
-        </div>
-
-        <div class="content-card">
-            <h2>Top 5 Texture Pack Creators</h2>
+            <h2>Top 10 Creators</h2>
             <div id="top-creators-container">
                 <p>Loading creators...</p>
             </div>
         </div>
+
+        <div class="content-card">
+            <h2>Recent Packs</h2>
+            <div id="recent-packs-container">
+                <p>Loading recent packs...</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>All Packs</h2>
+            <div id="all-packs-container">
+                <p>Loading all packs...</p>
+            </div>
+        </div>
+
     </div>
     
     <footer class="site-footer" role="contentinfo">
@@ -196,213 +273,151 @@
 
 
     <script>
-        let texturePacks = []; 
-        const featuredContainer = document.getElementById("featured-container");
-        const standardContainer = document.getElementById("standard-container");
-        const topCreatorsContainer = document.getElementById("top-creators-container");
+        (function(){
+            const summary = {
+                totalPacks: 0,
+                featured: 0,
+                types: {},
+                resolutions: {},
+                creatorsMap: {}
+            };
 
-        /**
-         * Renderiza uma lista de pacotes em um contêiner específico.
-         * @param {Array} packs - A lista de pacotes a ser renderizada.
-         * @param {HTMLElement} container - O elemento onde a lista será inserida.
-         * @param {string} emptyMessage - Mensagem para quando a lista está vazia.
-         */
-        function renderPackList(packs, container, emptyMessage) {
-            if (!packs || packs.length === 0) {
-                container.innerHTML = `<p>${emptyMessage}</p>`;
-                return;
+            const el = id => document.getElementById(id);
+
+            function safeNormalizeType(t){
+                if (!t && t !== 0) return null;
+                return String(t).toLowerCase().trim();
             }
 
-            // Ordena por nome
-            const sortedPacks = packs.sort((a, b) => a.name.localeCompare(b.name));
-
-            let htmlContent = `<ul class="pack-list">`;
-            
-            sortedPacks.forEach(pack => {
-                // Exibe a lista de criadores ou o campo 'creator' (se for string), ou vazio.
-                let creatorText = '';
-
-                if (Array.isArray(pack.creators) && pack.creators.length > 0) {
-                    // Novo formato: Junta os nomes com '&' e coloca em maiúsculas
-                    creatorText = ` - by ${pack.creators.map(c => c.toUpperCase()).join(' & ')}`;
-                } else if (typeof pack.creator === 'string' && pack.creator) {
-                    // Formato antigo: apenas a string do criador
-                    creatorText = ` - by ${pack.creator.toUpperCase()}`;
-                }
-
-                htmlContent += `
-                    <li>
-                        <a href="pack-detail.html?id=${pack.id}", '_self');">
-                            ${pack.name} (${pack.version})${creatorText}
-                        </a>
-                    </li>
-                `;
-            });
-
-            htmlContent += `</ul>`;
-            container.innerHTML = htmlContent;
-        }
-
-        /**
-         * Renders the two lists based on the 'featured' property.
-         * @param {Array} packs - The full list of texture packs.
-         */
-        function renderFeaturedAndStandardPacks(packs) {
-            if (!packs || packs.length === 0) {
-                renderPackList([], featuredContainer, "Nenhum pacote carregado.");
-                renderPackList([], standardContainer, "Nenhum pacote carregado.");
-                return;
+            function addCount(map, key){
+                if (!key) return;
+                map[key] = (map[key] || 0) + 1;
             }
 
-            const featuredPacks = packs.filter(pack => {
-                const isFeatured = String(pack.featured).toLowerCase() === 'true'; 
-                return isFeatured;
-            });
+            function processPacks(packs){
+                summary.totalPacks = packs.length;
 
-            const standardPacks = packs.filter(pack => {
-                const isFeatured = String(pack.featured).toLowerCase() === 'true';
-                return !isFeatured;
-            });
+                packs.forEach(pack => {
+                    // featured
+                    if (pack.featured === true || String(pack.featured).toLowerCase() === 'true') summary.featured++;
 
-            renderPackList(featuredPacks, featuredContainer, "Nenhum pacote está marcado como destaque (featured).");
-            renderPackList(standardPacks, standardContainer, "Nenhum pacote standard encontrado.");
-        }
-
-
-        /**
-         * CALCULA OS TOP CRIADORES: Suporta arrays 'creators' ou string 'creator'.
-         * Cada nome no array 'creators' recebe crédito por 1 pacote.
-         * @param {Array} packs - A lista completa de pacotes.
-         */
-        function calculateTopCreators(packs) {
-            const creatorMap = {};
-
-            packs.forEach(pack => {
-                let creatorNames = [];
-
-                // 1. Prioriza o novo formato (array de strings: "creators")
-                if (Array.isArray(pack.creators) && pack.creators.length > 0) {
-                    creatorNames = pack.creators;
-                } 
-                // 2. Se não houver array, usa o formato antigo (string simples: "creator")
-                else if (typeof pack.creator === 'string' && pack.creator) {
-                    creatorNames.push(pack.creator);
-                } else {
-                    // Se não houver criador, usa 'UNKNOWN'
-                    creatorNames.push('UNKNOWN');
-                }
-
-                // Itera sobre CADA nome encontrado (ou 'UNKNOWN')
-                creatorNames.forEach(name => {
-                    const creatorKey = name.toUpperCase().trim(); // A chave para agrupar (ex: ONLYYOICHI)
-
-                    if (!creatorMap[creatorKey]) {
-                        creatorMap[creatorKey] = { count: 0, packs: [] };
+                    // types (pack.type may be array or string)
+                    if (Array.isArray(pack.type)){
+                        pack.type.forEach(t => addCount(summary.types, safeNormalizeType(t)));
+                    } else if (typeof pack.type === 'string'){
+                        addCount(summary.types, safeNormalizeType(pack.type));
                     }
 
-                    // Adiciona 1 à contagem desse criador
-                    creatorMap[creatorKey].count++;
+                    // resolution (array expected)
+                    if (Array.isArray(pack.resolution)){
+                        pack.resolution.forEach(r => addCount(summary.resolutions, String(r).toLowerCase()));
+                    } else if (pack.resolution){
+                        addCount(summary.resolutions, String(pack.resolution).toLowerCase());
+                    }
 
-                    // Adiciona o pacote à lista de pacotes desse criador
-                    creatorMap[creatorKey].packs.push({
-                        name: pack.name,
-                        version: pack.version,
-                        id: pack.id
+                    // creators
+                    const creators = Array.isArray(pack.creators) ? pack.creators : (pack.creator ? [pack.creator] : ['UNKNOWN']);
+                    creators.forEach(c => {
+                        const key = String(c).trim();
+                        if (!key) return;
+                        const upper = key.toUpperCase();
+                        if (!summary.creatorsMap[upper]) summary.creatorsMap[upper] = { name: key, count: 0, countTexture: 0, packs: [] };
+                        summary.creatorsMap[upper].count++;
+                        summary.creatorsMap[upper].packs.push({ id: pack.id, name: pack.name, version: pack.version });
+
+                        // If this pack is a texture-pack (type includes 'texture-pack'), increment texture-only counter
+                        let isTexturePack = false;
+                        if (Array.isArray(pack.type)) {
+                            isTexturePack = pack.type.map(t => String(t).toLowerCase()).includes('texture-pack');
+                        } else if (typeof pack.type === 'string') {
+                            isTexturePack = String(pack.type).toLowerCase() === 'texture-pack';
+                        }
+                        if (isTexturePack) summary.creatorsMap[upper].countTexture++;
                     });
                 });
-            });
-
-            // Converte o mapa em um array e ordena (por contagem descendente, depois por nome ascendente)
-            const sortedCreators = Object.keys(creatorMap)
-                .map(creator => ({
-                    name: creator,
-                    count: creatorMap[creator].count,
-                    packs: creatorMap[creator].packs.sort((a, b) => a.name.localeCompare(b.name))
-                }))
-                .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-
-            return sortedCreators.slice(0, 5);
-        }
-
-        function renderTopCreators(packs) {
-            if (!packs || packs.length === 0) {
-                topCreatorsContainer.innerHTML = "<p>Nenhum dado disponível para calcular os Top Criadores.</p>";
-                return;
             }
 
-            const topCreatorsData = calculateTopCreators(packs);
-
-            if (topCreatorsData.length === 0) {
-                topCreatorsContainer.innerHTML = "<p>Nenhum dado de criador encontrado.</p>";
-                return;
+            function updateSummaryDom(){
+                el('total-packs').textContent = summary.totalPacks;
+                el('total-featured').textContent = summary.featured;
+                el('total-texturepacks').textContent = summary.types['texture-pack'] || 0;
+                el('total-icons').textContent = summary.types['icons'] || 0;
+                el('total-creators').textContent = Object.keys(summary.creatorsMap).length;
+                el('total-resolutions').textContent = Object.keys(summary.resolutions).length;
             }
 
-            let htmlContent = `<ul class="creators-list">`;
-            
-            topCreatorsData.forEach((creator, index) => {
-                const rank = index + 1;
+            function renderTopCreatorsList(){
+                const container = el('top-creators-container');
+                const creators = Object.values(summary.creatorsMap).sort((a,b)=>b.count-a.count || a.name.localeCompare(b.name));
+                if (creators.length === 0){ container.innerHTML = '<p>No creators found.</p>'; return; }
+                const top = creators.slice(0,10);
+                let html = '<ul class="creators-list">';
+                top.forEach((c, idx)=>{
+                    html += `<li class="creator-entry"><h3>#${idx+1} ${c.name} <span class="pack-count">${c.count} packs</span></h3>`;
+                    html += '<ul>' + c.packs.slice(0,8).map(p=>`<li><a href="pack-detail.html?id=${p.id}">${p.name} (${p.version})</a></li>`).join('') + '</ul>';
+                    html += '</li>';
+                });
+                html += '</ul>';
+                container.innerHTML = html;
+            }
 
-                htmlContent += `
-                    <li class="creator-entry">
-                        <h3>
-                            <a href="creator-detail.html?creator=${creator.name}" style="text-align: left;", '_self');">
-                                #${rank} ${creator.name}
-                            </a>
-                            <span class="pack-count">${creator.count} packs</span>
-                        </h3>
-                        <ul>
-                            ${creator.packs.map(pack => 
-                                `<li>
-                                    <a href="pack-detail.html?id=${pack.id}", '_self');">
-                                        ${pack.name} (${pack.version})
-                                    </a>
-                                </li>`
-                            ).join('')}
-                        </ul>
-                    </li>
-                `;
-            });
+            function renderRecentPacks(packs){
+                const cont = el('recent-packs-container');
+                if (!packs || packs.length === 0){ cont.innerHTML = '<p>No packs available.</p>'; return; }
+                // assume input order roughly chronological — show last 10
+                const recent = packs.slice(-10).reverse();
+                cont.innerHTML = '<ul class="pack-list">' + recent.map(p=>`<li><a href="pack-detail.html?id=${p.id}">${p.name} — ${p.version} — ${Array.isArray(p.type)?p.type.join(', '):p.type}</a></li>`).join('') + '</ul>';
+            }
 
-            htmlContent += `</ul>`;
-            topCreatorsContainer.innerHTML = htmlContent;
-        }
+            function renderAllPacks(packs){
+                const cont = el('all-packs-container');
+                if (!packs || packs.length === 0){ cont.innerHTML = '<p>No packs.</p>'; return; }
+                const listHtml = packs.map(p=>`<li>${p.name} — ${p.version} — ${(Array.isArray(p.type)?p.type.join(', '):p.type) || '—'} — ${Array.isArray(p.creators)?p.creators.join(', '):p.creator || '—'}</li>`).join('');
+                cont.innerHTML = `<ul class="pack-list">${listHtml}</ul>`;
+            }
 
-        // ----------------------------------------------------------------
-        // INICIALIZAÇÃO
-        // ----------------------------------------------------------------
+            function createCharts(){
+                // Types pie
+                const typesLabels = Object.keys(summary.types).filter(k=>k);
+                const typesData = typesLabels.map(k=>summary.types[k]);
+                const ctxTypes = document.getElementById('chartTypes').getContext('2d');
+                new Chart(ctxTypes, {
+                    type: 'pie',
+                    data: { labels: typesLabels, datasets: [{ data: typesData, backgroundColor: ['#00aaff','#ffaa00','#ff6b6b','#7bd389'] }] },
+                    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+                });
 
-        async function fetchPacksAndRender() {
-            try {
-                // Busca o array JSON
-                const res = await fetch("data/data.json"); 
-            
-                if (!res.ok) {
-                    const errorMessage = "<p>Erro ao carregar dados. Verifique o caminho 'data/data.json'.</p>";
-                    featuredContainer.innerHTML = errorMessage;
-                    standardContainer.innerHTML = "";
-                    topCreatorsContainer.innerHTML = "";
-                    return;
+                // Resolutions bar
+                const resLabels = Object.keys(summary.resolutions).filter(k=>k);
+                const resData = resLabels.map(k=>summary.resolutions[k]);
+                const ctxRes = document.getElementById('chartResolutions').getContext('2d');
+                new Chart(ctxRes, {
+                    type: 'bar',
+                    data: { labels: resLabels.map(l=>l.toUpperCase()), datasets: [{ label: 'Packs', data: resData, backgroundColor: '#00aaff' }] },
+                    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero:true } } }
+                });
+            }
+
+            async function init(){
+                try {
+                    const res = await fetch('data/data.json');
+                    if (!res.ok) throw new Error('Failed to fetch data/data.json');
+                    const packs = await res.json();
+
+                    processPacks(packs);
+                    updateSummaryDom();
+                    renderTopCreatorsList();
+                    renderRecentPacks(packs);
+                    renderAllPacks(packs);
+                    createCharts();
+                } catch (err){
+                    console.error(err);
+                    document.getElementById('main-content').innerHTML = `<div class="content-card"><h2>Error</h2><p>Não foi possível carregar estatísticas. Verifique o console.</p></div>`;
                 }
-            
-                texturePacks = await res.json();
-
-                // 1. Renderizar Featured e Standard Packs
-                renderFeaturedAndStandardPacks(texturePacks); 
-
-                // 2. Renderizar os TOP 5 Criadores
-                renderTopCreators(texturePacks);
-            
-            } catch (err) {
-                console.error('Erro ao buscar dados:', err);
-                const fetchError = "<p>Falha ao carregar dados. Consulte o console para obter detalhes.</p>";
-                featuredContainer.innerHTML = fetchError;
-                standardContainer.innerHTML = "";
-                topCreatorsContainer.innerHTML = "";
             }
-        }
 
-        // Iniciar o processo
-        fetchPacksAndRender();
+            init();
+        })();
     </script>
 </body>
 </html>

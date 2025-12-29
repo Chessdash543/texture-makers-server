@@ -7,6 +7,7 @@
     <link rel="icon" href="/img/icon.png" type="image/x-icon">
     <meta name="google-site-verification" content="_rl772weGA5Qz2gyiVZAo50Q3V1MhKeDx61nfk8gZy4" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preload" href="/img/icon.png" as="image">
 
 <style>
     body {
@@ -155,6 +156,13 @@
         /* Efeitos */
         transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
     }
+
+    /* Unified CTA button base */
+    .cta-button { display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+    .cta-button:focus { outline:3px solid rgba(14,165,255,0.28); outline-offset:3px; }
+
+    /* Small adjustments for accessibility */
+    a[role="button"] { cursor:pointer; }
 
     /*
     ====================================

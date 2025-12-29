@@ -12,7 +12,9 @@
     "icon": "/uploads/chessdash.diamondtp/icon.png",
     "screenshot": "/uploads/chessdash.diamondtp/image.png",
     "featured": true,
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "creators": [
       "ChessDash543",
       "TNTMAN"
@@ -31,7 +33,9 @@
     "version": "v1.6.0",
     "icon": "/uploads/danzgame.nova_ui/icon.png",
     "screenshot": "/uploads/danzgame.nova_ui/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "DANZGAME"
@@ -39,21 +43,25 @@
   },
   {
     "id": "martymcforty.cloudyceramics",
-    "name": "Cloudy Ceramics",
+    "name": "Cloudy Ceramics TP",
     "resolution": [
       "low",
       "medium",
       "high"
     ],
-    "download": "https://www.dropbox.com/scl/fi/20yuewi8gma3umboh7caw/Cloudy-Ceramics-TP-Updated-and-Fixed-AGAIN.zip?rlkey=dg9okhgt7et8957u1ggibpilw&st=4xzavfr1&dl=1",
-    "description": "A mix with all the icons with other people's texture packs (Supernova Texture Pack, 1000 Icon Private Mix, etc.). This texture pack also has music, fonts, sfx from mobile games (Cut the Rope, Pou, etc.)\nFor people who use the More Icons mod in order to see the existing icons that are replaced by the texture pack, do the following: Go to Geode --> More Icons --> Mod settings --> Load From Traditional Packs: Off",
-    "version": "v1.0.0",
+    "download": "https://www.dropbox.com/scl/fi/5bc2tb7u84gdks00tr4qt/Cloudy-Ceramics-TP-v1.0.3.zip?rlkey=6ntb0w5g2ik4jla3m565bm8pq&st=8naypqap&dl=1",
+    "description": "A mix with all the icons from other people's texture packs (Supernova Texture Pack, 1000 Icon \"Private\" Mix, etc.)",
+    "version": "v1.0.3",
     "icon": "/uploads/martymcforty.cloudyceramics/icon.png",
     "screenshot": "/uploads/martymcforty.cloudyceramics/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack",
+      "icons"
+    ],
     "featured": false,
     "creators": [
-      "MartyMCForty"
+      "MartyMCForty",
+      "mobile152681919"
     ]
   },
   {
@@ -68,7 +76,9 @@
     "version": "v1.1.2",
     "icon": "/uploads/yoichi.onlyyoichigdtexturepack/icon.png",
     "screenshot": "/uploads/yoichi.onlyyoichigdtexturepack/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": false,
     "creators": [
       "OnlyYoichi"
@@ -87,7 +97,9 @@
     "version": "v1.5.0",
     "icon": "/uploads/elbrift.better-df/pack-1.png",
     "screenshot": "/uploads/elbrift.better-df/78_sin_titulo_20251201221838.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": false,
     "creators": [
       "OstiLightOff"
@@ -106,7 +118,9 @@
     "version": "v1.1.0",
     "icon": "/uploads/DANZGAME.geosu/pack.png",
     "screenshot": "/uploads/DANZGAME.geosu/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "DANZGAME"
@@ -124,7 +138,9 @@
     "version": "v1.7.2",
     "icon": "/uploads/retroadvance64.supernova/1764705812032-GeodeLogo2.png",
     "screenshot": "/uploads/retroadvance64.supernova/1764705812039-Screenshot_20251202-013954.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "RetroAdvance64"
@@ -142,7 +158,9 @@
     "version": "v1.1.0",
     "icon": "/uploads/maustyles.srguillestertp/1764705782693-mtPE3TsA.png",
     "screenshot": "/uploads/maustyles.srguillestertp/1764705782708-78_sin_titulo_20251202015734.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": false,
     "creators": [
       "MauStyles"
@@ -160,7 +178,9 @@
     "download": "https://www.dropbox.com/scl/fi/s0jjt6qalsreegj5vqozh/Cirindo.zip?rlkey=1x1bb4t3na296gpgycp5p2osl&st=od6zw2m7&dl=1",
     "icon": "/uploads/DANZGAME.cirindo/1764796607046-20250211_133200.png",
     "screenshot": "/uploads/DANZGAME.cirindo/1764796607047-20251114_035005.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "DANZGAME"
@@ -178,7 +198,9 @@
     "download": "https://www.dl.dropboxusercontent.com/scl/fi/zy5hl0bjz8pkrobrs3k7t/Processor-Pack-OFFICIAL-RELEASE.zip?rlkey=5rduuosobxphaz2fyf0oktzut&st=1komgb35&dl=1",
     "icon": "/uploads/pvn6.processorpack/1764798799643-pack-3.png",
     "screenshot": "/uploads/pvn6.processorpack/1764798799644-7RFqWs_HJ0U-HD_1.jpg",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "Processor"
@@ -196,7 +218,9 @@
     "download": "https://github.com/Asky740/gdclean/releases/download/v2.1.2/GDClean2.1.2.zip",
     "icon": "/uploads/asky74.clean/1764799608547-pack-2.png",
     "screenshot": "/uploads/asky74.clean/1764799608548-86 sin tÃ­tulo_20251203175319.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "Asky74"
@@ -287,7 +311,9 @@
     "download": "https://www.dropbox.com/scl/fi/8htrlhpwb1l27irt18kpf/The-Garry-texture-pack.zip?rlkey=olfht68q0n6jjrud9iki1y44k&st=twqjpfrd&dl=1",
     "icon": "/uploads/olgcraft.garrytexturepack/pack.png",
     "screenshot": "/uploads/olgcraft.garrytexturepack/image.png",
-    "type": "icons",
+    "type": [
+      "icons"
+    ],
     "featured": false,
     "creators": [
       "OLGcraft"
@@ -305,7 +331,9 @@
     "download": "https://www.dropbox.com/scl/fi/12lniq9esri823rxswoow/DDLC-Texture-Pack-By-OnlyYoichi-Icy-Doodles-Port-to-medium-by-Kings-R-Us.zip?rlkey=l11h5s5q7q9ez3pfkbuf7psow&st=qxm0vjeo&dl=1",
     "icon": "/uploads/yoichi&icydoodles.dokidoki/pack.png",
     "screenshot": "/uploads/yoichi&icydoodles.dokidoki/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": true,
     "creators": [
       "OnlyYoichi",
@@ -325,7 +353,9 @@
     "download": "https://github.com/Chessdash543/Trail-Flags/releases/download/1.3.1/Trail.Flags.zip",
     "icon": "/uploads/trail.flags/pack.png",
     "screenshot": "/uploads/trail.flags/image.png",
-    "type": "icons",
+    "type": [
+      "icons"
+    ],
     "featured": false,
     "creators": [
       "ChessDash543"
@@ -344,7 +374,9 @@
     "download": "https://github.com/Chessdash543/WE-NEED-MORE-MODERATORS-/releases/download/v1.0.0/WE.NEED.MORE.MODERATORS.zip",
     "icon": "/uploads/chessdash543.weneedmoremoderators/pack.png",
     "screenshot": "/uploads/chessdash543.weneedmoremoderators/image.png",
-    "type": "texture-pack",
+    "type": [
+      "texture-pack"
+    ],
     "featured": false,
     "creators": [
       "ChessDash543"
@@ -366,6 +398,24 @@
     "featured": false,
     "creators": [
       "Diegolb"
+    ]
+  },
+  {
+    "id": "bxdash.gdenhanced",
+    "name": "GD Enhanced",
+    "description": "A texture pack that freshens up Geometry Dash with new tweaks and updated looks. Works with both vanilla and Geode mods.",
+    "version": "v8.1.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download":"https://www.dropbox.com/scl/fi/pz0vfonwmj9o8c3vjygs7/GD-Enhanced.zip?rlkey=izncu02tcgmvfej6g2xx6bb1w&st=aioq0n2s&dl=1",
+    "icon": "/uploads/bxdash.gdenhanced/pack.png",
+    "screenshot": "/uploads/bxdash.gdenhanced/image.jpg",
+    "type": "texture-pack",
+    "featured": false,
+    "creators": [
+      "BXDash"
     ]
   }
 ]
