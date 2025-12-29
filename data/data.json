@@ -400,22 +400,4 @@
       "Diegolb"
     ]
   },
-  {
-    "id": "bxdash.gdenhanced",
-    "name": "GD Enhanced",
-    "description": "A texture pack that freshens up Geometry Dash with new tweaks and updated looks. Works with both vanilla and Geode mods.",
-    "version": "v8.1.0",
-    "resolution": [
-      "medium",
-      "high"
-    ],
-    "download": "https://www.dropbox.com/scl/fi/pz0vfonwmj9o8c3vjygs7/GD-Enhanced.zip?rlkey=izncu02tcgmvfej6g2xx6bb1w&st=aioq0n2s&dl=1",
-    "icon": "/uploads/bxdash.gdenhanced/pack.png",
-    "screenshot": "/uploads/bxdash.gdenhanced/image.jpg",
-    "type": "texture-pack",
-    "featured": false,
-    "creators": [
-      "BXDash"
-    ]
-  }
 ]
