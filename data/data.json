@@ -417,5 +417,24 @@
     "creators": [
       "BXDash"
     ]
-  }
+  },
+  {
+    "id": "Kingolpem.ChessDash543",
+    "name": "Nebula TP",
+    "description": "a texture pack with an animated background and replaces the menu with a purple and black one",
+    "version": "v2.0.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/r3ashyht3m2d2aojejkf9/Nebula-TP.zip?rlkey=s9bu5odhtj0l1zy1vbm0gwh5l&st=mgqv349u&dl=1&pv=1",
+    "icon": "/uploads/Kingolpem.ChessDash543/pack.png",
+    "screenshot": "/uploads/Kingolpem.ChessDash543/image.jpg",
+    "type": "texture-pack",
+    "featured": false,
+    "creators": [
+      "Kingolpem",
+      "ChessDash543"
+    ]
+  },
 ]
