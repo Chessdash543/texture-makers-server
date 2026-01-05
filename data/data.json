@@ -471,5 +471,25 @@
     "creators": [
       "TheGamer2022"
     ]
+  },
+  {
+    "id": "juniper.refrescadorpack",
+    "name": "Juniper Cats (More Icons)",
+    "description": "At last... After 2 months I have finally port to bring here all the variants of the cats that Juniper uses!! (Thanks to Ponce for making this in 2.1)\nNote: More Icons by HimJustin00 it's required for the pack to work, I also added a menu loop and the explosion effect that Juniper used (Just activate death effect 13)",
+    "version": "v1.0.0",
+    "resolution": [
+      "medium",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/uk94jrw2gtoc0p1c4u1ie/Juniper-Cats-More-Icons.zip?rlkey=luagc9frha8f9a9yy2sdog86m&st=alrjrvyn&dl=1",
+    "icon": "/uploads/juniper.refrescadorpack/pack.png",
+    "screenshot": "/uploads/juniper.refrescadorpack/image.png",
+    "type": [
+      "icons"
+    ],
+    "featured": false,
+    "creators": [
+      "OnlyYoichi"
+    ]
   }
 ]
