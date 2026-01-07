@@ -25,6 +25,7 @@
     const addPackBtn = document.getElementById("addPackBtn");
     const invitePopup = document.getElementById("invite-popup");
     const inviteCloseBtn = invitePopup.querySelector('.close-invite-btn');
+    const sortOrderSelect = document.getElementById("sortOrder");
 
     // ----------------------------------------------------
     // --- UTILITY FUNCTIONS ---
@@ -92,8 +93,10 @@
             }
             
             const data = await res.json();
-            texturePacks = data; // Assumes data is the array of packs
-            
+
+            // Keep original insertion index as fallback ordering when `date` is missing.
+            texturePacks = (Array.isArray(data) ? data : []).map((p, i) => Object.assign({}, p, { __index: i }));
+
             filterAndSortPacks(); // Initial render
             
         } catch (err) {
@@ -155,12 +158,37 @@
             return matchesText && matchesCreator && matchesResolution && matchesType && matchesFeatured; 
         });
 
-        // Ordering is currently skipped (sortPacks in original was empty)
-        // const sortedAndFiltered = sortPacks(filteredPacks, ''); 
+        // Sort filtered results according to the selected order
+        sortFilteredByDate(filteredPacks);
 
         // Reset page and render
-        currentPage = 1; 
+        currentPage = 1;
         renderCards(filteredPacks);
+    }
+
+    /**
+     * Sorts list by `date` field if present. Falls back to original insertion order.
+     * Accepts ISO date strings (e.g. 2025-12-04) or any parseable Date string.
+     * @param {Array} list
+     */
+    function sortFilteredByDate(list) {
+        if (!Array.isArray(list)) return;
+        const order = (sortOrderSelect && sortOrderSelect.value) || 'recent';
+
+        list.sort((a, b) => {
+            const aDate = a.date ? Date.parse(a.date) : null;
+            const bDate = b.date ? Date.parse(b.date) : null;
+
+            if (aDate && bDate) {
+                return order === 'recent' ? bDate - aDate : aDate - bDate;
+            }
+
+            if (aDate && !bDate) return order === 'recent' ? -1 : 1;
+            if (!aDate && bDate) return order === 'recent' ? 1 : -1;
+
+            // Neither have date -> fallback to original insertion order
+            return order === 'recent' ? b.__index - a.__index : a.__index - b.__index;
+        });
     }
     
     // ----------------------------------------------------
@@ -374,6 +402,7 @@
     filterResolutionSelect.addEventListener("change", filterAndSortPacks);
     filterTypeSelect.addEventListener("change", filterAndSortPacks); 
     filterFeaturedSelect.addEventListener("change", filterAndSortPacks); 
+    if (sortOrderSelect) sortOrderSelect.addEventListener('change', filterAndSortPacks);
 
     // Add Pack Button Listeners
     if (addPackBtn) {
