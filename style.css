@@ -10,17 +10,17 @@ body {
     /* Tipografia */
     font-family: Arial, sans-serif;
 
-    /* Estilos de Fundo */
-    background-color: #000; /* Cor de fundo de fallback (preto) */
-    background-image: url('/img/bg.png'); /* Caminho da imagem de fundo */
-    background-size: cover; /* Cobre toda a área do elemento */
-    background-repeat: no-repeat; /* Não repete a imagem */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Imagem de fundo fixa na viewport */
+     /* Estilos de Fundo */
+     background-color: #000; /* Cor de fundo de fallback (preto) */
+     /* background-image moved to pseudo-element to allow fixed desktop backgrounds
+         and a different behavior on mobile (prevents duplicate rendering). */
+
+     position: relative; /* needed when swapping pseudo-element visibility */
 
     /* Espaçamento (padding) */
     /* Usando a última especificação: 20px superior/inferior, 0 esquerda/direita */
     padding: 20px 0; 
+    background: scroll;
 }
 
 a {
@@ -909,4 +909,40 @@ select:hover, button:hover {
 .featured-star {
     font-size: 1.2em; 
     margin-right: 5px;
+}
+
+/* Mobile background fixes: force scroll on touch devices and provide pseudo-element fallback */
+@media (pointer: coarse), (hover: none) {
+        body {
+                background-attachment: scroll !important;
+        }
+}
+
+/* Alternative approach: use a pseudo-element for a fixed desktop background
+     and switch it to absolute positioning on mobile so it scrolls with content. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('/img/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (pointer: coarse), (max-width: 900px) {
+    /* On touch / small screens hide the fixed pseudo-element to avoid
+         duplication and performance issues, then use the body's background
+         which will scroll normally. */
+    body::before { display: none !important; }
+
+    body {
+        background-image: url('/img/bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll !important;
+    }
 }
