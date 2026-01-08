@@ -492,5 +492,27 @@
     "creators": [
       "OnlyYoichi"
     ]
+  },
+  {
+    "id": "clmaxi-Ketsutt.doneitp",
+    "name": "Donei TP",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/clmaxi/Donei-TP-v4/releases/download/doneiTPv4/Donei.TP.v4.High.Medium.zip",
+    "description": "Texture Pack made for Donei GD, includes a fully customized menu, backgrounds, sound effects and more 8)",
+    "version": "v4.0.0",
+    "icon": "/uploads/clmaxi-Ketsutt.doneitp/pack.png",
+    "screenshot": "/uploads/clmaxi-Ketsutt.doneitp/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "clmaxi",
+      "Ketsutt"
+    ],
+    "date": "2026-01-08T23:17:34Z"
   }
 ]
