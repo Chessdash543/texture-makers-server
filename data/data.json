@@ -18,7 +18,8 @@
     "creators": [
       "ChessDash543",
       "TNTMAN"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "danzgame.nova_ui",
@@ -39,7 +40,8 @@
     "featured": true,
     "creators": [
       "DANZGAME"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "martymcforty.cloudyceramics",
@@ -62,7 +64,8 @@
     "creators": [
       "MartyMCForty",
       "mobile152681919"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "yoichi.onlyyoichigdtexturepack",
@@ -82,7 +85,8 @@
     "featured": false,
     "creators": [
       "OnlyYoichi"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "elbrift.better-df",
@@ -103,7 +107,8 @@
     "featured": false,
     "creators": [
       "OstiLightOff"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "danzgame.geosu",
@@ -124,7 +129,8 @@
     "featured": true,
     "creators": [
       "DANZGAME"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "retroadvance64.supernova",
@@ -144,7 +150,8 @@
     "featured": true,
     "creators": [
       "RetroAdvance64"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "maustyles.srguillestertp",
@@ -164,7 +171,8 @@
     "featured": false,
     "creators": [
       "MauStyles"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "DANZGAME.cirindo",
@@ -184,7 +192,8 @@
     "featured": true,
     "creators": [
       "DANZGAME"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "pvn6.processorpack",
@@ -204,7 +213,8 @@
     "featured": true,
     "creators": [
       "Processor"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "asky74.clean",
@@ -224,7 +234,8 @@
     "featured": true,
     "creators": [
       "Asky74"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "freakingdan.determination",
@@ -244,7 +255,8 @@
     "featured": false,
     "creators": [
       "FREAKINGDAN"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "zapher.frutigerdash",
@@ -264,7 +276,8 @@
     "featured": false,
     "creators": [
       "Zapher"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "freadfries.packofchi",
@@ -284,7 +297,8 @@
     "featured": false,
     "creators": [
       "FreadFries"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "keanan00.tp",
@@ -304,7 +318,8 @@
     "featured": false,
     "creators": [
       "Therealkeanan00"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "olgcraft.garrytexturepack",
@@ -325,7 +340,8 @@
     "featured": false,
     "creators": [
       "OLGcraft"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "yoichiicydoodles.dokidoki",
@@ -346,7 +362,8 @@
     "creators": [
       "OnlyYoichi",
       "Icy Doodles"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "trail.flags",
@@ -367,7 +384,8 @@
     "featured": false,
     "creators": [
       "ChessDash543"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "chessdash543.weneedmoremoderators",
@@ -388,7 +406,8 @@
     "featured": false,
     "creators": [
       "ChessDash543"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "diegolb.diegolbtp",
@@ -408,7 +427,8 @@
     "featured": false,
     "creators": [
       "Diegolb"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "bxdash.gdenhanced",
@@ -428,7 +448,8 @@
     "featured": false,
     "creators": [
       "BXDash"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "Kingolpem.ChessDash543",
@@ -449,7 +470,8 @@
     "creators": [
       "Kingolpem",
       "ChessDash543"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "thevoid8000.thevoidtp",
@@ -471,7 +493,8 @@
     "creators": [
       "TheVoid8000",
       "MartyMCForty"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "juniper.refrescadorpack",
@@ -491,7 +514,8 @@
     "featured": false,
     "creators": [
       "OnlyYoichi"
-    ]
+    ],
+    "gdversion": "2.2074"
   },
   {
     "id": "clmaxi-Ketsutt.doneitp",
@@ -513,6 +537,7 @@
       "clmaxi",
       "Ketsutt"
     ],
-    "date": "2026-01-08T23:17:34Z"
+    "date": "2026-01-08T23:17:34Z",
+    "gdversion": "2.2074"
   }
 ]

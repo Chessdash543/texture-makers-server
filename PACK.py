@@ -25,7 +25,6 @@ def make_id(name: str, creator: str | None) -> str:
     s = re.sub(r"-+", '-', s)
     return s.strip('-')
 
-
 class AddPackApp:
     def __init__(self, root):
         self.root = root
