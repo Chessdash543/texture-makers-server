@@ -73,16 +73,16 @@
       "medium",
       "high"
     ],
-    "download": "https://www.dropbox.com/scl/fi/6bzcgfszs5g34k8ggjoh5/OnlyYoichi-Texture-Pack.zip?rlkey=t1ph20hxwf03hl9r6kiq0ag18&st=8vtudv1a&dl=1",
+    "download": "https://www.dropbox.com/scl/fi/3q7sj21gybv9y4xsn2p5q/Yoichi-TP-UPDATED-AND-CHANGED-ICON-XD.zip?rlkey=2qkyvdblpcj2b6yl075pmbuvu&st=i6829ar8&dl=1",
     "description": "A Texture Pack made by OnlyYoichi! This texture pack changes to grayscale mode! Happy Textures and More Icons is HIGHLY recommended to use this texture pack!",
-    "version": "v1.2.0",
+    "version": "1.2.0",
     "icon": "/uploads/yoichi.onlyyoichigdtexturepack/icon.png",
     "screenshot": "/uploads/yoichi.onlyyoichigdtexturepack/image.png",
     "type": [
       "texture-pack",
       "icons"
     ],
-    "featured": false,
+    "featured": true,
     "creators": [
       "OnlyYoichi"
     ],
