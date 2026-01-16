@@ -544,5 +544,26 @@
     ],
     "date": "2026-01-08T23:17:34Z",
     "gdversion": "2.2074"
+  },
+  {
+    "id": "martymcforty.martymcforty_texture_pack",
+    "name": "MartyMcForty Texture Pack",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/MartyMcForty/MartyMcForty-Texture-Pack/releases/download/v1.0.0/MartyMcForty.Texture.Pack.zip",
+    "description": "A dark red-pink, dark blue, and purple texture pack that fits the respective icon.",
+    "version": "v1.0.0",
+    "icon": "/uploads/martymcforty.martymcforty_texture_pack/icon.png",
+    "screenshot": "/uploads/martymcforty.martymcforty_texture_pack/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "MartyMcForty"
+    ],
+    "gdversion": "2.2074"
   }
 ]
