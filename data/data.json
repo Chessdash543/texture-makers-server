@@ -609,5 +609,26 @@
       "Ketsutt"
     ],
     "gdversion": "2.207"
+  },
+  {
+    "id": "chessdash543.bongoboykisser",
+    "name": "Bongo Boykisser",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/Chessdash543/Bongo-Boykisser/releases/download/v1.0.0/Bongo-Boykisser.zip",
+    "description": "## Bongo Boykisser by ChessDash543\nReplace The Bongo cat of the Mod Bongo Cat for a Boykisser :3",
+    "version": "v1.0.0",
+    "icon": "/uploads/chessdash543.bongoboykisser/icon.png",
+    "screenshot": "/uploads/chessdash543.bongoboykisser/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "ChessDash543"
+    ],
+    "gdversion": "2.2074"
   }
 ]
