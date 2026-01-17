@@ -316,6 +316,7 @@
                     <div class="info-details-list">
                         <p><strong>Creator(s):</strong> ${creatorsFormatted}</p>
                         <p><strong>Version:</strong> ${pack.version}</p>
+                        <p><strong>GDversion:</strong> ${pack.gdversion}</p>
                         <p><strong>Resolution:</strong> ${resolutionDisplay}</p> <p style="font-size: 12px; color: #777;">ID: ${pack.id}</p>
                     </div>
 
