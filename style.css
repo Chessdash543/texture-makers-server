@@ -410,7 +410,6 @@ select:hover, button:hover {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    width: 100%;
 }
 
 .popup-info {
@@ -421,6 +420,7 @@ select:hover, button:hover {
     background-color: #2b2b2b; /* fundo do subbloco */
     padding: 15px;            /* espaço interno */
     border-radius: 10px; 
+    width: 100%;
 }
 
 .popup-info p {
