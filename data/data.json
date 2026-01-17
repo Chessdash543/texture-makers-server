@@ -588,5 +588,26 @@
       "MartyMcForty"
     ],
     "gdversion": "2.2074"
+  },
+  {
+    "id": "packgenerator.my_pack",
+    "name": "NIKO ONESHOT",
+    "resolution": [
+      "Medium",
+      "High"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/xp6vna011ts8l4zncslwr/TEXTURE-PACK-NIKO-BY-KETSU-HIGH-AND-MEDIUM.zip?rlkey=1972pp1ttz002nayo4swd554y&st=xbtwgwyg&dl=1",
+    "description": "This texture pack is inspired by the game \"Niko Oneshot\". For fans of the game or Niko, this texture pack is perfect... Includes a fully customized menu, backgrounds, icons and more! (Please use the mod with more happy icons and textures for a better experience)",
+    "version": "1.0.0",
+    "icon": "/uploads/packgenerator.my_pack/icon.png",
+    "screenshot": "/uploads/packgenerator.my_pack/image.png",
+    "featured": true,
+    "type": [
+      "Texture Pack"
+    ],
+    "creators": [
+      "Ketsutt"
+    ],
+    "gdversion": "2.207"
   }
 ]
