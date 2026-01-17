@@ -410,7 +410,7 @@ select:hover, button:hover {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    width: fill;
+    width: 100%;
 }
 
 .popup-info {
