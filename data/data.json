@@ -572,9 +572,9 @@
       "high",
       "medium"
     ],
-    "download": "https://github.com/Chessdash543/TMS-TEXTURE-PACK/releases/download/v1.0.0/TMS-TEXTURE-PACK.zip",
+    "download": "https://github.com/Chessdash543/TMS-TEXTURE-PACK/archive/refs/heads/main.zip",
     "description": "This TP has a complete reimagining of the entire game... Happy Textures is obviously required for the function of this one, XD",
-    "version": "1.0.0",
+    "version": "v1.0.1",
     "icon": "/uploads/tms-team.tms/icon.png",
     "screenshot": "/uploads/tms-team.tms/image.png",
     "featured": true,
