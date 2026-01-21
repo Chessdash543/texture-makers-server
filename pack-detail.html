@@ -213,11 +213,6 @@
         const last = links.pop();
         return links.join(', ') + ' & ' + last;
     }
-
-    /**
-     * Função auxiliar para formatar a lista de resoluções.
-     * @param {string[] | string} resolution - O array ou string de resoluções.
-     */
     function formatResolution(resolution) {
         if (Array.isArray(resolution)) {
             return resolution.map(r => r.charAt(0).toUpperCase() + r.slice(1)).join(', ');
@@ -315,7 +310,7 @@
                     <p><strong>Creator(s):</strong> ${creatorsHtml}</p>
                     <p><strong>Resolution(s):</strong> ${resolutionDisplay}</p>
                     <p><strong>Version:</strong> ${pack.version}</p>
-                    <p><strong>ID:</strong> ${pack.id}</p>
+                    <p><strong>GDversion:</strong> ${pack.gdversion}</p>
                     <p class="description">${pack.description || "Nenhuma descrição fornecida."}</p>
                 
                     <button id="detailDownloadBtn" class="download-btn" 
