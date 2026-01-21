@@ -239,7 +239,7 @@
                         </h3>
                         <p class="pack-description-text">${pack.description}</p>
                         <button class="download-btn" data-url="${pack.download}">Download (${pack.version})</button>
-                        <p class="download-count"><small>Available for Download</small></p>
+                        <p class="download-count"><small>${pack.likes} Likes</small></p>
                         <button class="more-info" aria-label="More information about ${pack.name}">i</button>
                     </div>
                 </div>
