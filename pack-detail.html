@@ -260,13 +260,7 @@
         }
     }
 
-
-    /**
-     * Inicia o download (não rastreia mais nada)
-     * @param {string} downloadUrl - A URL direta para o arquivo do pacote.
-     */
     function initiateDownload(downloadUrl) {
-        // Apenas inicia o download do arquivo sem rastreamento ou API
         const link = document.createElement('a');
         link.href = downloadUrl;
         link.download = '';
@@ -275,15 +269,9 @@
         setTimeout(() => link.remove(), 100); 
     }
 
-
-    /**
-     * Encontra o pacote na lista carregada e renderiza o HTML, sem contagem de downloads.
-     * @param {string} id - A ID do pack.
-     */
     function renderPackDetails(id) {
         const container = document.getElementById('pack-container');
         
-        // 1. Buscar o pacote na lista em memória (allTexturePacks)
         const pack = allTexturePacks.find(p => p.id === id);
 
         if (!pack) {
@@ -291,17 +279,13 @@
             return;
         }
         
-        // --- NOVO: Tratamento de Creators e Resolution ---
         const creatorsHtml = formatCreatorsWithLinks(pack.creators);
         const resolutionDisplay = formatResolution(pack.resolution);
         
-        // Para o título da página (title, não h1), usamos o primeiro criador ou a lista
         const titleCreator = Array.isArray(pack.creators) && pack.creators.length > 0 ? pack.creators.join(', ') : 'Unknown Creator';
 
-        // Atualiza o Título da Página
         document.getElementById('packTitle').textContent = `${pack.name} by ${titleCreator}`;
 
-        // 2. Cria o conteúdo HTML (USANDO AS NOVAS VARIÁVEIS)
         container.innerHTML = `
             <div class="detail-header">
                 <img src="${pack.icon}" alt="Icon" class="pack-icon-large">
