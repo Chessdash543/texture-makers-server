@@ -421,8 +421,10 @@
       "ChessDash543"
     ],
     "gdversion": "2.2074",
-    "likes": 0,
-    "liked_by": []
+    "likes": 1,
+    "liked_by": [
+      1220462901848965251
+    ]
   },
   {
     "id": "chessdash543.weneedmoremoderators",
@@ -445,10 +447,8 @@
       "ChessDash543"
     ],
     "gdversion": "2.2074",
-    "likes": 1,
-    "liked_by": [
-      1220462901848965251
-    ]
+    "likes": 0,
+    "liked_by": []
   },
   {
     "id": "diegolb.diegolbtp",
@@ -521,11 +521,8 @@
       "ChessDash543"
     ],
     "gdversion": "2.2074",
-    "likes": 2,
-    "liked_by": [
-      1220462901848965251,
-      1422135223981838358
-    ]
+    "likes": 0,
+    "liked_by": []
   },
   {
     "id": "thevoid8000.thevoidtp",
