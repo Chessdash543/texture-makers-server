@@ -45,8 +45,10 @@
       "DANZGAME"
     ],
     "gdversion": "2.2074",
-    "likes": 0,
-    "liked_by": []
+    "likes": 1,
+    "liked_by": [
+      1127573156522115105
+    ]
   },
   {
     "id": "martymcforty.cloudyceramics",
@@ -281,10 +283,7 @@
       "FREAKINGDAN"
     ],
     "gdversion": "2.2074",
-    "likes": 1,
-    "liked_by": [
-      1016562351270535208
-    ]
+    "likes": 0
   },
   {
     "id": "zapher.frutigerdash",
@@ -424,10 +423,8 @@
       "ChessDash543"
     ],
     "gdversion": "2.2074",
-    "likes": 1,
-    "liked_by": [
-      1220462901848965251
-    ]
+    "likes": 0,
+    "liked_by": []
   },
   {
     "id": "chessdash543.weneedmoremoderators",
