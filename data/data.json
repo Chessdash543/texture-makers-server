@@ -71,8 +71,10 @@
       "mobile152681919"
     ],
     "gdversion": "2.2074",
-    "likes": 0,
-    "liked_by": []
+    "likes": 1,
+    "liked_by": [
+      1422135223981838358
+    ]
   },
   {
     "id": "yoichi.onlyyoichigdtexturepack",
@@ -421,10 +423,8 @@
       "ChessDash543"
     ],
     "gdversion": "2.2074",
-    "likes": 1,
-    "liked_by": [
-      1220462901848965251
-    ]
+    "likes": 0,
+    "liked_by": []
   },
   {
     "id": "chessdash543.weneedmoremoderators",
