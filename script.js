@@ -26,6 +26,7 @@
     const invitePopup = document.getElementById("invite-popup");
     const inviteCloseBtn = invitePopup.querySelector('.close-invite-btn');
     const sortOrderSelect = document.getElementById("sortOrder");
+    const sortLikesSelect = document.getElementById("sortLikes");
 
     // ----------------------------------------------------
     // --- UTILITY FUNCTIONS ---
@@ -36,6 +37,21 @@
      * @param {string[]} creatorsArray 
      * @returns {string} Formatted string with anchors.
      */
+
+    function sortFilteredByLikes(list) {
+        if (!Array.isArray(list)) return;
+        const order = (sortLikesSelect && sortLikesSelect.value) || 'm_likes';
+
+        list.sort((a, b) => {
+            const likesA = parseInt(a.likes) || 0;
+            const likesB = parseInt(b.likes) || 0;
+
+            // m_likes = Most Likes (Maior para Menor)
+            // n_likes = Less Likes (Menor para Maior)
+            return order === 'm_likes' ? likesB - likesA : likesA - likesB;
+        });
+    }
+
     function formatCreators(creatorsArray) {
         if (!Array.isArray(creatorsArray) || creatorsArray.length === 0) {
             return "Unknown";
@@ -158,6 +174,11 @@
             return matchesText && matchesCreator && matchesResolution && matchesType && matchesFeatured; 
         });
 
+        sortFilteredByDate(filteredPacks);
+        if (sortLikesSelect) {
+            sortFilteredByLikes(filteredPacks);
+        }
+
         // Sort filtered results according to the selected order
         sortFilteredByDate(filteredPacks);
 
@@ -171,6 +192,66 @@
      * Accepts ISO date strings (e.g. 2025-12-04) or any parseable Date string.
      * @param {Array} list
      */
+    function filterAndSortPacks() {
+        const fullText = searchInput.value.toLowerCase();
+        const resolution = filterResolutionSelect.value;
+        const type = filterTypeSelect.value;
+        const featured = filterFeaturedSelect.value;
+
+        let searchText = fullText;
+        let creatorFilter = '';
+
+        const creatorMatch = fullText.match(/by:\s*([a-z0-9_.-]+)/); 
+        if (creatorMatch && creatorMatch[1]) {
+            creatorFilter = creatorMatch[1].trim(); 
+            searchText = fullText.replace(creatorMatch[0], '').trim(); 
+        }
+
+        filteredPacks = texturePacks.filter(pack => {
+            if (!pack.name || !Array.isArray(pack.creators)) return false; 
+
+            const packName = pack.name.toLowerCase();
+            const packCreatorsString = getCreatorsString(pack.creators); 
+
+            const matchesText = searchText === '' || packName.includes(searchText);
+            const matchesCreator = creatorFilter === '' || packCreatorsString.includes(creatorFilter);
+
+            const matchesResolution = resolution === "all" || (
+                Array.isArray(pack.resolution) && pack.resolution.includes(resolution)
+            );
+
+            let packTypes = [];
+            if (Array.isArray(pack.type)) {
+                packTypes = pack.type.map(t => String(t || '').toLowerCase());
+            } else if (typeof pack.type === 'string') {
+                packTypes = [pack.type.toLowerCase()];
+            }
+            const matchesType = type === "all" || packTypes.includes(type);
+
+            const matchesFeatured = featured === "all" || (pack.featured === true);
+
+            return matchesText && matchesCreator && matchesResolution && matchesType && matchesFeatured; 
+        });
+
+        // --- NOVA LÓGICA DE ORDENAÇÃO ---
+        // Aqui decidimos qual função de sorteio usar
+        applySorting(filteredPacks);
+
+        currentPage = 1;
+        renderCards(filteredPacks);
+    }
+/**
+ * Decide qual critério de ordenação aplicar
+ */
+function applySorting(list) {
+        // Primeiro aplica a ordenação por data (padrão)
+        sortFilteredByDate(list);
+        // Depois aplica a de likes se o select existir
+        if (sortLikesSelect) {
+            sortFilteredByLikes(list);
+        }
+    }
+
     function sortFilteredByDate(list) {
         if (!Array.isArray(list)) return;
         const order = (sortOrderSelect && sortOrderSelect.value) || 'recent';
@@ -182,12 +263,21 @@
             if (aDate && bDate) {
                 return order === 'recent' ? bDate - aDate : aDate - bDate;
             }
-
             if (aDate && !bDate) return order === 'recent' ? -1 : 1;
             if (!aDate && bDate) return order === 'recent' ? 1 : -1;
 
-            // Neither have date -> fallback to original insertion order
             return order === 'recent' ? b.__index - a.__index : a.__index - b.__index;
+        });
+    }
+
+    function sortFilteredByLikes(list) {
+        if (!Array.isArray(list) || !sortLikesSelect) return;
+        const order = sortLikesSelect.value;
+
+        list.sort((a, b) => {
+            const likesA = parseInt(a.likes) || 0;
+            const likesB = parseInt(b.likes) || 0;
+            return order === 'm_likes' ? likesB - likesA : likesA - likesB;
         });
     }
     
@@ -404,6 +494,9 @@
     filterTypeSelect.addEventListener("change", filterAndSortPacks); 
     filterFeaturedSelect.addEventListener("change", filterAndSortPacks); 
     if (sortOrderSelect) sortOrderSelect.addEventListener('change', filterAndSortPacks);
+    if (sortLikesSelect) {
+    sortLikesSelect.addEventListener('change', filterAndSortPacks);
+    }
 
     // Add Pack Button Listeners
     if (addPackBtn) {
