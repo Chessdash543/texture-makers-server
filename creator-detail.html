@@ -79,6 +79,15 @@
             color: #ffaa00;
             margin-bottom: 20px;
         }
+
+        .creator-info .pack-count-summary span {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: rgba(255, 71, 87, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 71, 87, 0.3);
+        }
         
         @media (max-width: 600px) {
             .content-card h2 {
@@ -131,8 +140,10 @@
          * @param {string} creatorName - Nome do criador.
          */
         function renderCreatorDetails(packs, creatorName) {
-            // Usa o nome do criador no formato original (com maiúsculas/minúsculas)
-            const displayCreatorName = packs[0] && Array.isArray(packs[0].creators) ? packs[0].creators.find(c => c.toUpperCase() === creatorName) || creatorName : creatorName;
+            // 1. Identifica o nome de exibição do criador
+            const displayCreatorName = packs[0] && Array.isArray(packs[0].creators) 
+                ? packs[0].creators.find(c => c.toUpperCase() === creatorName) || creatorName 
+                : creatorName;
         
             document.getElementById("page-title").textContent = `${displayCreatorName} - Creator - TMS`;
             creatorNameHeader.textContent = displayCreatorName;
@@ -143,18 +154,32 @@
                 return;
             }
         
-            packCountSummary.textContent = `${packs.length} Texture Packs Published`;
+            // 2. Calcula o total de likes do criador
+            const totalLikes = packs.reduce((sum, pack) => sum + (parseInt(pack.likes) || 0), 0);
             
-            // Ordena por nome
-            const sortedPacks = packs.sort((a, b) => a.name.localeCompare(b.name));
+            // 3. Atualiza o resumo visual
+            packCountSummary.innerHTML = `
+                ${packs.length} Texture Packs Published<br>
+                <span style="color: #ff4757; font-size: 0.8em; font-weight: bold;">❤️ ${totalLikes} Total Likes</span>
+            `;
+            
+            // --- MUDANÇA AQUI: ORDENAÇÃO POR LIKES (DO MAIOR PARA O MENOR) ---
+            const sortedPacks = packs.sort((a, b) => {
+                const likesA = parseInt(a.likes) || 0;
+                const likesB = parseInt(b.likes) || 0;
+                return likesB - likesA; // B - A garante a ordem decrescente
+            });
         
+            // 4. Gera o HTML da lista
             let htmlContent = `<ul class="pack-list">`;
             
             sortedPacks.forEach(pack => {
+                const packLikes = pack.likes || 0;
                 htmlContent += `
                     <li>
                         <a href="javascript:void(0)" onclick="window.open('pack-detail.html?id=${pack.id}', '_self');">
-                            ${pack.name} (${pack.version}) 
+                            <span style="float: right; color: #ff4757; font-weight: bold;">❤️ ${packLikes}</span>
+                            ${pack.name} <span style="color: #666; font-size: 0.85em;">(${pack.version})</span>
                         </a>
                     </li>
                 `;

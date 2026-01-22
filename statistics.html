@@ -172,6 +172,16 @@
             gap: 20px;
         }
 
+        .like-badge {
+            float: right;
+            background-color: #ff4757;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         @media (max-width: 900px) {
             .charts-grid { grid-template-columns: 1fr }
         }
@@ -250,6 +260,13 @@
             </div>
         </div>
 
+        <div class="content-card">
+            <h2>Top 10 Most Liked Packs</h2>
+            <div id="top-likes-container">
+                <p>Loading popular packs...</p>
+            </div>
+        </div>
+
     </div>
     
     <footer class="site-footer" role="contentinfo">
@@ -292,6 +309,34 @@
             function addCount(map, key){
                 if (!key) return;
                 map[key] = (map[key] || 0) + 1;
+            }
+
+            function renderTopLikedPacks(packs) {
+                const container = el('top-likes-container');
+                if (!packs || packs.length === 0) {
+                    container.innerHTML = '<p>No packs found.</p>';
+                    return;
+                }
+            
+                // Ordena por likes (do maior para o menor) e pega os 10 primeiros
+                const topLiked = [...packs]
+                    .sort((a, b) => (parseInt(b.likes) || 0) - (parseInt(a.likes) || 0))
+                    .slice(0, 10);
+            
+                let html = '<ul class="pack-list">';
+                topLiked.forEach((p, idx) => {
+                    const likes = p.likes || 0;
+                    html += `
+                        <li>
+                            <a href="pack-detail.html?id=${p.id}">
+                                <span class="like-badge">❤️ ${likes}</span>
+                                <strong>#${idx + 1}</strong> ${p.name} 
+                                <span style="color: #666; font-size: 0.9em;">by ${Array.isArray(p.creators) ? p.creators.join(', ') : p.creator}</span>
+                            </a>
+                        </li>`;
+                });
+                html += '</ul>';
+                container.innerHTML = html;
             }
 
             function processPacks(packs){
@@ -403,9 +448,13 @@
                     const res = await fetch('data/data.json');
                     if (!res.ok) throw new Error('Failed to fetch data/data.json');
                     const packs = await res.json();
-
+                
                     processPacks(packs);
                     updateSummaryDom();
+                    
+                    // --- ADICIONE ESTA LINHA ---
+                    renderTopLikedPacks(packs); 
+                    
                     renderTopCreatorsList();
                     renderRecentPacks(packs);
                     renderAllPacks(packs);
