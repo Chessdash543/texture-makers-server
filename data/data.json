@@ -95,10 +95,8 @@
       "OnlyYoichi"
     ],
     "gdversion": "2.2074",
-    "likes": 1,
-    "liked_by": [
-      1347585933754503188
-    ]
+    "likes": 0,
+    "liked_by": []
   },
   {
     "id": "elbrift.better-df",
@@ -642,9 +640,10 @@
       "MartyMcForty"
     ],
     "gdversion": "2.208",
-    "likes": 1,
+    "likes": 2,
     "liked_by": [
-      1220462901848965251
+      1220462901848965251,
+      1422135223981838358
     ]
   },
   {
