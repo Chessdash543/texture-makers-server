@@ -744,5 +744,26 @@
       "JohnRickGD"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "danzgame & johnrickgd.rgdps_2026",
+    "name": "Herida",
+    "resolution": [
+      "Any"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/p98vt08oywz8z3gzco8de/Herida.zip?rlkey=3noomigkbb1hdvacteb7tvcy2&st=16ybp4js&dl=1",
+    "description": "Texture Pack Made For <a href='https://www.rickgdps.xyz/'>Rick GDPS (RGDPS)</a> Made By <a href='https://youtube.com/@danzgame2.2?si=7mc3KMfZOvHaA6Yu'>DANZGAME</a> And <a href='https://www.tiktok.com/@johnrickgdofficial?is_from_webapp=1&sender_device=pc'>JohnrickGD</a>",
+    "version": "1.0.0",
+    "icon": "/uploads/danzgame & johnrickgd.rgdps_2026/icon.png",
+    "screenshot": "/uploads/danzgame & johnrickgd.rgdps_2026/image.png",
+    "featured": true,
+    "type": [
+      "Texture Packs"
+    ],
+    "creators": [
+      "DANZGAME",
+      "JohnRickGD"
+    ],
+    "gdversion": "2.2081"
   }
 ]
