@@ -725,7 +725,10 @@
       "JohnRickGD"
     ],
     "gdversion": "2.2081",
-    "likes": 0,
-    "likes_by": []
+    "likes": 1,
+    "likes_by": [],
+    "liked_by": [
+      1220462901848965251
+    ]
   }
 ]
