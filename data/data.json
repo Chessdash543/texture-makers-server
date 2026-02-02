@@ -732,5 +732,26 @@
     "gdversion": "2.2081",
     "likes": 0,
     "liked_by": []
+  },
+  {
+    "id": "chessdash543.terrariadash",
+    "name": "Terraria Dash",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/Chessdash543/TERRARIA-TEXTURE-PACK/archive/refs/heads/main.zip",
+    "description": "Texture Pack inspired in Terraria",
+    "version": "auto updated",
+    "icon": "/uploads/chessdash543.terrariadash/icon.png",
+    "screenshot": "/uploads/chessdash543.terrariadash/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "ChessDash543"
+    ],
+    "gdversion": "any"
   }
 ]
