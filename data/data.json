@@ -754,5 +754,27 @@
       "ChessDash543"
     ],
     "gdversion": "any"
+  },
+  {
+    "id": "cmds.no_colors",
+    "name": "No Colors",
+    "resolution": [
+      "Low",
+      "Med",
+      "High"
+    ],
+    "download": "https://github.com/oki333ed/No-Colors/releases/download/1.4.0/No.Colors.zip",
+    "description": "No Colors",
+    "version": "v1.4.0",
+    "icon": "/uploads/cmds.no_colors/icon.png",
+    "screenshot": "/uploads/cmds.no_colors/image.png",
+    "featured": false,
+    "type": [
+      "Texture Pack"
+    ],
+    "creators": [
+      "CMDs"
+    ],
+    "gdversion": "2.2081"
   }
 ]
