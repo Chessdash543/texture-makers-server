@@ -761,9 +761,9 @@
     "id": "cmds.no_colors",
     "name": "No Colors",
     "resolution": [
-      "Low",
-      "Med",
-      "High"
+      "low",
+      "med",
+      "high"
     ],
     "download": "https://github.com/oki333ed/No-Colors/releases/download/1.4.5/No.Colors.zip",
     "description": "No Colors",
@@ -772,7 +772,7 @@
     "screenshot": "/uploads/cmds.no_colors/image.png",
     "featured": true,
     "type": [
-      "Texture Pack"
+      "texture-pack"
     ],
     "creators": [
       "CMDs"
@@ -787,8 +787,8 @@
     "id": "anaxes.anaxestexturepack",
     "name": "Anaxes Texture Pack",
     "resolution": [
-      "High",
-      "Medium"
+      "high",
+      "medium"
     ],
     "download": "https://www.dropbox.com/scl/fi/5eid1pc7x1oc5371w33nc/Anaxes-Texture-Pack-fix-and-ported-to-medium-by-MartyMcForty.zip?rlkey=sg05pbfkbz4f178kyk9ymoq00&st=o3nqf4ik&dl=1",
     "description": "This is my first ever texture pack, and because of that this took sooo long to make, but I´m very happy with the result. The textures themselves aren´t really anything crazy, they´re mostly just recolors of the original GD textures so that they´re mint green and white, but with some differences.   Let me know if there is anything I should know/if you have feedback!",
@@ -797,7 +797,7 @@
     "screenshot": "/uploads/anaxes.anaxestexturepack/image.png",
     "featured": true,
     "type": [
-      "Texture Pack, Icons"
+      "texture pack, icons"
     ],
     "creators": [
       "Anaxes (fix by MartyMcForty)"
