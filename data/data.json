@@ -807,5 +807,27 @@
     "liked_by": [
       1422135223981838358
     ]
+  },
+  {
+    "id": "yoichi-soluble.zoinktp",
+    "name": "Trollmachine",
+    "resolution": [
+      "High",
+      "Medium"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/deuj4z8581zx3fgmj4nyb/TrollMachine-Zoink-s-Texture-Pack.zip?rlkey=ur9h27jnzlrfbim95vnpibyv0&st=s7uil8zp&dl=1",
+    "description": "Show how pro you are with the Geometry Dash top 1 pack, Zoink! 2.208 Port: Soluble Geode Support: Yoichi",
+    "version": "1.1.0",
+    "icon": "/uploads/yoichi-soluble.zoinktp/icon.png",
+    "screenshot": "/uploads/yoichi-soluble.zoinktp/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Soluble",
+      "OnlyYoichi"
+    ],
+    "gdversion": "2.2081"
   }
 ]
