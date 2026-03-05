@@ -540,14 +540,14 @@
   {
     "id": "thevoid8000.thevoidtp",
     "name": "TheVoid8000 TP",
-    "description": "The First Texture Pack by TheVoid8000!",
-    "version": "v1.0.0",
+    "description": "This is the 2nd version of TheVoid pack! I thank @ martymcforty for porting! You have any questions? dm me on Discord at TheVoid8000gd.",
+    "version": "v2.0.1",
     "resolution": [
       "medium",
       "high",
       "low"
     ],
-    "download": "https://www.dropbox.com/scl/fi/rz08d06pbu4stk1eo1014/TheVoid8000-TP.zip?rlkey=ll4lv00u6ydp3rlnram1z4ykf&st=agv2ixu3&dl=1",
+    "download": "https://www.dropbox.com/scl/fi/sh0c3y4c153zgciltal6u/TheVoid-Pack-fixkingsrus.zip?rlkey=8ojdcf5ur97ijibm7r9icl8wf&st=rgtucoxk&dl=1",
     "icon": "/uploads/thevoid8000.thevoidtp/pack.png",
     "screenshot": "/uploads/thevoid8000.thevoidtp/image.png",
     "type": [
@@ -558,7 +558,7 @@
       "TheVoid8000",
       "MartyMCForty"
     ],
-    "gdversion": "2.2074",
+    "gdversion": "2.2081",
     "likes": 0,
     "liked_by": []
   },
