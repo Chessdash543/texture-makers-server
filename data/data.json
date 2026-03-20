@@ -34,9 +34,9 @@
       "high",
       "medium"
     ],
-    "download": "https://textureworkshop.plusgdps.dev/api/v1/tws/getPack/114.zip",
+    "download": "https://github.com/DANZGAME-GD/NovaUI/releases/download/v1.7.0/NovaUi.zip",
     "description": "NOVA UI is a name derived from the word innovation, which means developing ideas in a field.",
-    "version": "v1.6.0",
+    "version": "1.7.0",
     "icon": "/uploads/danzgame.nova_ui/icon.png",
     "screenshot": "/uploads/danzgame.nova_ui/image.png",
     "type": [
@@ -46,7 +46,7 @@
     "creators": [
       "DANZGAME"
     ],
-    "gdversion": "2.2074",
+    "gdversion": "2.2081",
     "likes": 2,
     "liked_by": [
       1127573156522115105,
