@@ -322,12 +322,12 @@
     "id": "freadfries.packofchi",
     "name": "Pack of Chi",
     "description": "A purple texture pack with support for many mods and semi-transparent menus. Shoutout to Jaid and NamesTesla for finding out bugs, and slideglide for providing the hardcoded colors used by Happy Textures.",
-    "version": "v1.2.0",
+    "version": "1.3.3",
     "resolution": [
       "medium",
       "high"
     ],
-    "download": "https://github.com/FreadFries/PackOfChi/releases/download/v1.2.0/Pack.of.Chi.zip",
+    "download": "https://github.com/FreadFries/PackOfChi/releases/download/v1.3.3/pack-of-chi-v1.3.3.zip",
     "icon": "/uploads/freadfries.packofchi/1764888197832-pack-5.png",
     "screenshot": "/uploads/freadfries.packofchi/1764888197835-86_sin_titulo_20251204154500.png",
     "type": [
