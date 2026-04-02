@@ -884,5 +884,27 @@
       "icedcave"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "miguet-icedcave.miguettp",
+    "name": "Miguet Texture Pack",
+    "resolution": [
+      "high",
+      "med"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/zmeekfoqt2e9av83vm3fy/Miguet-GD-Texture-Pack-2.2-v2.1.1.zip?rlkey=o7i3g6lmf5xf24u0lu7g72m9d&st=pi68tsa2&dl=1",
+    "description": "ESP: Edit de SSOH v3 con dibujos, iconos y extras. Modifica la mayoria de menus del SSOH v3 original con dibujos reales pro y cambia algunos iconos por los de Miguet (yo nuevamente). \nENG: SSOH v3 edit with custom drawings, icons and extras. Changes most SSOH v3 menus with awesome drawings and changes some icons with the ones Miguet uses (me).",
+    "version": "2.1.1",
+    "icon": "/uploads/miguet-icedcave.miguettp/icon.png",
+    "screenshot": "/uploads/miguet-icedcave.miguettp/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Miguet",
+      "IcedCave"
+    ],
+    "gdversion": "2.2081"
   }
 ]
