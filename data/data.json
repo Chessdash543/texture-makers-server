@@ -254,12 +254,12 @@
     "id": "asky74.clean",
     "name": "GD Clean",
     "description": "GD Clean is a minimalist, dark-themed, monochromatic texture pack with simple icons from tabler-icons.io. \nIt is intuitive and, most importantly, easy on the eyes.",
-    "version": "v2.1.2",
+    "version": "2.2.0",
     "resolution": [
       "medium",
       "high"
     ],
-    "download": "https://github.com/Asky740/gdclean/releases/download/v2.1.2/GDClean2.1.2.zip",
+    "download": "https://github.com/Asky740/gdclean/releases/download/v2.2.0/GDClean2.2.0.zip",
     "icon": "/uploads/asky74.clean/11.png",
     "screenshot": "/uploads/asky74.clean/1764799608548-86 sin tÃ­tulo_20251203175319.png",
     "type": [
