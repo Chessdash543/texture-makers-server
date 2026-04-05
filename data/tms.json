@@ -502,5 +502,47 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 38,
+    "packName": "Emojis In Tags",
+    "downloadLink": "https://github.com/GatoNaranjaGD/Emojis-in-Tags/releases/tag/Geode-Tags",
+    "packLogo": "/uploads/gatonaranjagd.emojisintags/icon.png",
+    "packDescription": "Change the logo of most Geode mods to emojis (Paid Tag, Joke Tag, Featured Tag, Modtober & Modtober Winner Tag, etc...)",
+    "packCreator": "GatoNaranjaGD",
+    "packVersion": "1.0.1",
+    "gdVersion": "2.2081",
+    "packFeature": 0,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
+  },
+  {
+    "packID": 39,
+    "packName": "Auditory Faces",
+    "downloadLink": "https://github.com/GatoNaranjaGD/Auditory-Faces/releases/download/TP/Auditory.Faces.Update.zip",
+    "packLogo": "/uploads/gatonaranjagd.auditoryfaces/icon.png",
+    "packDescription": "Change the difficulty faces in the style of the Auditory Breaker level  Inspired by Difficulties Simplified by QuixonicGD  Ty King R Us for Port this tp",
+    "packCreator": "GatoNaranjaGD",
+    "packVersion": "1.0.1",
+    "gdVersion": "2.2081",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
+  },
+  {
+    "packID": 40,
+    "packName": "Sapphire SDK V4",
+    "downloadLink": "https://github.com/symphonyfg/sapphire-texture-pack/releases/download/v4/Sapphire.2.208.V4.zip",
+    "packLogo": "/uploads/vyntrix.sapphiresdk/icon.png",
+    "packDescription": "Restores the \"Sapphire\" UI present in Geode April Fools 2026. The Happy Textures mod (alphalaneous.happy_textures) is necessary for this pack to work properly.  Credits: Vyntrix - Restoring the textures themselves. SymphonyFG - Adding back the custom Sapphire background.",
+    "packCreator": "Vyntrix",
+    "packVersion": "4.0.0",
+    "gdVersion": "2.2081",
+    "packFeature": 0,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]
