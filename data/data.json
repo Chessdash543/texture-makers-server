@@ -885,5 +885,27 @@
       "IcedCave"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "gatonaranjagd.emojisintags",
+    "name": "Emojis In Tags",
+    "resolution": [
+      "high",
+      "med",
+      "low"
+    ],
+    "download": "https://github.com/GatoNaranjaGD/Emojis-in-Tags/releases/tag/Geode-Tags",
+    "description": "Change the logo of most Geode mods to emojis (Paid Tag, Joke Tag, Featured Tag, Modtober & Modtober Winner Tag, etc...)",
+    "version": "1.0.1",
+    "icon": "/uploads/gatonaranjagd.emojisintags/icon.png",
+    "screenshot": "/uploads/gatonaranjagd.emojisintags/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "GatoNaranjaGD"
+    ],
+    "gdversion": "2.2081"
   }
 ]
