@@ -254,12 +254,12 @@
     "id": "asky74.clean",
     "name": "GD Clean",
     "description": "GD Clean is a minimalist, dark-themed, monochromatic texture pack with simple icons from tabler-icons.io. \nIt is intuitive and, most importantly, easy on the eyes.",
-    "version": "2.2.0",
+    "version": "v2.1.2",
     "resolution": [
       "medium",
       "high"
     ],
-    "download": "https://github.com/Asky740/gdclean/releases/download/v2.2.0/GDClean2.2.0.zip",
+    "download": "https://github.com/Asky740/gdclean/releases/download/v2.1.2/GDClean2.1.2.zip",
     "icon": "/uploads/asky74.clean/11.png",
     "screenshot": "/uploads/asky74.clean/1764799608548-86 sin tÃ­tulo_20251203175319.png",
     "type": [
@@ -647,8 +647,8 @@
     ],
     "download": "https://github.com/Chessdash543/TMS-TEXTURE-PACK/archive/refs/heads/main.zip",
     "description": "This TP has a complete reimagining of the entire game... Happy Textures is obviously required for the function of this one, XD",
-    "version": "v1.0.4",
-    "icon": "/uploads/tms-team.tms/38.png",
+    "version": "auto updated",
+    "icon": "/uploads/tms-team.tms/27.png",
     "screenshot": "/uploads/tms-team.tms/image.png",
     "featured": true,
     "type": [
@@ -844,7 +844,7 @@
     "name": "GD Venezuela",
     "resolution": [
       "high",
-      "med"
+      "medium"
     ],
     "download": "https://www.dropbox.com/scl/fi/mmrh6iajd4esn3o9rms5v/Geometry-Dash-Venezuela-2.208-Port-by-OnlyYoichi.zip?rlkey=68l3z5s69kjszaz27h0jok7ys&st=064nvzqp&dl=1",
     "description": "Have you ever thought about how it feels to be Venezuelan? Well, this Texture Pack will make you discover it!! With a complete redesign and MANY Venezuelan references, this TP is ideal for those who want to become true Venezuelan players.\n\nDedicated to GD Venezuela Discord Server <3, Ported to 2.2081 by OnlyYoichi",
@@ -883,71 +883,6 @@
     "creators": [
       "Miguet",
       "IcedCave"
-    ],
-    "gdversion": "2.2081"
-  },
-  {
-    "id": "gatonaranjagd.emojisintags",
-    "name": "Emojis In Tags",
-    "resolution": [
-      "high",
-      "med",
-      "low"
-    ],
-    "download": "https://github.com/GatoNaranjaGD/Emojis-in-Tags/releases/tag/Geode-Tags",
-    "description": "Change the logo of most Geode mods to emojis (Paid Tag, Joke Tag, Featured Tag, Modtober & Modtober Winner Tag, etc...)",
-    "version": "1.0.1",
-    "icon": "/uploads/gatonaranjagd.emojisintags/icon.png",
-    "screenshot": "/uploads/gatonaranjagd.emojisintags/image.png",
-    "featured": false,
-    "type": [
-      "texture-pack"
-    ],
-    "creators": [
-      "GatoNaranjaGD"
-    ],
-    "gdversion": "2.2081"
-  },
-  {
-    "id": "gatonaranjagd.auditoryfaces",
-    "name": "Auditory Faces",
-    "resolution": [
-      "High",
-      "Medium"
-    ],
-    "download": "https://github.com/GatoNaranjaGD/Auditory-Faces/releases/download/TP/Auditory.Faces.Update.zip",
-    "description": "Change the difficulty faces in the style of the Auditory Breaker level  Inspired by Difficulties Simplified by QuixonicGD  Ty King R Us for Port this tp",
-    "version": "1.0.1",
-    "icon": "/uploads/gatonaranjagd.auditoryfaces/icon.png",
-    "screenshot": "/uploads/gatonaranjagd.auditoryfaces/image.png",
-    "featured": true,
-    "type": [
-      "texture-pack"
-    ],
-    "creators": [
-      "GatoNaranjaGD"
-    ],
-    "gdversion": "2.2081"
-  },
-  {
-    "id": "vyntrix.sapphiresdk",
-    "name": "Sapphire SDK V4",
-    "resolution": [
-      "High",
-      "Medium",
-      "Low"
-    ],
-    "download": "https://github.com/symphonyfg/sapphire-texture-pack/releases/download/v4/Sapphire.2.208.V4.zip",
-    "description": "Restores the \"Sapphire\" UI present in Geode April Fools 2026. The Happy Textures mod (alphalaneous.happy_textures) is necessary for this pack to work properly.  Credits: Vyntrix - Restoring the textures themselves. SymphonyFG - Adding back the custom Sapphire background.",
-    "version": "4.0.0",
-    "icon": "/uploads/vyntrix.sapphiresdk/icon.png",
-    "screenshot": "/uploads/vyntrix.sapphiresdk/image.png",
-    "featured": false,
-    "type": [
-      "texture-pack"
-    ],
-    "creators": [
-      "Vyntrix"
     ],
     "gdversion": "2.2081"
   }
