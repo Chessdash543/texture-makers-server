@@ -907,5 +907,26 @@
       "GatoNaranjaGD"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "gatonaranjagd.auditoryfaces",
+    "name": "Auditory Faces",
+    "resolution": [
+      "High",
+      "Medium"
+    ],
+    "download": "https://github.com/GatoNaranjaGD/Auditory-Faces/releases/download/TP/Auditory.Faces.Update.zip",
+    "description": "Change the difficulty faces in the style of the Auditory Breaker level  Inspired by Difficulties Simplified by QuixonicGD  Ty King R Us for Port this tp",
+    "version": "1.0.1",
+    "icon": "/uploads/gatonaranjagd.auditoryfaces/icon.png",
+    "screenshot": "/uploads/gatonaranjagd.auditoryfaces/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "GatoNaranjaGD"
+    ],
+    "gdversion": "2.2081"
   }
 ]
