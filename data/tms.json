@@ -544,5 +544,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 41,
+    "packName": "Auditory",
+    "downloadLink": "https://github.com/GatoNaranjaGD/Auditory-Faces/releases/download/TP/Auditory.Faces.Update.zip",
+    "packLogo": "/uploads/gatonaranjagd.auditoryfaces/38.png",
+    "packDescription": "Change the dificultou faces in the style of the Auditory Breaker Level, Inspired bye Dificultosa Simplified bye QuixonicGD, tu King R Us for Port this tp",
+    "packCreator": "GatoNaranjaGD",
+    "packVersion": "v1.0.1",
+    "gdVersion": "2.2081",
+    "packFeature": 0,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

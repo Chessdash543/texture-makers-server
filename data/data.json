@@ -885,5 +885,26 @@
       "IcedCave"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "gatonaranjagd.auditoryfaces",
+    "name": "Auditory",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/GatoNaranjaGD/Auditory-Faces/releases/download/TP/Auditory.Faces.Update.zip",
+    "description": "Change the dificultou faces in the style of the Auditory Breaker Level, Inspired bye Dificultosa Simplified bye QuixonicGD, tu King R Us for Port this tp",
+    "version": "v1.0.1",
+    "icon": "/uploads/gatonaranjagd.auditoryfaces/38.png",
+    "screenshot": "/uploads/gatonaranjagd.auditoryfaces/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "GatoNaranjaGD"
+    ],
+    "gdversion": "2.2081"
   }
 ]
