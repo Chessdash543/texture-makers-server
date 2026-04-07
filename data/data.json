@@ -415,7 +415,7 @@
     "id": "trail.flags",
     "name": "Trail Flags",
     "description": "Just the texture pack with various country trails. ",
-    "version": "v1.0.0",
+    "version": "1.3.1",
     "resolution": [
       "medium",
       "high",
@@ -647,7 +647,7 @@
     ],
     "download": "https://github.com/Chessdash543/TMS-TEXTURE-PACK/archive/refs/heads/main.zip",
     "description": "This TP has a complete reimagining of the entire game... Happy Textures is obviously required for the function of this one, XD",
-    "version": "auto updated",
+    "version": "v1.0.4",
     "icon": "/uploads/tms-team.tms/27.png",
     "screenshot": "/uploads/tms-team.tms/image.png",
     "featured": true,
@@ -865,6 +865,29 @@
     ]
   },
   {
+    "id": "gatonaranjagd.emojisintags",
+    "name": "Emojis In Tags",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/GatoNaranjaGD/Emojis-in-Tags/releases/tag/Geode-Tags",
+    "description": "Change the logo of most Geode mods to emojis (Paid Tag, Joke Tag, Featured Tag, Modtober & Modtober Winner Tag, etc...)",
+    "version": "1.0.1",
+    "icon": "/uploads/gatonaranjagd.emojisintags/36.png",
+    "screenshot": "/uploads/gatonaranjagd.emojisintags/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "GatoNaranjaGD"
+    ],
+    "gdversion": "2.2081",
+    "likes": 0,
+    "liked_by": []
+  },
+  {
     "id": "miguet-icedcave.miguettp",
     "name": "Miguet Texture Pack",
     "resolution": [
@@ -888,7 +911,7 @@
   },
   {
     "id": "gatonaranjagd.auditoryfaces",
-    "name": "Auditory",
+    "name": "Auditory Faces",
     "resolution": [
       "high",
       "medium"
@@ -906,5 +929,28 @@
       "GatoNaranjaGD"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "vyntrix.sapphiresdk",
+    "name": "Sapphire SDK V4",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/symphonyfg/sapphire-texture-pack/releases/download/v4/Sapphire.2.208.V4.zip",
+    "description": "Restores the \"Sapphire\" UI present in Geode April Fools 2026. The Happy Textures mod (alphalaneous.happy_textures) is necessary for this pack to work properly. Credits: Vyntrix - Restoring the textures themselves. SymphonyFG - Adding back the custom Sapphire background.",
+    "version": "4.0.0",
+    "icon": "/uploads/vyntrix.sapphiresdk/39.png",
+    "screenshot": "/uploads/vyntrix.sapphiresdk/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Vyntrix"
+    ],
+    "gdversion": "2.2081",
+    "likes": 0,
+    "liked_by": []
   }
 ]
