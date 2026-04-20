@@ -544,5 +544,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 40,
+    "packName": "Vic22 Texture Pack (Medium)",
+    "downloadLink": "https://www.dropbox.com/scl/fi/qpt1yjz2pvc7q9k8wl9ps/Vic22-2.2081-Medium.zip?rlkey=eg6a6h7er1hhtje8bkbjqt96o&st=tig4ljg9&dl=1",
+    "packLogo": "/uploads/vic22.tp/40.png",
+    "packDescription": "The official Texture Pack created 100%by Vic22, a small GD player (Inspired in part by the Blueskii TP)",
+    "packCreator": "Vic22",
+    "packVersion": "1.1.0",
+    "gdVersion": "2.2081",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]
