@@ -572,5 +572,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 42,
+    "packName": "Axelonw Texture Pack (High)",
+    "downloadLink": "https://files.catbox.moe/ky4l0r.zip",
+    "packLogo": "/uploads/axelonw.tp/42.png",
+    "packDescription": "The Texture Pack from TMS's best staff, Axelonw!",
+    "packCreator": "Axelonw",
+    "packVersion": "1.20.1",
+    "gdVersion": "2.2081",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

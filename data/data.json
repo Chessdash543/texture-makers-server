@@ -997,5 +997,25 @@
       "DiegoLB"
     ],
     "gdversion": "all"
+  },
+  {
+    "id": "axelonw.tp",
+    "name": "Axelonw Texture Pack (High)",
+    "resolution": [
+      "high"
+    ],
+    "download": "https://files.catbox.moe/ky4l0r.zip",
+    "description": "The Texture Pack from TMS's best staff, Axelonw!",
+    "version": "1.20.1",
+    "icon": "/uploads/axelonw.tp/42.png",
+    "screenshot": "/uploads/axelonw.tp/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Axelonw"
+    ],
+    "gdversion": "2.2081"
   }
 ]
