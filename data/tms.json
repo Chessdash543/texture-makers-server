@@ -558,5 +558,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 41,
+    "packName": "DiegoLB Icons (More Icons)",
+    "downloadLink": "https://www.dropbox.com/scl/fi/c64u42odq3cvcyk87h2h2/DiegoLB-Icons.zip?rlkey=gf2pqqnw84eko2ue3t6z7llfq&st=qm422mus&dl=1",
+    "packLogo": "/uploads/diegolb.icons/41.png",
+    "packDescription": "I removed the icons from the original TP",
+    "packCreator": "DiegoLB",
+    "packVersion": "0.0.1",
+    "gdVersion": "all",
+    "packFeature": 0,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

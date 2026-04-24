@@ -976,5 +976,26 @@
     "liked_by": [
       1347585933754503188
     ]
+  },
+  {
+    "id": "diegolb.icons",
+    "name": "DiegoLB Icons (More Icons)",
+    "resolution": [
+      "med",
+      "high"
+    ],
+    "download": "https://www.dropbox.com/scl/fi/c64u42odq3cvcyk87h2h2/DiegoLB-Icons.zip?rlkey=gf2pqqnw84eko2ue3t6z7llfq&st=qm422mus&dl=1",
+    "description": "I removed the icons from the original TP",
+    "version": "0.0.1",
+    "icon": "/uploads/diegolb.icons/41.png",
+    "screenshot": "/uploads/diegolb.icons/image.png",
+    "featured": false,
+    "type": [
+      "icons"
+    ],
+    "creators": [
+      "DiegoLB"
+    ],
+    "gdversion": "all"
   }
 ]
