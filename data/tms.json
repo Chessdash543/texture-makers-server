@@ -586,5 +586,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 43,
+    "packName": "Spaghetti TP",
+    "downloadLink": "https://files.catbox.moe/vcx20k.zip",
+    "packLogo": "/uploads/spaghetti.tp/44.png",
+    "packDescription": "The Second texture pack from tms's Best staff Axelonw. I Made this tp because i love Spaghetti And for Fun :)",
+    "packCreator": "Axelonw",
+    "packVersion": "1.0.0",
+    "gdVersion": "2.208",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

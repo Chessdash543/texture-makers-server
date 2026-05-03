@@ -1026,5 +1026,26 @@
       1347585933754503188,
       705498840735940759
     ]
+  },
+  {
+    "id": "spaghetti.tp",
+    "name": "Spaghetti TP",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://files.catbox.moe/vcx20k.zip",
+    "description": "The Second texture pack from tms's Best staff Axelonw. I Made this tp because i love Spaghetti And for Fun :)",
+    "version": "1.0.0",
+    "icon": "/uploads/spaghetti.tp/44.png",
+    "screenshot": "/uploads/spaghetti.tp/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Axelonw"
+    ],
+    "gdversion": "2.208"
   }
 ]
