@@ -2,11 +2,11 @@
   {
     "packID": 1,
     "packName": "Diamond TP",
-    "downloadLink": "https://github.com/Chessdash543/Diamond-TP-Official/archive/refs/heads/main.zip",
+    "downloadLink": "https://github.com/Chessdash543/Diamond-TP-Official/releases/download/v4.1.0/Diamond-TP.zip",
     "packLogo": "/uploads/chessdash.diamondtp/1.png",
     "packDescription": "Is a Remake Of Diamond TP And the Texture Mix sequence (TDOSSZ), With a very cool RGB style, with support for +62 mods!",
     "packCreator": "ChessDash543, TNTMAN",
-    "packVersion": "auto updated",
+    "packVersion": "v4.1.0",
     "gdVersion": "2.2081",
     "packFeature": 1,
     "packDownloads": 3,

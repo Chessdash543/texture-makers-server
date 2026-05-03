@@ -6,9 +6,9 @@
       "high",
       "medium"
     ],
-    "download": "https://github.com/Chessdash543/Diamond-TP-Official/archive/refs/heads/main.zip",
+    "download": "https://github.com/Chessdash543/Diamond-TP-Official/releases/download/v4.1.0/Diamond-TP.zip",
     "description": "Is a Remake Of Diamond TP And the Texture Mix sequence (TDOSSZ), With a very cool RGB style, with support for +62 mods!",
-    "version": "auto updated",
+    "version": "v4.1.0",
     "icon": "/uploads/chessdash.diamondtp/1.png",
     "screenshot": "/uploads/chessdash.diamondtp/image.png",
     "featured": true,
