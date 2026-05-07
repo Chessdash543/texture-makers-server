@@ -960,11 +960,12 @@
     "id": "vic22.tp",
     "name": "Vic22 Texture Pack (Medium)",
     "resolution": [
+      "high",
       "med"
     ],
-    "download": "https://www.dropbox.com/scl/fi/qpt1yjz2pvc7q9k8wl9ps/Vic22-2.2081-Medium.zip?rlkey=eg6a6h7er1hhtje8bkbjqt96o&st=tig4ljg9&dl=1",
-    "description": "The official Texture Pack created 100%by Vic22, a small GD player (Inspired in part by the Blueskii TP)",
-    "version": "1.1.0",
+    "download": "https://www.dropbox.com/scl/fi/f3dnv5yqrec2wldzmqfnn/Vic22-2.208.zip?rlkey=e6n0ty75gzwt7bz6gbhqokmyb&st=1ab22wqf&dl=1",
+    "description": "Now  Support the High quality! (The title lies XD)",
+    "version": "1.2.3",
     "icon": "/uploads/vic22.tp/40.png",
     "screenshot": "/uploads/vic22.tp/image.png",
     "featured": true,
