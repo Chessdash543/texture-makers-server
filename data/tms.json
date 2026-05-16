@@ -600,5 +600,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 44,
+    "packName": "Windows Icons Recreations",
+    "downloadLink": "https://github.com/rEnderDust/Windows-Icons-Recreation/releases/download/v1.0.0/Windows.Icons.Recreation.zip",
+    "packLogo": "/uploads/enderdust812.windowsicons/45.png",
+    "packDescription": "A recreation of the <c-0114ef>Windows</c> <cy>logo</c> <c-f25022>i</c><c-0114ef>c</c><c-ffb901>o</c><c-7fba00>n</c> based on this [original post by the official Windows Twitter account](https://x.com/Windows/status/1805664279976112195/).\n\n## Requires the <cg>[More Icons](mod:hiimjustin000.more_icons) mod</c> by [`hiimjustin000!`](user:7466002).",
+    "packCreator": "rEnderDust",
+    "packVersion": "v1.0.0",
+    "gdVersion": "all",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

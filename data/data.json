@@ -1055,5 +1055,26 @@
       1391891902139469976,
       1420087471802290328
     ]
+  },
+  {
+    "id": "enderdust812.windowsicons",
+    "name": "Windows Icons Recreations",
+    "resolution": [
+      "high",
+      "med"
+    ],
+    "download": "https://github.com/rEnderDust/Windows-Icons-Recreation/releases/download/v1.0.0/Windows.Icons.Recreation.zip",
+    "description": "A recreation of the <c-0114ef>Windows</c> <cy>logo</c> <c-f25022>i</c><c-0114ef>c</c><c-ffb901>o</c><c-7fba00>n</c> based on this [original post by the official Windows Twitter account](https://x.com/Windows/status/1805664279976112195/).\n\n## Requires the <cg>[More Icons](mod:hiimjustin000.more_icons) mod</c> by [`hiimjustin000!`](user:7466002).",
+    "version": "v1.0.0",
+    "icon": "/uploads/enderdust812.windowsicons/45.png",
+    "screenshot": "/uploads/enderdust812.windowsicons/image.png",
+    "featured": true,
+    "type": [
+      "icon"
+    ],
+    "creators": [
+      "rEnderDust"
+    ],
+    "gdversion": "all"
   }
 ]
