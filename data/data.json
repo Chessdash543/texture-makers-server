@@ -1077,5 +1077,25 @@
       "rEnderDust"
     ],
     "gdversion": "all"
+  },
+  {
+    "id": "und.robloxicons",
+    "name": "Roblox Icons",
+    "resolution": [
+      "high"
+    ],
+    "download": "https://github.com/HelloMyNameIsUnd/Roblox-Icons/releases/download/1.0.0/Roblox.Icons.zip",
+    "description": "Roblox Icons for Geometry dash, includes an Icons for each Gamemode And two for ship",
+    "version": "1.0.0",
+    "icon": "/uploads/und.robloxicons/46.png",
+    "screenshot": "/uploads/und.robloxicons/image.png",
+    "featured": false,
+    "type": [
+      "icons"
+    ],
+    "creators": [
+      "und."
+    ],
+    "gdversion": "2.2081"
   }
 ]
