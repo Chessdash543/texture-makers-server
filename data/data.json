@@ -301,13 +301,13 @@
     "id": "zapher.frutigerdash",
     "name": "Frutiger Aero Dash",
     "description": "The promised future we never got, now in Geometry Dash!",
-    "version": "v1.5.2",
+    "version": "1.5.2",
     "resolution": [
       "medium",
       "high"
     ],
-    "download": "https://www.dropbox.com/scl/fi/4ny2wyxyek3bd5n8leppw/Aero-Dash-Workshop.zip?rlkey=grtanpcmdj5i5uf43xgvif9mt&st=dp9tcvz5&dl=1",
-    "icon": "/uploads/zapher.frutigerdash/13.png",
+    "download": "https://github.com/xsilbotx/aero-tp/releases/download/v1.1/Aero.Dash.zip",
+    "icon": "/uploads/zapher.frutigerdash/47.png",
     "screenshot": "/uploads/zapher.frutigerdash/1764888014506-86_sin_titulo_20251204154144.png",
     "type": [
       "texture-pack"
@@ -316,7 +316,7 @@
     "creators": [
       "Zapher"
     ],
-    "gdversion": "2.2074",
+    "gdversion": "2.2081",
     "likes": 0,
     "liked_by": []
   },
