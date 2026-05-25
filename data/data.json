@@ -252,8 +252,10 @@
       "OnlyYoichi"
     ],
     "gdversion": "2.2081",
-    "likes": 0,
-    "liked_by": []
+    "likes": 1,
+    "liked_by": [
+      1347585933754503188
+    ]
   },
   {
     "id": "asky74.clean",
