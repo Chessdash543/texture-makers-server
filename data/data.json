@@ -114,13 +114,13 @@
     "name": "Shop Girls",
     "resolution": [
       "low",
-      "medium",
-      "high"
+      "high",
+      "med"
     ],
-    "download": "https://www.dropbox.com/scl/fi/w5fkig8kjti1rqso94dz1/ShopGirl2.2-1.zip?rlkey=8ejj779892advdshyts2jo41h&st=5u4r0as8&dl=1",
-    "description": "Turn ShopKeepers into girls... What other explanation do you want?",
-    "version": "v1.5.0",
-    "icon": "/uploads/elbrift.better-df/5.png",
+    "download": "https://github.com/OstiLightOff/shop_girl/releases/download/1.0.3/Shop.Girl.zip",
+    "description": "Tired of the same type of sellers? Here is our solution.\n# New ShopKeepers Girls!!!!\n\nDo you really think I'm going to put \"Hot\"? no, this just turns shopkeepers into girls... Nothing new, to be honest",
+    "version": "1.0.3",
+    "icon": "/uploads/elbrift.better-df/48.png",
     "screenshot": "/uploads/elbrift.better-df/78_sin_titulo_20251201221838.png",
     "type": [
       "texture-pack"
@@ -129,7 +129,7 @@
     "creators": [
       "OstiLightOff"
     ],
-    "gdversion": "2.2074",
+    "gdversion": "all",
     "likes": 1,
     "liked_by": [
       1264596674915860582
