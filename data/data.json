@@ -234,13 +234,13 @@
   {
     "id": "pvn6.processorpack",
     "name": "Processor Pack",
-    "description": "Black and Purple themed mashup of some of my favorite texture packs together (Credits: Futura UI, SSOH, Soluble, Zeronium, Blueskii)",
-    "version": "v1.0.0",
+    "description": "Black and Purple themed mashup of some of my favorite texture packs together (Credits: Futura UI, SSOH, Soluble, Zeronium, Blueskii)\n\n-# Shootout to OnlyYoichi for Port this to 2.2081",
+    "version": "1.0.1",
     "resolution": [
       "medium",
       "high"
     ],
-    "download": "https://www.dl.dropboxusercontent.com/scl/fi/zy5hl0bjz8pkrobrs3k7t/Processor-Pack-OFFICIAL-RELEASE.zip?rlkey=5rduuosobxphaz2fyf0oktzut&st=1komgb35&dl=1",
+    "download": "https://www.dropbox.com/scl/fi/lrvqyngqbylr3hvhcbr8a/Processor-TP-2.208-Fan-Port.zip?rlkey=0vba79h5w9dw4fhubrbkqsmfr&st=3x1euujf&dl=1",
     "icon": "/uploads/pvn6.processorpack/10.png",
     "screenshot": "/uploads/pvn6.processorpack/1764798799644-7RFqWs_HJ0U-HD_1.jpg",
     "type": [
@@ -248,9 +248,10 @@
     ],
     "featured": true,
     "creators": [
-      "Processor"
+      "Processor",
+      "OnlyYoichi"
     ],
-    "gdversion": "2.2074",
+    "gdversion": "2.2081",
     "likes": 0,
     "liked_by": []
   },
