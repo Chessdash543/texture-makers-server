@@ -628,5 +628,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 46,
+    "packName": "Fuyuno Icons",
+    "downloadLink": "https://www.dropbox.com/scl/fi/8q8fumue25ctz06asdgd0/Fuyuno-TP.zip?rlkey=al38g2thy5clvxo9tbmadw3fw&st=jnjoqo9c&dl=1",
+    "packLogo": "/uploads/fuyuno.iconmix/49.png",
+    "packDescription": "Improvise your skills as a player with this Texture Pack!!!\n# +1000 icons so you can choose which one to use!\n(Requires the mod \"More Icons\" to work lmao)",
+    "packCreator": "Fuyuno, Soluble",
+    "packVersion": "1.0.0",
+    "gdVersion": "all",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]
