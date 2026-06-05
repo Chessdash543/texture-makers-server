@@ -642,5 +642,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 47,
+    "packName": "Freaky demons (High)",
+    "downloadLink": "https://files.catbox.moe/374tfn.zip",
+    "packLogo": "/uploads/axelonw.freakydemons/50.png",
+    "packDescription": "Freaky demon faces. We made them for fun",
+    "packCreator": "TMSTEAM, Axelonw, MartyMcForty, ChessDash543",
+    "packVersion": "1.0.0",
+    "gdVersion": "2.2081",
+    "packFeature": 0,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

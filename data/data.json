@@ -1129,5 +1129,28 @@
     "liked_by": [
       1347585933754503188
     ]
+  },
+  {
+    "id": "axelonw.freakydemons",
+    "name": "Freaky demons (High)",
+    "resolution": [
+      "high"
+    ],
+    "download": "https://files.catbox.moe/374tfn.zip",
+    "description": "Freaky demon faces. We made them for fun",
+    "version": "1.0.0",
+    "icon": "/uploads/axelonw.freakydemons/50.png",
+    "screenshot": "/uploads/axelonw.freakydemons/image.png",
+    "featured": false,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "TMSTEAM",
+      "Axelonw",
+      "MartyMcForty",
+      "ChessDash543"
+    ],
+    "gdversion": "2.2081"
   }
 ]
