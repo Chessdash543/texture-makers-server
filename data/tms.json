@@ -670,5 +670,19 @@
     "packDownloads": 0,
     "creationDate": 0,
     "lastUpdated": 0
+  },
+  {
+    "packID": 49,
+    "packName": "Mistik Texture PackMistik Texture Pack",
+    "downloadLink": "https://github.com/lordmistik3/Mistik-Texture-Pack-v3/archive/refs/tags/v3.0.0.zip",
+    "packLogo": "/uploads/lord.mistik/52.png",
+    "packDescription": "My texture pack updated with a mixture pack included and many more",
+    "packCreator": "Mistik",
+    "packVersion": "v3.0.0",
+    "gdVersion": "2.2081",
+    "packFeature": 1,
+    "packDownloads": 0,
+    "creationDate": 0,
+    "lastUpdated": 0
   }
 ]

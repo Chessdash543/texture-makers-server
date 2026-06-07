@@ -1184,5 +1184,26 @@
       "FuturaUITeam"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "lord.mistik",
+    "name": "Mistik Texture PackMistik Texture Pack",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/lordmistik3/Mistik-Texture-Pack-v3/archive/refs/tags/v3.0.0.zip",
+    "description": "My texture pack updated with a mixture pack included and many more",
+    "version": "v3.0.0",
+    "icon": "/uploads/lord.mistik/52.png",
+    "screenshot": "/uploads/lord.mistik/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Mistik"
+    ],
+    "gdversion": "2.2081"
   }
 ]
