@@ -1162,5 +1162,27 @@
       1347585933754503188
     ],
     "domain": 1391891902139469976
+  },
+  {
+    "id": "riizal.fui180.en010",
+    "name": "Futura UI",
+    "resolution": [
+      "high",
+      "medium"
+    ],
+    "download": "https://github.com/rii-zal/Futura-UI-Pack/releases/download/v1.8.0.a0011.tpw/Version_Alpha_1.8.0.a0011_tpw.zip",
+    "description": "Futura UI is a minimalism GUI texture pack with focusing on UI element and UX system, with Custom BG Loading screen, Menu Loop, even more. 1.8 is a 2.2081 lastest port from 1.7 version.",
+    "version": "v1.8.0.a0010_tpw",
+    "icon": "/uploads/riizal.fui180.en010/51.png",
+    "screenshot": "/uploads/riizal.fui180.en010/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "RiiZal",
+      "FuturaUITeam"
+    ],
+    "gdversion": "2.2081"
   }
 ]
