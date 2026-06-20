@@ -1205,5 +1205,31 @@
       "Mistik"
     ],
     "gdversion": "2.2081"
+  },
+  {
+    "id": "ice.tp",
+    "name": "Ice Pop TP!",
+    "resolution": [
+      "high",
+      "med",
+      "low"
+    ],
+    "download": "https://github.com/haturz1/IcePopTP/releases/download/tag3/1.0.0.zip",
+    "description": "Ice Pop lmao (Esta descripcion fue improvisada por Yoichi :P)",
+    "version": "1.0.0",
+    "icon": "/uploads/ice.tp/53.png",
+    "screenshot": "/uploads/ice.tp/image.png",
+    "featured": true,
+    "type": [
+      "texture-pack"
+    ],
+    "creators": [
+      "Harutz21",
+      "Colix",
+      "MartyMcForty",
+      "OnlyYoichi",
+      "DANZGAME"
+    ],
+    "gdversion": "2.2081"
   }
 ]
